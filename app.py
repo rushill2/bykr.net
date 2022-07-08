@@ -6,12 +6,13 @@ from threading import Thread
 datag = None
 app = Flask(__name__, template_folder='templates')
 
-
+# Handle the get requests to app (site server)
 @app.route('/', methods=["GET"])
 def index():
     # thread for the location data transfer
     return render_template("index.html")
 
+# Handle POST requests (backend server)
 # Remember to switch the button for a constant feature and the acq() while loop out
 @app.route('/', methods=["POST"])
 def post():
@@ -23,7 +24,7 @@ def post():
         except Exception as e:
             data = {}
             print(e)
-
+    # parallel thread for the location processing
     new_thread = Thread(target=maps.acq, args=(datag,))
     new_thread.daemon = True
     print(new_thread.is_alive())
