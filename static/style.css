@@ -1,0 +1,59 @@
+/*
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map.
+ */
+#map {
+  height: 100%;
+}
+
+/*
+ * Optional: Makes the sample page fill the window.
+ */
+html,
+body {
+  height: 80%;
+  margin: 0;
+  padding: 0;
+}
+
+.map-control {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+  font-family: "Roboto", "sans-serif";
+  margin: 10px;
+  /* Hide the control initially, to prevent it from appearing
+           before the map loads. */
+  display: none;
+}
+
+/* Display the control once it is inside the map. */
+#map .map-control {
+  display: block;
+}
+
+.selector-control {
+  font-size: 14px;
+  line-height: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#legend {
+  position: fixed;
+  height: 240px;
+  bottom: 0;
+  right: 0;
+  width : 12%;
+  background-color: white;
+}
+
+#tester {
+  position: fixed;
+  height: 240px;
+  bottom: 0;
+  right: 1000;
+  width : 12%;
+  background-color: white;
+}
+
