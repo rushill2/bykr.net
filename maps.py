@@ -5,21 +5,27 @@ import fed
 from geopy.geocoders import Nominatim
 
 key = "AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA"
-
+INIT = (0,0)
 
 # overseer of all things in this one
 def acq(datag):
     loc = coordToPlace(datag.to_dict())
     print(loc)
-    fed.scrape(loc)
+    # fed.scrape(loc)
 
 # find the smallest possible unit that would have some news
 # Would likely have to scrap this due to api ratelimits
 # Replace with recommendations for bikimg locations, and setting paths for those?
 def coordToPlace(usedict):
+        payload = ""
+        global INIT
         blacklist = ['building', 'house', 'house_number', 'road', 'quarter']
-        payload =usedict['data[lat]'] + "," + usedict['data[lng]']
         geolocator = Nominatim(user_agent="BikeTes")
+
+        if('data[lat]' in usedict.keys() and 'data[lng]' in usedict.keys()):
+            payload =usedict['data[lat]'] + "," + usedict['data[lng]']
+        INIT = (float(usedict['data[lat]']), float(usedict['data[lng]']))
+        print(usedict, INIT)
         loc = geolocator.reverse(payload)
         addr = loc.raw['address']
         # print(retloc)
@@ -37,3 +43,6 @@ def coordToPlace(usedict):
 
 
 # implement nearby biking suggestions
+
+def testhelp(dataset):
+    print(dataset)

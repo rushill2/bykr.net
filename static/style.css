@@ -9,11 +9,14 @@
 /*
  * Optional: Makes the sample page fill the window.
  */
+
+
 html,
 body {
-  height: 80%;
-  margin: 0;
+  height: 90%;
+  margin: 10;
   padding: 0;
+  width: 60%;
 }
 
 .map-control {
@@ -38,22 +41,156 @@ body {
   padding-left: 5px;
   padding-right: 5px;
 }
-
 #legend {
   position: fixed;
-  height: 240px;
+  height: 40%;
   bottom: 0;
   right: 0;
   width : 12%;
-  background-color: white;
+  background-color: black;
 }
 
 #tester {
-  position: fixed;
-  height: 240px;
-  bottom: 0;
-  right: 1000;
-  width : 12%;
-  background-color: white;
+  position: absolute;
+  top: 200px;
+  right: 20px;
+  width: 220px;
+  height: 35px;
+  border: 3px solid #73AD21;
 }
 
+`.column {
+  position: fixed;
+  height: 400px;
+  bottom: 0;
+  right: 600;
+  width : 12%;
+  background-color: 1D2C4D;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}`
+
+#toolbar {
+height: 15,
+}
+
+#start-btn{
+    height : 35px;
+    width : 220px;
+
+}
+
+#recalib{
+    height : 35px;
+    width : 220px;
+
+}
+
+#start{
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  width: 220px;
+  height: 35px;
+  border: 3px solid #73AD21;
+}
+
+#suggest{
+  position: absolute;
+  top: 140px;
+  right: 20px;
+  width: 220px;
+  height: 35px;
+  border: 3px solid #73AD21;
+}
+
+#sugg-btn{
+    height : 35px;
+    width : 220px;
+}
+
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  top: 35px;
+  right: 320px;
+  width: 600px; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  width: 400px;
+  height: 500px;
+  right: 320px;
+  margin: auto 20%;
+  color: yellow;
+  font-family: 'Courier New'
+  background-color: black;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pac-container{
+    font-family: 'Courier New';
+    color:yellow;
+}
+
+#dest-text{
+    color: yellow;
+    background-color:black;
+    width: 200px;
+    font-family: 'Courier New'
+}
+
+.pac-item{
+    color:yellow;
+    background-color: black;
+}
+
+.pac-icon{
+    color:yellow;
+    background-color: black;}
+
+.pac-item-query{
+    color:yellow;
+}
+
+th{
+    border: 1px solid yellow;
+    color: yellow;
+    padding: 8px;
+    font-family: 'Courier New';
+
+}
+
+table {
+border-collapse:collapse;
+width: 50%;
+text-align:center;
+vertical-align: middle;
+}
