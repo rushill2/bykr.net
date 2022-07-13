@@ -191,6 +191,20 @@ th{
 table {
 border-collapse:collapse;
 width: 50%;
+border: 1px solid yellow;
 text-align:center;
 vertical-align: middle;
+}
+
+tbody{
+    border: 1px solid yellow;
+    color:yellow;
+    font-size:12;
+    padding: 8px;
+    width: 33%;
+    height: 66%
+}
+
+th, td, tr{
+    border: 1px solid yellow;
 }

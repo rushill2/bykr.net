@@ -1,6 +1,7 @@
 // Main Page for Ryder static html
 var map, infoWindow;
 var ps;
+var homemarker, destmarker;
 
 // gets the starting position of the marker.
 if(flag==1){console.log(fetchit);}
@@ -277,6 +278,7 @@ var sty = [
 var opt = {
     center: { lat: -34.397, lng: 150.644 },
     zoom: 14,
+    clickableIcons: false,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
 }
   map = new google.maps.Map(document.getElementById("map"), opt);
@@ -290,7 +292,7 @@ var opt = {
           };
 
 
-          var marker = new google.maps.Marker({
+           homemarker = new google.maps.Marker({
                       position: pos,
                       map: map,
                       icon: {
@@ -429,14 +431,76 @@ document.getElementById("cross").onclick = function() {
    Inputs - None
    Purpose -  Directions form with suggestions
 */
-document.getElementById("dir-btn").onclick = function() {
+document.getElementById("dir-btn").onclick = function(map) {
+  document.getElementById("dest-text").value = "";
   var modal = document.getElementById("directions-form");
+  var loc;
   modal.style.display = "block";
   document.getElementById("myModal").style.display = "none";
-  const comp = new google.maps.places.Autocomplete(
-      document.getElementById("dest-text"));
+  const comp = new google.maps.places.Autocomplete(document.getElementById("dest-text"));
+  comp.addListener('place_changed', fillInAddress);
+                function fillInAddress() {
+                    var place1 = comp.getPlace();
+                    findRoute(place1.geometry.location);
+                }
+
 
 }
+
+
+
+function findRoute(coord){
+    var dest;
+    var l, ln;
+    var dest_coord;     // for get directions
+    var el = document.getElementById("dest-text");
+
+      var geocoder = new google.maps.Geocoder();
+      geocoder.geocode( { 'address': el.value}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK)
+      {
+          dest_coord = results[0].geometry.location;
+          destmarker = new google.maps.Marker({
+          position: dest_coord,
+          map,
+      });
+        destmarker.setMap(map);
+        var latlngbounds = new google.maps.LatLngBounds();
+        latlngbounds.extend(homemarker.position);
+        latlngbounds.extend(destmarker.position);
+        map.fitBounds(latlngbounds);
+        var directionsService = new google.maps.DirectionsService();
+        var directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true, suppressBicyclingLayer: true});
+        directionsDisplay.setMap(null);
+        directionsDisplay.setMap(map);
+        var send = new google.maps.LatLng(coord['lat'], coord['lng']);
+        var test = new google.maps.LatLng(fetchit['lat'], fetchit['lng']);
+
+
+
+        var request = {
+                origin: homemarker.position,
+                destination: destmarker.position,
+                travelMode: google.maps.TravelMode.BICYCLING
+            };
+        directionsDisplay.setOptions({
+          polylineOptions: {
+            strokeColor: 'red',
+          }
+        });
+        directionsService.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+                directionsDisplay.setMap(map);
+            } else {
+            }
+        });
+      }
+    });
+
+}
+
+
 
 /* Function Interface - cross_dir
    Inputs - None
@@ -472,41 +536,48 @@ document.getElementById("sugg-btn").onclick = function(){
     lt = fetchit['lat'];
     ln = fetchit['lng'];
     const URL = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lt},${ln}&radius=5000&sensor=true&type=park&rankBy=distance&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA`
-
     // First get and parse the nearby regions
-    fetch(URL).then(data=> {
-      return data.json();
-    }).then(jsonData => {
 
-     for(var i=0; i<jsonData.results.length; i++){
-        var res = jsonData.results[i];
-        console.log(typeof res)
-        setTimeout(function() {
-         if(res['photos']){
-            dict.push({'name': res.name, 'rating': res.rating, 'pic_id': res['photos'][0]['photo_reference']});
+    async function fetcher(URL){
+        const resp = await fetch(URL);
+        return await resp.json()
+    }
+
+    var res, req;
+    (async () => {
+      req = await fetcher(URL);
+      res = req.results;
+      console.log(res);
+      for(var i=0; i<req.results.length; i++){
+        var res = req.results[i];
+        if(res['photos'] && res['opening_hours']){
+            dict.push({'name': res.name, 'rating': res.rating, 'pic_id': res['photos'][0]['photo_reference'], 'open_now': res.opening_hours.open_now});
+        }
+        else if(res['opening_hours']){
+             dict.push({'name': res.name, 'rating': res.rating, 'pic_id': res.opening_hours.open_now});
         }
         else{
             dict.push({'name': res.name, 'rating': res.rating});
         }
-        }, 1000);
-        console.log(dict[i])
+      console.log(dict)
+
+      console.log(dict.length);
+      var tbody = document.getElementById("sugg-entries")
+      var row = tbody.insertRow();
+      var cell_name = row.insertCell();
+      var cell_rating = row.insertCell();
+      var cell_hours = row.insertCell();
+      cell_name.innerHTML = dict[i]['name'];
+      cell_rating.innerHTML = dict[i]['rating'];
+      cell_hours.innerHTML = dict[i]['open_now'];
+
     }
-    }).catch(error=> {
-      console.log(error);
-    })
-    // Now to put them onto a table in a modal
+})()
+
     var modal = document.getElementById("nearby-srch");
     modal.style.display = "block";
-
-    // inserting into table
-//       console.log("Entered loop");
-//       console.log(dict);
-//       var tbody = document.getElementById("sugg-entries")
-//       var row = tbody.insertRow();
-//       var cell = row.insertCell();
-//       cell.innerHTML = dict[0]['name'];
-//       console.log(value);
 }
+
 /* Function Interface - cross-srch
    Inputs - None
    Purpose - Close button for the suggestions
@@ -530,4 +601,5 @@ document.getElementById("cross-srch").onclick = function() {
 /* Inputs- None;
    Outputs - None;
    Description - Handler for Get Directions button, that creates an autocomplete widget from google maps API */
+
 
