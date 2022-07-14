@@ -1,7 +1,10 @@
 // Main Page for Ryder static html
+
+
 var map, infoWindow;
 var ps;
 var homemarker, destmarker;
+var directionsDisplay;
 
 // gets the starting position of the marker.
 if(flag==1){console.log(fetchit);}
@@ -283,6 +286,17 @@ var opt = {
 }
   map = new google.maps.Map(document.getElementById("map"), opt);
   window.mp = map;
+  trackLocation({
+    onSuccess: ({ coords: { latitude: lat, longitude: lng } }) => {
+      homemarker.setPosition({ lat, lng });
+      map.panTo({ lat, lng });
+    },
+    onError: err =>
+      alert(`Error: ${getPositionErrorMessage(err.code) || err.message}`)
+  });
+  directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true, suppressBicyclingLayer: true});
+  destmarker = new google.maps.Marker({position: null,map: map});
+  destmarker.setVisible(false);
    if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -305,8 +319,7 @@ var opt = {
   },
 });
           map.setCenter(pos);
-          const bikeLayer = new google.maps.BicyclingLayer();
-          bikeLayer.setMap(map);
+
         },
         () => {
           handleLocationError(true, infoWindow, map.getCenter());
@@ -330,42 +343,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 // tester
 document.getElementById("recalib").onclick = function(){
-
-    const pos = {
-            lat: 0.0,
-            lng: 0.0,
-          };
-
-    function success(pos){
-        const posi = {
-            lat: (pos.coords.latitude),
-            lng: (pos.coords.longitude),
-          };
-          ps = posi
-          alert(posi.lat)
-          $.ajax({
-            type : "POST",
-            url : "/post",
-            data: {'data':posi, 'flag':'init'},
-            dataType: 'json',
-            success: function(result) {
-                alert(posi.lng);
-        },error: function(XMLHttpRequest, textStatus, errorThrown) {
-        alert("Status: " + textStatus); alert("Error: " + errorThrown);
-    }
-    });
-        }
-
-    function error(){
-        alert("Error in transfer");}
-
-    const options = {
-      enableHighAccuracy: true,
-      timeout: 5000,
-      maximumAge: 0
-    };
-
-    navigator.geolocation.getCurrentPosition(success, error, options);
 
 
 
@@ -435,21 +412,25 @@ document.getElementById("dir-btn").onclick = function(map) {
   document.getElementById("dest-text").value = "";
   var modal = document.getElementById("directions-form");
   var loc;
+  var usearr = [];
   modal.style.display = "block";
   document.getElementById("myModal").style.display = "none";
   const comp = new google.maps.places.Autocomplete(document.getElementById("dest-text"));
   comp.addListener('place_changed', fillInAddress);
                 function fillInAddress() {
                     var place1 = comp.getPlace();
-                    findRoute(place1.geometry.location);
+                    var param = document.getElementById("dest-text").value;
+                    usearr = fetchmoredeets(param);
+                    console.log(usearr)
+                    destmarker.position = place1.geometry.location;
+                    findRoute(place1.geometry.location, usearr);
+
                 }
 
 
 }
 
-
-
-function findRoute(coord){
+function findRoute(coord, usearr){
     var dest;
     var l, ln;
     var dest_coord;     // for get directions
@@ -459,19 +440,36 @@ function findRoute(coord){
       geocoder.geocode( { 'address': el.value}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK)
       {
-          dest_coord = results[0].geometry.location;
-          destmarker = new google.maps.Marker({
-          position: dest_coord,
-          map,
-      });
+        dest_coord = results[0].geometry.location;
+        destmarker.setPosition(dest_coord);
+        destmarker.setVisible(true);
         destmarker.setMap(map);
         var latlngbounds = new google.maps.LatLngBounds();
         latlngbounds.extend(homemarker.position);
         latlngbounds.extend(destmarker.position);
         map.fitBounds(latlngbounds);
         var directionsService = new google.maps.DirectionsService();
-        var directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true, suppressBicyclingLayer: true});
-        directionsDisplay.setMap(null);
+        var revsearch;
+
+          document.getElementById("directions-form").style.display = "none";
+          document.getElementById("deets-modal").style.display = "block";
+            var deetsreq = {
+              placeId: "ChIJ7XUlvEHXDIgRZ-s1ZkNU2yg",
+              fields: ['name', 'rating', 'formatted_phone_number', 'geometry', 'international_phone_number', 'address_component']
+            };
+
+            var service = new google.maps.places.PlacesService(map);
+            service.getDetails(deetsreq, callback);
+
+            function callback(place, status) {
+              if (status == google.maps.places.PlacesServiceStatus.OK) {
+
+
+              }
+            }
+
+
+
         directionsDisplay.setMap(map);
         var send = new google.maps.LatLng(coord['lat'], coord['lng']);
         var test = new google.maps.LatLng(fetchit['lat'], fetchit['lng']);
@@ -518,6 +516,7 @@ document.getElementById("track-btn").onclick = function(map){
    document.getElementById("directions-form").style.display = "none";
    document.getElementById("map").style.width = "400px";
    window.mp.setZoom(16);
+
 }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -586,20 +585,87 @@ document.getElementById("cross-srch").onclick = function() {
   document.getElementById("nearby-srch").style.display = "none";
 }
 
+document.getElementById("deets_cross").onclick = function() {
+    document.getElementById("rating").innerHTML = '';
+    document.getElementById("phone").innerHTML = '';
+    document.getElementById("addr").innerHTML = '';
+    document.getElementById("deets-modal").style.display = "none";
 
-// When the user clicks on the button, open the modal
+}
 
-
-
-
-//window.onclick = function(event) {
-//  if (event.target == modal) {
-//    modal.style.display = "none";
-//  }
-//}
+document.getElementById("stop-trip").onclick = function() {
+  document.getElementById("deets-modal").style.display = "none";
+  destmarker.setVisible(false);
+  directionsDisplay.setMap(null);
+  map.setCenter(homemarker.position);
+}
 
 /* Inputs- None;
    Outputs - None;
    Description - Handler for Get Directions button, that creates an autocomplete widget from google maps API */
 
 
+function fetchmoredeets(addr) {
+    var loc = addr.split(' ').join('+')
+    const URL = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=${loc}&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA`
+    // First get and parse the nearby regions
+
+    async function fetcher(URL){
+        const resp = await fetch(URL);
+        return await resp.json()
+    }
+
+    var res, req;
+    var picref;
+    (async () => {
+      req = await fetcher(URL);
+      res = req.results;
+      var deetsreq = {placeId: res[0].place_id};
+
+      var service = new google.maps.places.PlacesService(map);
+      service.getDetails(deetsreq, callback);
+
+
+      function callback(place, status) {
+          if (status == google.maps.places.PlacesServiceStatus.OK) {
+                document.getElementById("addr").innerHTML  =  "Address: " + place.address_components[1].short_name + ' ' + place.address_components[2].short_name; // addr
+                document.getElementById("rating").innerHTML = "Rating: " + place.rating;
+                var ref = place.photos[0].getUrl();
+//                console.log("photos:", )
+                document.getElementById("loc-img").src = ref;
+                if(place.formatted_phone_number==null){
+                    document.getElementById("phone").innerHTML= "Phone Number: NA";
+                }
+                else{
+                    document.getElementById("phone").innerHTML= "Phone Number: " + place.international_phone_number;
+                }
+//                var url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${ref}&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA`
+
+              }
+            }
+          }
+        )()
+}
+
+var bikeLayer;
+document.getElementById("recalib").onclick=function(){
+    bikeLayer = new google.maps.BicyclingLayer();
+    bikeLayer.setMap(map);
+}
+
+document.getElementById("remove-bike").onclick=function(){
+    bikeLayer.setMap(null);
+}
+
+const trackLocation = ({ onSuccess, onError = () => { } }) => {
+  if ('geolocation' in navigator === false) {
+    return onError(new Error('Geolocation is not supported by your browser.'));
+  }
+
+  // Use watchPosition instead.
+  return navigator.geolocation.watchPosition(onSuccess, onError);
+};
+
+document.getElementById("recenter").onclick=function(){
+    map.setCenter(homemarker.position.lat, homemarker.position.lng, 20);
+}

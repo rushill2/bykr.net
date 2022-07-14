@@ -120,7 +120,7 @@ height: 15,
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  top: 35px;
+  top: 57px;
   right: 320px;
   width: 600px; /* Full width */
   height: 100%; /* Full height */
@@ -207,4 +207,29 @@ tbody{
 
 th, td, tr{
     border: 1px solid yellow;
+}
+
+.free-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#stop-btn{
+    padding: 8px;
+}
+
+#remove-bike{
+    height : 35px;
+    width : 220px;
+
+}
+
+#remove {
+  position: absolute;
+  top: 260px;
+  right: 20px;
+  width: 220px;
+  height: 35px;
+  border: 3px solid #73AD21;
 }
