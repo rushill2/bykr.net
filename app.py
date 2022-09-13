@@ -2,6 +2,7 @@ import csrf as csrf
 from flask import Flask, render_template, request, jsonify
 import maps
 from threading import Thread
+import _thread
 
 datag = None
 app = Flask(__name__, template_folder='templates')
@@ -29,13 +30,13 @@ def post():
 
     # parallel thread for the location processing
     if (data.to_dict()['flag'] == 'init'):
-        new_thread = Thread(target=maps.acq, args=(datag,))
+        new_thread = _thread(target=maps.acq, args=(datag,))
         new_thread.daemon = True
         new_thread.start()
         print("Starting the init transfer thread")
 
     elif data.to_dict()['flag'] == 'const':
-        new_thread = Thread(target=maps.testhelp, args=(datag,))
+        new_thread = _thread(target=maps.testhelp, args=(datag,))
         new_thread.daemon = True
         new_thread.start()
         print("Starting the call transfer thread")
