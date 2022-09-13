@@ -1,7 +1,6 @@
 import csrf as csrf
 from flask import Flask, render_template, request, jsonify
 import maps
-from threading import Thread
 import _thread
 
 datag = None
