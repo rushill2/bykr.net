@@ -6,9 +6,6 @@ var ps;
 var homemarker, destmarker;
 var directionsDisplay;
 
-// gets the starting position of the marker.
-if(flag==1){console.log(fetchit);}
-
 //----------------------------------------------------------------------------------------------------------------------
 // Map Init
 /* Function - initMap
@@ -279,56 +276,36 @@ var sty = [
 ]
 
 var opt = {
-    center: { lat: -34.397, lng: 150.644 },
+    center: latlng,
     zoom: 14,
     clickableIcons: false,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
 }
+
+  var latlng = new google.maps.LatLng(fetchit.lat, fetchit.lng);
   map = new google.maps.Map(document.getElementById("map"), opt);
   window.mp = map;
-  trackLocation({
-    onSuccess: ({ coords: { latitude: lat, longitude: lng } }) => {
-      homemarker.setPosition({ lat, lng });
-      map.panTo({ lat, lng });
-    },
-    onError: err =>
-      alert(`Error: ${getPositionErrorMessage(err.code) || err.message}`)
-  });
+  var lat_coord = fetchit.lat;
+  var lng_coord = fetchit.lng;
   directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true, suppressBicyclingLayer: true});
   destmarker = new google.maps.Marker({position: null,map: map});
   destmarker.setVisible(false);
-   if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          };
-
-
-           homemarker = new google.maps.Marker({
-                      position: pos,
-                      map: map,
-                      icon: {
-                        url: "https://cdn.pixabay.com/photo/2014/04/03/10/53/bicycle-311656_960_720.png",
-                        scaledSize: new google.maps.Size(60, 50),
-                        fillOpacity: 1,
-                        strokeWeight: 5,
-                        fillColor: '#5384ED',
-                        strokeColor: '#ffffff',
-  },
+  const pos = latlng;
+  homemarker = new google.maps.Marker({
+              position: pos,
+              map: map,
+              icon: {
+                url: "https://cdn.pixabay.com/photo/2014/04/03/10/53/bicycle-311656_960_720.png",
+                scaledSize: new google.maps.Size(60, 50),
+                fillOpacity: 1,
+                strokeWeight: 5,
+                fillColor: '#5384ED',
+                strokeColor: '#ffffff',
+              },
 });
-          map.setCenter(pos);
+  map.setCenter(pos);
+  map.panTo(pos);
 
-        },
-        () => {
-          handleLocationError(true, infoWindow, map.getCenter());
-        }
-      );
-    } else {
-      // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
-    }
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -534,7 +511,7 @@ document.getElementById("sugg-btn").onclick = function(){
     var save;
     lt = fetchit['lat'];
     ln = fetchit['lng'];
-    const URL = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lt},${ln}&radius=5000&sensor=true&type=park&rankBy=distance&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA`
+    const URL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lt},${ln}&radius=5000&sensor=true&type=park&rankBy=distance&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA`
     // First get and parse the nearby regions
 
     async function fetcher(URL){
@@ -667,5 +644,6 @@ const trackLocation = ({ onSuccess, onError = () => { } }) => {
 };
 
 document.getElementById("recenter").onclick=function(){
-    map.setCenter(homemarker.position.lat, homemarker.position.lng, 20);
+    var latlng = new google.maps.LatLng(fetchit.lat, fetchit.lng);
+    map.setCenter(latlng, 20);
 }
