@@ -2,7 +2,9 @@
 # initializes location and other data for use for
 # other features
 import time
-
+import traceback
+from config import apiConfig
+import requests
 from geopy.geocoders import Nominatim
 import logging
 
@@ -45,6 +47,27 @@ class GeoHandler:
             else:
                 return addr[arr[4]]
 
+    def placeDetails(self, place_id):
+        url = apiConfig.urls['place_details'].replace('{_key}', apiConfig.maps_key).replace('{_pid}', place_id)
+        logger.info("placeDetails() suggestions url: " + str(url))
+        try:
+            response = requests.get(url)
+            data = response.json()
+            logger.info("placeDetails() suggestions response: " + str(data))
+            return data
+        except Exception as e:
+            logger.error("Error in placeDetails(): " + str(e) + traceback.format_exc())
+
+    def nearbyPlaces(self, lat, lng):
+        url = apiConfig.urls['nearby_places'].replace('${lt}', str(lat)).replace('${ln}', str(lng)).replace('{_key}', apiConfig.maps_key)
+        logger.info("nearbySearch() suggestions url: " + str(url))
+        try:
+            response = requests.get(url)
+            data = response.json()
+            logger.info("nearbySearch() suggestions response: " + str(data))
+            return data
+        except Exception as e:
+            logger.error("Error in nearbySearch(): " + str(e) + traceback.format_exc())
 
     # implement nearby biking suggestions
 

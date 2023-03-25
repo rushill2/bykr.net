@@ -1,10 +1,11 @@
 import logging
 import sys, os
 import traceback
+import requests
 from flask import Flask, render_template, request, jsonify
 from maps import GeoHandler
 import _thread
-from config import logconfig
+from config import logconfig, apiConfig
 
 logger = logging.getLogger()
 logger.propagate = False
@@ -42,7 +43,9 @@ def post():
             sys.exit(-1)
 
     # parallel thread for the location processing
-    logger.info("whatever the fuck datag is: " + str(datag))
+    # init for the location data transfer
+    # const to send position to python backend
+    # place_details for the place_id transfer
     if (data.to_dict()['flag'] == 'init'):
         new_thread = _thread(target=GeoHandler.acq, args=(datag,))
         new_thread.daemon = True
@@ -54,6 +57,9 @@ def post():
         new_thread.daemon = True
         new_thread.start()
         print("Starting the call transfer thread")
+    elif data.to_dict()['flag'] == 'place_details':
+        # make placedetails api call
+        details = GeoHandler.placeDetails(GeoHandler, datag['place_id'])
 
     return data
 
@@ -64,6 +70,11 @@ def count():
     data = {'lat': geodata.latlng[0], 'lng': geodata.latlng[1]}
     logger.info("Location data by count(): " + str(data))
     return jsonify(data)
+
+@app.route('/nearby')
+def nearby():
+    return GeoHandler.nearbyPlaces(GeoHandler, geodata.latlng[0], geodata.latlng[1])
+
 
 
 if __name__ == "__main__":

@@ -511,48 +511,80 @@ document.getElementById("sugg-btn").onclick = function(){
     var save;
     lt = fetchit['lat'];
     ln = fetchit['lng'];
-    const URL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lt},${ln}&radius=5000&sensor=true&type=park&rankBy=distance&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA`
+    
     // First get and parse the nearby regions
 
-    async function fetcher(URL){
-        const resp = await fetch(URL);
-        return await resp.json()
-    }
-
-    var res, req;
-    (async () => {
-      req = await fetcher(URL);
-      res = req.results;
+    // async function fetcher(URL){
+    //     const resp = await fetch(URL);
+    //     return await resp.json()
+    // }
+    var suggestions;
+    $.ajax({
+      url: "/nearby"
+  }).done(function(res, data) {
+      suggestions = res;
+      var req = suggestions;
       console.log(res);
+
       for(var i=0; i<req.results.length; i++){
         var res = req.results[i];
-        if(res['photos'] && res['opening_hours']){
-            dict.push({'name': res.name, 'rating': res.rating, 'pic_id': res['photos'][0]['photo_reference'], 'open_now': res.opening_hours.open_now});
+        try{
+          if(res['photos'] && res['opening_hours']){
+              dict.push({'place_id': res.place_id, 'name': res.name, 'rating': res.rating, 'icon': res['icon'], 'open_now': res.opening_hours.open_now});
+          }
+          else if(res['opening_hours']){
+              dict.push({'place_id': res.place_id,'name': res.name, 'rating': res.rating, 'pic_id': res.opening_hours.open_now});
+          }
+          else{
+              dict.push({'place_id': res.place_id,'name': res.name, 'rating': res.rating});
+        }}
+        catch(err){
+          console.log(err);
         }
-        else if(res['opening_hours']){
-             dict.push({'name': res.name, 'rating': res.rating, 'pic_id': res.opening_hours.open_now});
-        }
-        else{
-            dict.push({'name': res.name, 'rating': res.rating});
-        }
-      console.log(dict)
-
-      console.log(dict.length);
       var tbody = document.getElementById("sugg-entries")
       var row = tbody.insertRow();
+      row.id = 'suggestion'.concat(String(i));
       var cell_name = row.insertCell();
       var cell_rating = row.insertCell();
       var cell_hours = row.insertCell();
       cell_name.innerHTML = dict[i]['name'];
       cell_rating.innerHTML = dict[i]['rating'];
       cell_hours.innerHTML = dict[i]['open_now'];
-
-    }
-})()
+      var tbl = document.getElementById("near-tbl");
+      var rows = tbl.getElementsByTagName("tr");
+      }
+      for (i = 0; i < rows.length; i++) {
+        var currentRow = tbl.rows[i];
+        if (currentRow.id != 'desc-row'){
+          currentRow.onmouseover = function() {
+            this.style.backgroundColor = "#ff0000";
+          }
+          currentRow.onmouseout = function() {
+            this.style.backgroundColor = "#000000";  
+          }
+        }
+        
+        var createClickHandler = function(row) {
+          return function() {
+            var cell = row.getElementsByTagName("td");
+            // make call to places details for maps api from backend
+            var place_id = dict.place_id;
+            $.ajax({
+              type : "POST",
+              url : "/post",
+              data: {'data':place_id, 'flag': 'place_details'},
+              dataType: 'json',
+            });
+          };
+        };
+        currentRow.onclick = createClickHandler(currentRow);
+      }
+  });
 
     var modal = document.getElementById("nearby-srch");
     modal.style.display = "block";
 }
+
 
 /* Function Interface - cross-srch
    Inputs - None
@@ -584,12 +616,12 @@ document.getElementById("stop-trip").onclick = function() {
 
 function fetchmoredeets(addr) {
     var loc = addr.split(' ').join('+')
-    const URL = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=${loc}&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA`
+    const URL = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=${loc}&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA`;
     // First get and parse the nearby regions
 
     async function fetcher(URL){
         const resp = await fetch(URL);
-        return await resp.json()
+        return await resp.json();
     }
 
     var res, req;
@@ -608,7 +640,6 @@ function fetchmoredeets(addr) {
                 document.getElementById("addr").innerHTML  =  "Address: " + place.address_components[1].short_name + ' ' + place.address_components[2].short_name; // addr
                 document.getElementById("rating").innerHTML = "Rating: " + place.rating;
                 var ref = place.photos[0].getUrl();
-//                console.log("photos:", )
                 document.getElementById("loc-img").src = ref;
                 if(place.formatted_phone_number==null){
                     document.getElementById("phone").innerHTML= "Phone Number: NA";
@@ -616,8 +647,6 @@ function fetchmoredeets(addr) {
                 else{
                     document.getElementById("phone").innerHTML= "Phone Number: " + place.international_phone_number;
                 }
-//                var url = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${ref}&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA`
-
               }
             }
           }
