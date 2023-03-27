@@ -1,311 +1,321 @@
 // Main Page for Ryder static html
-
-
 var map, infoWindow;
 var ps;
 var homemarker, destmarker;
 var directionsDisplay;
+var currPos;
+//----------------------------------------------------------------------------------------------------------------------
+// handle logger
 
 //----------------------------------------------------------------------------------------------------------------------
 // Map Init
 /* Function - initMap
    Input - None
    Purpose - Initialize map with bike routes and the bike icon for indicator. */
-window.initMap= function initMap() {
-
-//  position = getCurrentPosition();
-var sty = [
-  {
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#1d2c4d"
-      }
-    ]
-  },
-  {
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#8ec3b9"
-      }
-    ]
-  },
-  {
-    "elementType": "labels.text.stroke",
-    "stylers": [
-      {
-        "color": "#1a3646"
-      }
-    ]
-  },
-  {
-    "featureType": "administrative.country",
-    "elementType": "geometry.stroke",
-    "stylers": [
-      {
-        "color": "#4b6878"
-      }
-    ]
-  },
-  {
-    "featureType": "administrative.land_parcel",
-    "elementType": "labels",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "administrative.land_parcel",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#64779e"
-      }
-    ]
-  },
-  {
-    "featureType": "administrative.province",
-    "elementType": "geometry.stroke",
-    "stylers": [
-      {
-        "color": "#4b6878"
-      }
-    ]
-  },
-  {
-    "featureType": "landscape.man_made",
-    "elementType": "geometry.stroke",
-    "stylers": [
-      {
-        "color": "#334e87"
-      }
-    ]
-  },
-  {
-    "featureType": "landscape.natural",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#023e58"
-      }
-    ]
-  },
-  {
-    "featureType": "poi",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#283d6a"
-      }
-    ]
-  },
-  {
-    "featureType": "poi",
-    "elementType": "labels.text",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "poi",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#6f9ba5"
-      }
-    ]
-  },
-  {
-    "featureType": "poi",
-    "elementType": "labels.text.stroke",
-    "stylers": [
-      {
-        "color": "#1d2c4d"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.park",
-    "elementType": "geometry.fill",
-    "stylers": [
-      {
-        "color": "#023e58"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.park",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#3C7680"
-      }
-    ]
-  },
-  {
-    "featureType": "road",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#304a7d"
-      }
-    ]
-  },
-  {
-    "featureType": "road",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#98a5be"
-      }
-    ]
-  },
-  {
-    "featureType": "road",
-    "elementType": "labels.text.stroke",
-    "stylers": [
-      {
-        "color": "#1d2c4d"
-      }
-    ]
-  },
-  {
-    "featureType": "road.highway",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#2c6675"
-      }
-    ]
-  },
-  {
-    "featureType": "road.highway",
-    "elementType": "geometry.stroke",
-    "stylers": [
-      {
-        "color": "#255763"
-      }
-    ]
-  },
-  {
-    "featureType": "road.highway",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#b0d5ce"
-      }
-    ]
-  },
-  {
-    "featureType": "road.highway",
-    "elementType": "labels.text.stroke",
-    "stylers": [
-      {
-        "color": "#023e58"
-      }
-    ]
-  },
-  {
-    "featureType": "road.local",
-    "elementType": "labels",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "transit",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#98a5be"
-      }
-    ]
-  },
-  {
-    "featureType": "transit",
-    "elementType": "labels.text.stroke",
-    "stylers": [
-      {
-        "color": "#1d2c4d"
-      }
-    ]
-  },
-  {
-    "featureType": "transit.line",
-    "elementType": "geometry.fill",
-    "stylers": [
-      {
-        "color": "#283d6a"
-      }
-    ]
-  },
-  {
-    "featureType": "transit.station",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#3a4762"
-      }
-    ]
-  },
-  {
-    "featureType": "water",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#0e1626"
-      }
-    ]
-  },
-  {
-    "featureType": "water",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#4e6d70"
-      }
-    ]
-  }
-]
-
-var opt = {
-    center: latlng,
+function initMap() {
+  var opt = {
     zoom: 14,
     clickableIcons: false,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
-}
-
-  var latlng = new google.maps.LatLng(fetchit.lat, fetchit.lng);
+  }
   map = new google.maps.Map(document.getElementById("map"), opt);
-  window.mp = map;
-  var lat_coord = fetchit.lat;
-  var lng_coord = fetchit.lng;
-  directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true, suppressBicyclingLayer: true});
-  destmarker = new google.maps.Marker({position: null,map: map});
-  destmarker.setVisible(false);
-  const pos = latlng;
   homemarker = new google.maps.Marker({
-              position: pos,
-              map: map,
-              icon: {
-                url: "https://cdn.pixabay.com/photo/2014/04/03/10/53/bicycle-311656_960_720.png",
-                scaledSize: new google.maps.Size(60, 50),
-                fillOpacity: 1,
-                strokeWeight: 5,
-                fillColor: '#5384ED',
-                strokeColor: '#ffffff',
-              },
-});
-  map.setCenter(pos);
-  map.panTo(pos);
+    icon: {url: "https://cdn.pixabay.com/photo/2014/04/03/10/53/bicycle-311656_960_720.png",
+      scaledSize: new google.maps.Size(60, 50),
+      fillOpacity: 1,
+      strokeWeight: 5,
+      fillColor: '#5384ED',
+      strokeColor: '#ffffff',
+    }, 
+    map: map
+  });
+  destmarker = new google.maps.Marker({map:map});
+  var sty = [
+    {
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#1d2c4d"
+        }
+      ]
+    },
+    {
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#8ec3b9"
+        }
+      ]
+    },
+    {
+      "elementType": "labels.text.stroke",
+      "stylers": [
+        {
+          "color": "#1a3646"
+        }
+      ]
+    },
+    {
+      "featureType": "administrative.country",
+      "elementType": "geometry.stroke",
+      "stylers": [
+        {
+          "color": "#4b6878"
+        }
+      ]
+    },
+    {
+      "featureType": "administrative.land_parcel",
+      "elementType": "labels",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "administrative.land_parcel",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#64779e"
+        }
+      ]
+    },
+    {
+      "featureType": "administrative.province",
+      "elementType": "geometry.stroke",
+      "stylers": [
+        {
+          "color": "#4b6878"
+        }
+      ]
+    },
+    {
+      "featureType": "landscape.man_made",
+      "elementType": "geometry.stroke",
+      "stylers": [
+        {
+          "color": "#334e87"
+        }
+      ]
+    },
+    {
+      "featureType": "landscape.natural",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#023e58"
+        }
+      ]
+    },
+    {
+      "featureType": "poi",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#283d6a"
+        }
+      ]
+    },
+    {
+      "featureType": "poi",
+      "elementType": "labels.text",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "poi",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#6f9ba5"
+        }
+      ]
+    },
+    {
+      "featureType": "poi",
+      "elementType": "labels.text.stroke",
+      "stylers": [
+        {
+          "color": "#1d2c4d"
+        }
+      ]
+    },
+    {
+      "featureType": "poi.park",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#023e58"
+        }
+      ]
+    },
+    {
+      "featureType": "poi.park",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#3C7680"
+        }
+      ]
+    },
+    {
+      "featureType": "road",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#304a7d"
+        }
+      ]
+    },
+    {
+      "featureType": "road",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#98a5be"
+        }
+      ]
+    },
+    {
+      "featureType": "road",
+      "elementType": "labels.text.stroke",
+      "stylers": [
+        {
+          "color": "#1d2c4d"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#2c6675"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "elementType": "geometry.stroke",
+      "stylers": [
+        {
+          "color": "#255763"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#b0d5ce"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "elementType": "labels.text.stroke",
+      "stylers": [
+        {
+          "color": "#023e58"
+        }
+      ]
+    },
+    {
+      "featureType": "road.local",
+      "elementType": "labels",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "transit",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#98a5be"
+        }
+      ]
+    },
+    {
+      "featureType": "transit",
+      "elementType": "labels.text.stroke",
+      "stylers": [
+        {
+          "color": "#1d2c4d"
+        }
+      ]
+    },
+    {
+      "featureType": "transit.line",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#283d6a"
+        }
+      ]
+    },
+    {
+      "featureType": "transit.station",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#3a4762"
+        }
+      ]
+    },
+    {
+      "featureType": "water",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#0e1626"
+        }
+      ]
+    },
+    {
+      "featureType": "water",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#4e6d70"
+        }
+      ]
+    }
+  ]
 
+  $.ajax({
+    url: "/count",
+  }).done(function(res, data) {
+    var fetchit = res;
+    flag = 1
+
+    
+    try{
+      var latlng = new google.maps.LatLng(fetchit.lat, fetchit.lng);
+      map.setCenter(latlng);
+      currPos = fetchit;
+      window.mp = map;
+      directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true, suppressBicyclingLayer: true});
+      var pos = latlng;
+      console.log('pos', res);
+      homemarker.setPosition(pos);
+      console.log(homemarker.position.lat(), homemarker.position.lng());
+      homemarker.setVisible(true);
+      map.setCenter(pos);
+      map.panTo(pos);
+    }
+    catch(err){
+      console.log(err);
+    } 
+    });
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -318,12 +328,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.open(map);
 }
 
-// tester
-document.getElementById("recalib").onclick = function(){
-
-
-
-}
 //----------------------------------------------------------------------------------------------------------------------
 /* Class of Start Ride functionality
    Purpose - Provide functionality to the Track and Get Directions buttons, with autocomplete for Get Directions.
@@ -346,9 +350,10 @@ document.getElementById("start-btn").onclick = function(ps){
             alert(pos);
             $.ajax({
             type : "POST",
+            contentType: "application/json", 
             url : "/post",
-            data: {'data':pos, 'flag': 'const'},
-            dataType: 'json',
+            dataType: "json",
+            data: JSON.stringify({'data':pos, 'flag': 'const'}),
             success: function(result) {
         },error: function(XMLHttpRequest, textStatus, errorThrown) {
         alert("Status: " + textStatus); alert("Error: " + errorThrown);
@@ -394,17 +399,16 @@ document.getElementById("dir-btn").onclick = function(map) {
   document.getElementById("myModal").style.display = "none";
   const comp = new google.maps.places.Autocomplete(document.getElementById("dest-text"));
   comp.addListener('place_changed', fillInAddress);
-                function fillInAddress() {
-                    var place1 = comp.getPlace();
-                    var param = document.getElementById("dest-text").value;
-                    usearr = fetchmoredeets(param);
-                    console.log(usearr)
-                    destmarker.position = place1.geometry.location;
-                    findRoute(place1.geometry.location, usearr);
-
-                }
-
-
+  function fillInAddress() {
+      var place1 = comp.getPlace();
+      var param = document.getElementById("dest-text").value;
+      usearr = fetchmoredeets(param);
+      console.log(destmarker);
+      var destmarker = new google.maps.Marker({map:map});
+      destmarker.position= place1.geometry.location;
+      destmarker.setVisible(true);
+      findRoute(place1.geometry.location, usearr);
+    }
 }
 
 function findRoute(coord, usearr){
@@ -418,9 +422,9 @@ function findRoute(coord, usearr){
       if (status == google.maps.GeocoderStatus.OK)
       {
         dest_coord = results[0].geometry.location;
-        destmarker.setPosition(dest_coord);
+        var destmarker = new google.maps.Marker({map:map});
         destmarker.setVisible(true);
-        destmarker.setMap(map);
+        destmarker.setMap(window.mp);
         var latlngbounds = new google.maps.LatLngBounds();
         latlngbounds.extend(homemarker.position);
         latlngbounds.extend(destmarker.position);
@@ -447,11 +451,11 @@ function findRoute(coord, usearr){
 
 
 
-        directionsDisplay.setMap(map);
+        directionsDisplay.setMap(window.mp);
         var send = new google.maps.LatLng(coord['lat'], coord['lng']);
         var test = new google.maps.LatLng(fetchit['lat'], fetchit['lng']);
 
-
+        var destmarker = new google.maps.Marker({map:map});
 
         var request = {
                 origin: homemarker.position,
@@ -509,80 +513,90 @@ document.getElementById("sugg-btn").onclick = function(){
     var lt, ln;
     var dict = new Array();
     var save;
-    lt = fetchit['lat'];
-    ln = fetchit['lng'];
-    
-    // First get and parse the nearby regions
-
-    // async function fetcher(URL){
-    //     const resp = await fetch(URL);
-    //     return await resp.json()
-    // }
-    var suggestions;
     $.ajax({
-      url: "/nearby"
-  }).done(function(res, data) {
-      suggestions = res;
-      var req = suggestions;
-      console.log(res);
-
-      for(var i=0; i<req.results.length; i++){
-        var res = req.results[i];
-        try{
-          if(res['photos'] && res['opening_hours']){
-              dict.push({'place_id': res.place_id, 'name': res.name, 'rating': res.rating, 'icon': res['icon'], 'open_now': res.opening_hours.open_now});
+      url: "/count"
+    }).done(function(res, data) {
+      lt = res['lat'];
+      ln = res['lng'];
+      
+      // gets list of nearby places for suggestions
+      var suggestions;
+      $.ajax({
+        url: "/nearby"
+    }).done(function(res, data) {
+      // once we have the list of nearby places
+        suggestions = res;
+        var req = suggestions;
+      // get basic data from here
+        for(var i=0; i<req.results.length; i++){
+          var res = req.results[i];
+          try{
+            if(res['photos'] && res['opening_hours']){
+                dict.push({'place_id': res.place_id, 'name': res.name, 'rating': res.rating, 'icon': res['icon'], 'open_now': res.opening_hours.open_now});
+            }
+            else if(res['opening_hours']){
+                dict.push({'place_id': res.place_id,'name': res.name, 'rating': res.rating, 'pic_id': res.opening_hours.open_now});
+            }
+            else{
+                dict.push({'place_id': res.place_id,'name': res.name, 'rating': res.rating});
+          }}
+          catch(err){
+            console.log(err);
           }
-          else if(res['opening_hours']){
-              dict.push({'place_id': res.place_id,'name': res.name, 'rating': res.rating, 'pic_id': res.opening_hours.open_now});
-          }
-          else{
-              dict.push({'place_id': res.place_id,'name': res.name, 'rating': res.rating});
-        }}
-        catch(err){
-          console.log(err);
+        // insert into the table
+        var tbody = document.getElementById("sugg-entries")
+        var row = tbody.insertRow();
+        row.id = 'suggestion'.concat(String(i));
+        var rank = row.insertCell();
+        var cell_name = row.insertCell();
+        var cell_rating = row.insertCell();
+        var cell_hours = row.insertCell();
+        rank.innerHTML = i+1;
+        cell_name.innerHTML = dict[i]['name'];
+        cell_rating.innerHTML = dict[i]['rating'];
+        cell_hours.innerHTML = dict[i]['open_now'];
+        var tbl = document.getElementById("near-tbl");
+        var rows = tbl.getElementsByTagName("tr");
         }
-      var tbody = document.getElementById("sugg-entries")
-      var row = tbody.insertRow();
-      row.id = 'suggestion'.concat(String(i));
-      var cell_name = row.insertCell();
-      var cell_rating = row.insertCell();
-      var cell_hours = row.insertCell();
-      cell_name.innerHTML = dict[i]['name'];
-      cell_rating.innerHTML = dict[i]['rating'];
-      cell_hours.innerHTML = dict[i]['open_now'];
-      var tbl = document.getElementById("near-tbl");
-      var rows = tbl.getElementsByTagName("tr");
-      }
-      for (i = 0; i < rows.length; i++) {
-        var currentRow = tbl.rows[i];
-        if (currentRow.id != 'desc-row'){
-          currentRow.onmouseover = function() {
-            this.style.backgroundColor = "#ff0000";
+        for (i = 0; i < rows.length; i++) {
+          var currentRow = tbl.rows[i];
+          // responsible for highlighting hovered row
+          if (currentRow.id != 'desc-row'){
+            currentRow.onmouseover = function() {
+              this.style.backgroundColor = "#ff0000";
+            }
+            currentRow.onmouseout = function() {
+              this.style.backgroundColor = "#000000";  
+            }
           }
-          currentRow.onmouseout = function() {
-            this.style.backgroundColor = "#000000";  
-          }
-        }
-        
-        var createClickHandler = function(row) {
-          return function() {
-            var cell = row.getElementsByTagName("td");
-            // make call to places details for maps api from backend
-            var place_id = dict.place_id;
-            $.ajax({
-              type : "POST",
-              url : "/post",
-              data: {'data':place_id, 'flag': 'place_details'},
-              dataType: 'json',
-            });
+          
+          var createClickHandler = function(row) {
+            return function() {
+              var cell = row.getElementsByTagName("td");
+              // make call to places details for maps api from backend
+              var place_id = dict.place_id;
+              // send clicked place to backed, so we can get the place details
+              $.ajax({
+                type : "POST",
+                url : "/post",
+                dataType: "json",
+                contentType: "application/json",
+                data: JSON.stringify({data:place_id, flag: 'place_details'}),
+                success: function(result) {
+                },error: function(XMLHttpRequest, textStatus, errorThrown) {
+                  
+            }
+                });
+            };
           };
-        };
-        currentRow.onclick = createClickHandler(currentRow);
-      }
-  });
-
-    var modal = document.getElementById("nearby-srch");
-    modal.style.display = "block";
+          currentRow.onclick = createClickHandler(currentRow);
+        }
+      });
+      // table display
+      var modal = document.getElementById("nearby-srch");
+      modal.style.display = "block";
+    });
+    
 }
 
 
@@ -604,6 +618,7 @@ document.getElementById("deets_cross").onclick = function() {
 
 document.getElementById("stop-trip").onclick = function() {
   document.getElementById("deets-modal").style.display = "none";
+  var destmarker = new google.maps.Marker({map:map});
   destmarker.setVisible(false);
   directionsDisplay.setMap(null);
   map.setCenter(homemarker.position);
@@ -676,3 +691,4 @@ document.getElementById("recenter").onclick=function(){
     var latlng = new google.maps.LatLng(fetchit.lat, fetchit.lng);
     map.setCenter(latlng, 20);
 }
+

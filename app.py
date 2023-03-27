@@ -34,34 +34,29 @@ def index():
 @app.route('/post', methods=["POST"])
 def post():
     global datag
-    if request.method == 'POST':
-        try:
-            data = request.form
-            datag = data
-        except Exception as e:
-            logger.error("Error in post request " + str(e) + traceback.format())
-            sys.exit(-1)
+    try:
+        data = request.get_json(force=True)
+        logger.info("Post data: " + str(data))
+        datag = data
+        if data['flag'] == 'const':
+            new_thread = _thread(target=GeoHandler.testhelp, args=(datag,))
+            new_thread.daemon = True
+            new_thread.start()
+            logger.info("Starting the call transfer thread")
+        elif data['flag'] == 'place_details':
+            # make placedetails api call
+            details = GeoHandler.placeDetails(GeoHandler, datag['place_id'])
+            logger.info("Placedetails post request received")
+    # return data
+    except Exception as e:
+        logger.error("Error in post request " + str(e) + traceback.format())
+        sys.exit(-1)
 
     # parallel thread for the location processing
     # init for the location data transfer
     # const to send position to python backend
     # place_details for the place_id transfer
-    if (data.to_dict()['flag'] == 'init'):
-        new_thread = _thread(target=GeoHandler.acq, args=(datag,))
-        new_thread.daemon = True
-        new_thread.start()
-        logger.info("Starting the init transfer thread")
-
-    elif data.to_dict()['flag'] == 'const':
-        new_thread = _thread(target=GeoHandler.testhelp, args=(datag,))
-        new_thread.daemon = True
-        new_thread.start()
-        print("Starting the call transfer thread")
-    elif data.to_dict()['flag'] == 'place_details':
-        # make placedetails api call
-        details = GeoHandler.placeDetails(GeoHandler, datag['place_id'])
-
-    return data
+    
 
 
 @app.route('/count')
@@ -74,8 +69,6 @@ def count():
 @app.route('/nearby')
 def nearby():
     return GeoHandler.nearbyPlaces(GeoHandler, geodata.latlng[0], geodata.latlng[1])
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)
