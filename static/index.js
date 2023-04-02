@@ -12,13 +12,15 @@ var currPos;
 /* Function - initMap
    Input - None
    Purpose - Initialize map with bike routes and the bike icon for indicator. */
+
+   // refactor this to assign all variables here and then call the function that does this stuff
 function initMap() {
   var opt = {
     zoom: 14,
     clickableIcons: false,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
   }
-  map = new google.maps.Map(document.getElementById("map"), opt);
+  window.mp = new google.maps.Map(document.getElementById("map"), opt);
   homemarker = new google.maps.Marker({
     icon: {url: "https://cdn.pixabay.com/photo/2014/04/03/10/53/bicycle-311656_960_720.png",
       scaledSize: new google.maps.Size(60, 50),
@@ -27,9 +29,11 @@ function initMap() {
       fillColor: '#5384ED',
       strokeColor: '#ffffff',
     }, 
-    map: map
+    map: window.mp
   });
-  destmarker = new google.maps.Marker({map:map});
+  destmarker = new google.maps.Marker({map:window.mp});
+  window.directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true, suppressBicyclingLayer: true});
+
   var sty = [
     {
       "elementType": "geometry",
@@ -292,30 +296,26 @@ function initMap() {
   ]
 
   $.ajax({
-    url: "/count",
+    url: "/locate",
   }).done(function(res, data) {
     var fetchit = res;
     flag = 1
-
-    
     try{
       var latlng = new google.maps.LatLng(fetchit.lat, fetchit.lng);
-      map.setCenter(latlng);
+      window.mp.setCenter(latlng);
       currPos = fetchit;
-      window.mp = map;
-      directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true, suppressBicyclingLayer: true});
       var pos = latlng;
       console.log('pos', res);
       homemarker.setPosition(pos);
-      console.log(homemarker.position.lat(), homemarker.position.lng());
       homemarker.setVisible(true);
-      map.setCenter(pos);
-      map.panTo(pos);
+      window.mp.setCenter(pos);
+      window.mp.panTo(pos);
     }
     catch(err){
       console.log(err);
     } 
     });
+    console.log(document.getElementById('bike-routes').style);
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -325,7 +325,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
       ? "Error: The Geolocation service failed."
       : "Error: Your browser doesn't support geolocation."
   );
-  infoWindow.open(map);
+  infoWindow.open(window.mp);
 }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -342,6 +342,7 @@ document.getElementById("start-btn").onclick = function(ps){
       timeout: 5000,
       maximumAge: 0
     };
+    document.getElementById("suggest").style.visibility = "hidden";
 
     function error(){
         alert("Error in start ride");}
@@ -383,6 +384,7 @@ document.getElementById("start-btn").onclick = function() {
 */
 document.getElementById("cross").onclick = function() {
   document.getElementById("myModal").style.display = "none";
+  document.getElementById("suggest").style.visibility = "visible";
 }
 
 
@@ -400,80 +402,85 @@ document.getElementById("dir-btn").onclick = function(map) {
   const comp = new google.maps.places.Autocomplete(document.getElementById("dest-text"));
   comp.addListener('place_changed', fillInAddress);
   function fillInAddress() {
-      var place1 = comp.getPlace();
-      var param = document.getElementById("dest-text").value;
-      usearr = fetchmoredeets(param);
-      console.log(destmarker);
-      var destmarker = new google.maps.Marker({map:map});
-      destmarker.position= place1.geometry.location;
-      destmarker.setVisible(true);
-      findRoute(place1.geometry.location, usearr);
-    }
+    // get the actual latitude and longitude from the place name
+    var place1 = comp.getPlace();
+    usearr = fetchmoredeets(place1.name);
+    console.log('usearr:', usearr);
+    destmarker = new google.maps.Marker({map:window.mp});
+    destmarker.setPosition(place1.geometry.location);
+    destmarker.setVisible(true);
+    findRoute(place1.geometry.location);
+  }
 }
 
-function findRoute(coord, usearr){
+function findRoute(coord){
     var dest;
     var l, ln;
+    console.log('window.directionsDisplay:', window.directionsDisplay);
     var dest_coord;     // for get directions
     var el = document.getElementById("dest-text");
-
+    console.log('findRoute directionsdisplay:', window.directionsDisplay);
+    console.log('map:', window.mp);  
       var geocoder = new google.maps.Geocoder();
       geocoder.geocode( { 'address': el.value}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK)
       {
         dest_coord = results[0].geometry.location;
-        var destmarker = new google.maps.Marker({map:map});
-        destmarker.setVisible(true);
-        destmarker.setMap(window.mp);
-        var latlngbounds = new google.maps.LatLngBounds();
-        latlngbounds.extend(homemarker.position);
-        latlngbounds.extend(destmarker.position);
-        map.fitBounds(latlngbounds);
-        var directionsService = new google.maps.DirectionsService();
-        var revsearch;
+        console.log('dest_coord:', dest_coord);
+        // get location of bike now
+        $.ajax({
+          type:'GET', 
+          url: '/locate'
+        }).done(function(location, status){
+          console.log(location, status);
+          destmarker = new google.maps.Marker({map:window.mp});
+          destmarker.setPosition(dest_coord);
+          destmarker.setVisible(true);
+          destmarker.setMap(window.mp);
+          var latlngbounds = new google.maps.LatLngBounds();
+          
+          // scalr map
+          var curr_coords = new google.maps.LatLng(location.lat, location.lng);
+          console.log(curr_coords);
+          latlngbounds.extend(curr_coords);
+          console.log(dest_coord);
+          latlngbounds.extend(dest_coord);
+          window.mp.fitBounds(latlngbounds);
+
+          // call directions service
+          var directionsService = new google.maps.DirectionsService();
 
           document.getElementById("directions-form").style.display = "none";
           document.getElementById("deets-modal").style.display = "block";
-            var deetsreq = {
-              placeId: "ChIJ7XUlvEHXDIgRZ-s1ZkNU2yg",
-              fields: ['name', 'rating', 'formatted_phone_number', 'geometry', 'international_phone_number', 'address_component']
+          var deetsreq = {
+            placeId: "ChIJ7XUlvEHXDIgRZ-s1ZkNU2yg",
+            fields: ['name', 'rating', 'formatted_phone_number', 'geometry', 'international_phone_number', 'address_component']
+          };
+
+          // send places service request
+          var service = new google.maps.places.PlacesService(window.mp);
+          // service.getDetails(deetsreq, callback);
+          window.directionsDisplay.setMap(window.mp);
+          console.log('location:', location);
+          var request =  { 
+          origin: curr_coords,
+          destination: dest_coord,
+          travelMode: google.maps.TravelMode.BICYCLING
             };
-
-            var service = new google.maps.places.PlacesService(map);
-            service.getDetails(deetsreq, callback);
-
-            function callback(place, status) {
-              if (status == google.maps.places.PlacesServiceStatus.OK) {
-
-
+          window.directionsDisplay.setOptions({
+            polylineOptions: {
+              strokeColor: 'green',
+            }
+          });
+          // actual directions
+          directionsService.route(request, function (response, status) {
+              if (status == google.maps.DirectionsStatus.OK) {
+                  window.directionsDisplay.setDirections(response);
+                  window.directionsDisplay.setMap(window.mp);
               }
-            }
-
-
-
-        directionsDisplay.setMap(window.mp);
-        var send = new google.maps.LatLng(coord['lat'], coord['lng']);
-        var test = new google.maps.LatLng(fetchit['lat'], fetchit['lng']);
-
-        var destmarker = new google.maps.Marker({map:map});
-
-        var request = {
-                origin: homemarker.position,
-                destination: destmarker.position,
-                travelMode: google.maps.TravelMode.BICYCLING
-            };
-        directionsDisplay.setOptions({
-          polylineOptions: {
-            strokeColor: 'red',
-          }
+    });
         });
-        directionsService.route(request, function (response, status) {
-            if (status == google.maps.DirectionsStatus.OK) {
-                directionsDisplay.setDirections(response);
-                directionsDisplay.setMap(map);
-            } else {
-            }
-        });
+        
       }
     });
 
@@ -485,8 +492,14 @@ function findRoute(coord, usearr){
    Inputs - None
    Purpose -  Close button for directions form
 */
-document.getElementById("cross_dir").onclick = function() {
+document.getElementById("cross-dir").onclick = function() {
   document.getElementById("directions-form").style.display = "none";
+
+}
+
+document.getElementById("cross-details").onclick = function() {
+  document.getElementById("sugg-details").style.display = "none";
+  document.getElementById("start").style.visibility = "visible";
 }
 
 /* Function Interface - track-btn
@@ -510,11 +523,11 @@ document.getElementById("track-btn").onclick = function(map){
    Purpose - Scrape Places API based on LatLng Bounds
 */
 document.getElementById("sugg-btn").onclick = function(){
-    var lt, ln;
     var dict = new Array();
-    var save;
+    var lt, ln;
+    document.getElementById("start").style.visibility = "hidden";
     $.ajax({
-      url: "/count"
+      url: "/locate"
     }).done(function(res, data) {
       lt = res['lat'];
       ln = res['lng'];
@@ -570,27 +583,40 @@ document.getElementById("sugg-btn").onclick = function(){
             }
           }
           
-          var createClickHandler = function(row) {
+          var createClickHandler = function(row, cnt) {
             return function() {
               var cell = row.getElementsByTagName("td");
+              modal.style.display = "none";
               // make call to places details for maps api from backend
-              var place_id = dict.place_id;
+              var place_id = dict[cnt-1].place_id;
               // send clicked place to backed, so we can get the place details
               $.ajax({
                 type : "POST",
                 url : "/post",
                 dataType: "json",
                 contentType: "application/json",
-                data: JSON.stringify({data:place_id, flag: 'place_details'}),
+                data: JSON.stringify({pid:place_id, flag: 'place_details'}),
                 success: function(result) {
+                  console.log(result);
+                  $.ajax({
+                    type: 'GET',
+                    url: '/details'
+                  }).done(function(res, data) {
+                    // get the place details and create info page
+                    console.log(res, data);
+                    var detailspopup = document.getElementById("sugg-details"); 
+                    detailspopup.style.display = "block";
+                  })
                 },error: function(XMLHttpRequest, textStatus, errorThrown) {
-                  
+                  console.log("ERRRR");
             }
                 });
             };
           };
-          currentRow.onclick = createClickHandler(currentRow);
+          currentRow.onclick = createClickHandler(currentRow, i);
         }
+
+
       });
       // table display
       var modal = document.getElementById("nearby-srch");
@@ -606,6 +632,8 @@ document.getElementById("sugg-btn").onclick = function(){
 */
 document.getElementById("cross-srch").onclick = function() {
   document.getElementById("nearby-srch").style.display = "none";
+  document.getElementById("start").style.visibility = "visible";
+
 }
 
 document.getElementById("deets_cross").onclick = function() {
@@ -618,10 +646,10 @@ document.getElementById("deets_cross").onclick = function() {
 
 document.getElementById("stop-trip").onclick = function() {
   document.getElementById("deets-modal").style.display = "none";
-  var destmarker = new google.maps.Marker({map:map});
+  destmarker = new google.maps.Marker({map:window.mp});
   destmarker.setVisible(false);
   directionsDisplay.setMap(null);
-  map.setCenter(homemarker.position);
+  window.mp.setCenter(homemarker.position);
 }
 
 /* Inputs- None;
@@ -631,31 +659,38 @@ document.getElementById("stop-trip").onclick = function() {
 
 function fetchmoredeets(addr) {
     var loc = addr.split(' ').join('+')
-    const URL = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=${loc}&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA`;
-    // First get and parse the nearby regions
+    console.log(loc);
+    // replace with backend api call
+    try{
+      $.ajax({
+        type : "POST",
+        url : "/post",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify({place_name:loc, flag: 'place_name'}),
+        success: function(result) {
+          // console.log(result);
+          $.ajax({
+            type: 'GET',
+            url: '/details'
+          }).done(function(res, data) {
+            // get the place details and create info page
+            
+            // console.log("fetchmoredeets", res, data);
+            var picref;
+            // console.log(res.results[0].place_id);
+            var deetsreq = {placeId: res.results[0].place_id};
 
-    async function fetcher(URL){
-        const resp = await fetch(URL);
-        return await resp.json();
-    }
-
-    var res, req;
-    var picref;
-    (async () => {
-      req = await fetcher(URL);
-      res = req.results;
-      var deetsreq = {placeId: res[0].place_id};
-
-      var service = new google.maps.places.PlacesService(map);
-      service.getDetails(deetsreq, callback);
+            var service = new google.maps.places.PlacesService(window.mp);
+            service.getDetails(deetsreq, callback);
 
 
-      function callback(place, status) {
-          if (status == google.maps.places.PlacesServiceStatus.OK) {
-                document.getElementById("addr").innerHTML  =  "Address: " + place.address_components[1].short_name + ' ' + place.address_components[2].short_name; // addr
-                document.getElementById("rating").innerHTML = "Rating: " + place.rating;
-                var ref = place.photos[0].getUrl();
-                document.getElementById("loc-img").src = ref;
+            function callback(place, status) {
+                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                      document.getElementById("addr").innerHTML  =  "Address: " + place.address_components[1].short_name + ' ' + place.address_components[2].short_name; // addr
+                      document.getElementById("rating").innerHTML = "Rating: " + place.rating;
+                      var ref = place.photos[0].getUrl();
+                      document.getElementById("loc-img").src = ref;
                 if(place.formatted_phone_number==null){
                     document.getElementById("phone").innerHTML= "Phone Number: NA";
                 }
@@ -664,19 +699,55 @@ function fetchmoredeets(addr) {
                 }
               }
             }
-          }
-        )()
-}
+            return res.results;
+            // var detailspopup = document.getElementById("sugg-details"); 
+            // detailspopup.style.display = "block";
+          }).fail(function(err){
+            console.log('fetchmoredeets error:', err);
+          })
+        },error: function(XMLHttpRequest, textStatus, errorThrown) {
+          console.log(errorThrown, textStatus);
+    }
+        });
+    }
+    catch(err){
+      console.log('fetch error:', err);
+    }
+    
+    
 
+}
+/* Function Interface - bike-route-btn
+   Inputs - None
+   Outputs - None;
+   Description - Toggle for showing bike routes */
 var bikeLayer;
-document.getElementById("recalib").onclick=function(){
-    bikeLayer = new google.maps.BicyclingLayer();
-    bikeLayer.setMap(map);
+var layerCnt = 0;
+document.getElementById("bike-routes-btn").onclick=function(){
+    // implies show bike routes
+    if (layerCnt % 2 == 0) {
+      document.getElementById('bike-routes-btn').innerHTML= "Hide Bike Routes";
+      try{
+        bikeLayer = new google.maps.BicyclingLayer();
+        bikeLayer.setMap(window.mp);
+      }
+      catch(err){
+        console.log(err);
+      }
+      
+    }
+    else {
+      document.getElementById('bike-routes-btn').innerHTML= "Show Bike Routes";
+      try{
+        bikeLayer.setMap(null);
+      }
+      catch(err){
+        console.log(err);
+      }
+    }
+    layerCnt++;
 }
 
-document.getElementById("remove-bike").onclick=function(){
-    bikeLayer.setMap(null);
-}
 
 const trackLocation = ({ onSuccess, onError = () => { } }) => {
   if ('geolocation' in navigator === false) {
@@ -687,8 +758,12 @@ const trackLocation = ({ onSuccess, onError = () => { } }) => {
   return navigator.geolocation.watchPosition(onSuccess, onError);
 };
 
-document.getElementById("recenter").onclick=function(){
-    var latlng = new google.maps.LatLng(fetchit.lat, fetchit.lng);
-    map.setCenter(latlng, 20);
-}
+// document.getElementById("recenter").onclick=function(){
+//     var latlng = new google.maps.LatLng(fetchit.lat, fetchit.lng);
+//     window.mp.setCenter(latlng, 20);
+// }
 
+document.getElementById("logo").onclick=function(){
+  window.location.href = '/';
+  window.location.reload();
+}

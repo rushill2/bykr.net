@@ -4,8 +4,7 @@
     <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
-
-    <title>Safe Travels</title>
+    <title>bykr.net</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
     <link rel="stylesheet" type="text/css" href="./static/style.css" />
@@ -13,7 +12,9 @@
   </head>
   <body style="background-color:black;">
     <h3 style="text-align:center;">
-      <button id = "toolbar" style="text-align:center;font-size:30px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid" value = "Ryder">Ryder</button>
+      <button id = "logo">
+        <img src="https://ibb.co/3MtsLtj" border="0" alt="bykr.net"/>
+      </button>
     </h3>
     <!--The div element for the map -->
      <div class="row">
@@ -25,6 +26,8 @@
     <div id= "start">
       <button id="start-btn" style="text-align:center;font-size:20px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Start Ride</button>
     </div>
+    <div id= "Directions">
+    </div id>
     <div id="myModal" class="modal" style="color:black;margin-left:auto;margin-right:auto;text-align:center;font-family:Courier New;text-align:center">
       <!-- Modal content -->
       <div class="modal-content" style="text-align:center">
@@ -35,26 +38,21 @@
           <button type="button" id="dir-btn" style="text-align:center;font-size:20px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Get Directions</button>
       </div>
       </div>
-
-    </div>
-
-    <div id = "remove">
-      <button id="remove-bike" style="text-align:center;font-size:15px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Remove Bike Routes</button>
     </div>
 
     <div id="deets-modal" class="modal" style="color:black;margin-left:auto;margin-right:auto;text-align:center;font-family:Courier New;text-align:center">
       <!-- Modal content -->
       <div class="modal-content" style="text-align:center">
         <span class="close" id = "deets_cross">&times;</span>
-        <p id = "table-title"></p>
-        <p id = "addr">
+        <p id = "table-title" style="color:yellow">Trip Details</p>
+        <p id = "addr" style="color:yellow">
         </p>
-          <p id = "phone"></p>
-          <p id = "rating"></p>
+          <p id = "phone" style="color:yellow"></p>
+          <p id = "rating" style="color:yellow"></p>
           <img id="loc-img" src = "" width="400" height="300" style="text-align:center" class="free-img">
         <div class="modal-footer">
-        <button type="button" id="stop-trip" style="text-align:center;font-size:20px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Stop Trip</button>
-          <button type="button" id="recenter" style="text-align:center;font-size:20px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Re-Center</button>
+        <button type="button" id="stop-trip" style="text-align:center;font-size:20px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Start Ride</button>
+          
       </div>
       </div>
     </div>
@@ -62,16 +60,16 @@
     <div id="directions-form" class="modal" style="color:black;margin-left:auto;margin-right:auto;text-align:center;font-family:Courier New;text-align:center">
       <!-- Modal content -->
       <div class="modal-content" style="text-align:center">
-        <span class="close" id = "cross_dir">&times;</span>
+        <span class="close" id = "cross-dir">&times;</span>
          <form id="dest-form">
-          <label for="dest-text">Enter Destination: <br>
+          <label for="dest-text" style="color:yellow">Enter Destination and click suggestion <br>
           <input type="text" id="dest-text" name="fname"><br>
         </form>
       </div>
 
     </div>
 
-    <div id="nearby-srch" class="modal" style="color:black;margin-left:auto;margin-right:auto;text-align:center;font-family:Courier New;text-align:center">
+    <div id="nearby-srch" class="modal">
       <!-- Modal content -->
       <div class="modal-content" style="text-align:center">
         <span class="close" id = "cross-srch">&times;</span>
@@ -92,13 +90,21 @@
       </div>
 
     </div>
+    
+    <div id="sugg-details" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content" style="text-align:center">
+        <span class="close" id = "cross-details">&times;</span>  
+      </div>
+
+    </div>
 
     <div id= "suggest">
       <button id="sugg-btn" style="text-align:center;font-size:20px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Suggest Ride</button>
     </div>
 
-    <div id="tester">
-      <button id="recalib" style="text-align:center;font-size:15px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Show Bike Routes</button>
+    <div id="bike-routes">
+      <button id="bike-routes-btn" style="text-align:center;font-size:15px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Show Bike Routes</button>
     </div>
     <div id="map"></div>
 

@@ -1,6 +1,6 @@
 import logging
 import sys, os
-import traceback
+import traceback,json
 import requests
 from flask import Flask, render_template, request, jsonify
 from maps import GeoHandler
@@ -16,6 +16,8 @@ file_handler.setFormatter(logconfig.logFormat)
 logger.addHandler(file_handler)
 
 datag = None
+placeDeets = None
+placeName = None
 app = Flask(__name__, template_folder='templates')
 import geocoder
 geodata = geocoder.ip('me')
@@ -34,8 +36,11 @@ def index():
 @app.route('/post', methods=["POST"])
 def post():
     global datag
+    global placeDeets
     try:
-        data = request.get_json(force=True)
+        data = request.json
+        if data is None:
+            data = json.loads(request.json)
         logger.info("Post data: " + str(data))
         datag = data
         if data['flag'] == 'const':
@@ -45,21 +50,19 @@ def post():
             logger.info("Starting the call transfer thread")
         elif data['flag'] == 'place_details':
             # make placedetails api call
-            details = GeoHandler.placeDetails(GeoHandler, datag['place_id'])
+            global placeDeets
+            placeDeets = GeoHandler.placeDetails(GeoHandler, data['pid'])
             logger.info("Placedetails post request received")
-    # return data
+        elif data['flag'] == 'place_name':
+            placeDeets = GeoHandler.nameSearch(GeoHandler, data['place_name'])
+            logger.info("Place nameSearch post request received")
+
+        return jsonify({"message": "Request received successfully"})
     except Exception as e:
-        logger.error("Error in post request " + str(e) + traceback.format())
+        logger.error("Error in post request " + str(e) + traceback.format_exc())
         sys.exit(-1)
 
-    # parallel thread for the location processing
-    # init for the location data transfer
-    # const to send position to python backend
-    # place_details for the place_id transfer
-    
-
-
-@app.route('/count')
+@app.route('/locate')
 def count():
     # GeoHandler.acq(GeoHandler, )
     data = {'lat': geodata.latlng[0], 'lng': geodata.latlng[1]}
@@ -69,6 +72,15 @@ def count():
 @app.route('/nearby')
 def nearby():
     return GeoHandler.nearbyPlaces(GeoHandler, geodata.latlng[0], geodata.latlng[1])
+
+@app.route('/details')
+def details():
+    return placeDeets
+
+@app.route('/nameSearch')
+def name():
+    return placeName
+
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -53,7 +53,7 @@ class GeoHandler:
         try:
             response = requests.get(url)
             data = response.json()
-            logger.info("placeDetails() suggestions response: " + str(data))
+            # logger.info("placeDetails() suggestions response: " + str(data))
             return data
         except Exception as e:
             logger.error("Error in placeDetails(): " + str(e) + traceback.format_exc())
@@ -64,12 +64,23 @@ class GeoHandler:
         try:
             response = requests.get(url)
             data = response.json()
-            logger.info("nearbySearch() suggestions response: " + str(data))
+            # logger.info("nearbySearch() suggestions response: " + str(data))
             return data
         except Exception as e:
             logger.error("Error in nearbySearch(): " + str(e) + traceback.format_exc())
 
     # implement nearby biking suggestions
+
+    def nameSearch(self, name):
+        url = apiConfig.urls['text_search'].replace('${_name}', str(name)).replace('{_key}', apiConfig.maps_key)
+        logger.info("nameSearch() suggestions url: " + str(url))
+        try:
+            response = requests.get(url)
+            data = response.json()
+            # logger.info("nearbySearch() suggestions response: " + str(data))
+            return data
+        except Exception as e:
+            logger.error("Error in nearbySearch(): " + str(e) + traceback.format_exc())
 
     def testhelp(self, dataset):
         logger.info("testhelp checking dataset:" + str(dataset))
