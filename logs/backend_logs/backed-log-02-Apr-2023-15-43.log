@@ -1,0 +1,20 @@
+15:43:26 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+15:43:26 :: INFO : werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+15:43:26 :: INFO : werkzeug: [33mPress CTRL+C to quit[0m
+15:43:26 :: INFO : werkzeug:  * Restarting with stat
+15:43:28 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+15:43:28 :: WARNING : werkzeug:  * Debugger is active!
+15:43:28 :: INFO : werkzeug:  * Debugger PIN: 919-660-729
+15:43:32 :: INFO : werkzeug: 127.0.0.1 - - [02/Apr/2023 15:43:32] "GET / HTTP/1.1" 200 -
+15:43:32 :: INFO : werkzeug: 127.0.0.1 - - [02/Apr/2023 15:43:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+15:43:32 :: INFO : werkzeug: 127.0.0.1 - - [02/Apr/2023 15:43:32] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+15:43:32 :: INFO : werkzeug: 127.0.0.1 - - [02/Apr/2023 15:43:32] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+15:43:32 :: INFO : root: Location data by count(): {'lat': 41.8713, 'lng': -87.6277}
+15:43:32 :: INFO : werkzeug: 127.0.0.1 - - [02/Apr/2023 15:43:32] "GET /locate HTTP/1.1" 200 -
+15:44:51 :: INFO : werkzeug: 127.0.0.1 - - [02/Apr/2023 15:44:51] "GET / HTTP/1.1" 200 -
+15:44:51 :: INFO : werkzeug: 127.0.0.1 - - [02/Apr/2023 15:44:51] "GET /static/style.css HTTP/1.1" 200 -
+15:44:51 :: INFO : werkzeug: 127.0.0.1 - - [02/Apr/2023 15:44:51] "GET /static/index.js HTTP/1.1" 200 -
+15:44:51 :: INFO : werkzeug: 127.0.0.1 - - [02/Apr/2023 15:44:51] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+15:44:51 :: INFO : root: Location data by count(): {'lat': 41.8713, 'lng': -87.6277}
+15:44:51 :: INFO : werkzeug: 127.0.0.1 - - [02/Apr/2023 15:44:51] "GET /locate HTTP/1.1" 200 -

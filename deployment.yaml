@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bykr-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bykr-hosting
+  template:
+    metadata:
+      labels:
+        app: bykr-hosting
+    spec:
+      containers:
+      - name: bykr
+        image: spetsnazzz/bykr:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5000
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: bykr-service
+spec:
+  selector:
+    app: bykr-hosting
+  ports:
+  - port: 6000
+    targetPort: 5000
+  type: LoadBalancer
+
+

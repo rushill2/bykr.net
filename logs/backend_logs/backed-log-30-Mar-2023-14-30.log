@@ -1,0 +1,37 @@
+14:30:52 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+14:30:52 :: INFO : werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+14:30:52 :: INFO : werkzeug: [33mPress CTRL+C to quit[0m
+14:30:52 :: INFO : werkzeug:  * Restarting with stat
+14:30:54 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+14:30:54 :: WARNING : werkzeug:  * Debugger is active!
+14:30:54 :: INFO : werkzeug:  * Debugger PIN: 919-660-729
+14:32:37 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:32:37] "GET /?fname=Downtown+Chicago,+IL,+USA HTTP/1.1" 200 -
+14:32:37 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:32:37] "GET /static/index.js HTTP/1.1" 200 -
+14:32:37 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:32:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+14:32:37 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:32:37] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+14:32:37 :: INFO : root: Location data by count(): {'lat': 41.8713, 'lng': -87.6277}
+14:32:37 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:32:37] "GET /locate HTTP/1.1" 200 -
+14:32:43 :: INFO : root: Post data: {'place_name': 'Union+Station+Transit+center', 'flag': 'place_name'}
+14:32:43 :: INFO : root: nameSearch() suggestions url: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Union+Station+Transit+center&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA
+14:32:44 :: INFO : root: Place nameSearch post request received
+14:32:44 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:32:44] "POST /post HTTP/1.1" 200 -
+14:32:44 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:32:44] "GET /details HTTP/1.1" 200 -
+14:33:17 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:33:17] "GET /?fname=Union+Station+Transit+center,+West+Jackson+Boulevard,+Chicago,+IL,+USA HTTP/1.1" 200 -
+14:33:17 :: INFO : root: Post data: {'place_name': 'Union+Station+Transit+center,+West+Jackson+Boulevard,+Chicago,+IL,+USA', 'flag': 'place_name'}
+14:33:17 :: INFO : root: nameSearch() suggestions url: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Union+Station+Transit+center,+West+Jackson+Boulevard,+Chicago,+IL,+USA&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA
+14:33:17 :: INFO : root: Post data: {'place_name': 'Union+Station+Transit+center,+West+Jackson+Boulevard,+Chicago,+IL,+USA', 'flag': 'place_name'}
+14:33:17 :: INFO : root: nameSearch() suggestions url: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Union+Station+Transit+center,+West+Jackson+Boulevard,+Chicago,+IL,+USA&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA
+14:33:17 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:33:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+14:33:17 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:33:17] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+14:33:17 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:33:17] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+14:33:18 :: INFO : root: Location data by count(): {'lat': 41.8713, 'lng': -87.6277}
+14:33:18 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:33:18] "GET /locate HTTP/1.1" 200 -
+14:33:18 :: INFO : root: Place nameSearch post request received
+14:33:18 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:33:18] "POST /post HTTP/1.1" 200 -
+14:33:18 :: INFO : root: Place nameSearch post request received
+14:33:18 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:33:18] "POST /post HTTP/1.1" 200 -
+14:36:41 :: INFO : root: Location data by count(): {'lat': 41.8713, 'lng': -87.6277}
+14:36:41 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:36:41] "GET /locate HTTP/1.1" 200 -
+14:36:41 :: INFO : root: nearbySearch() suggestions url: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.8713,-87.6277&radius=5000&sensor=true&type=park&rankBy=distance&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA
+14:36:41 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:36:41] "GET /nearby HTTP/1.1" 200 -

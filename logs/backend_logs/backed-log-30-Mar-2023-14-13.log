@@ -1,0 +1,26 @@
+14:13:31 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+14:13:31 :: INFO : werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+14:13:31 :: INFO : werkzeug: [33mPress CTRL+C to quit[0m
+14:13:31 :: INFO : werkzeug:  * Restarting with stat
+14:13:32 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+14:13:32 :: WARNING : werkzeug:  * Debugger is active!
+14:13:32 :: INFO : werkzeug:  * Debugger PIN: 919-660-729
+14:13:41 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:13:41] "GET /?fname=Union+Station+Transit+center,+West+Jackson+Boulevard,+Chicago,+IL,+USA HTTP/1.1" 200 -
+14:13:41 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:13:41] "GET /static/index.js HTTP/1.1" 200 -
+14:13:41 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:13:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+14:13:41 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:13:41] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+14:13:41 :: INFO : root: Location data by count(): {'lat': 41.8713, 'lng': -87.6277}
+14:13:41 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:13:41] "GET /locate HTTP/1.1" 200 -
+14:13:48 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:13:48] "GET /?fname=Union+Station+Transit+center,+West+Jackson+Boulevard,+Chicago,+IL,+USA HTTP/1.1" 200 -
+14:13:48 :: INFO : root: Post data: {'place_name': 'Union+Station+Transit+center,+West+Jackson+Boulevard,+Chicago,+IL,+USA', 'flag': 'place_details'}
+14:13:48 :: ERROR : root: Error in post request 'pid'Traceback (most recent call last):
+  File "c:\Users\rushi\Desktop\Projects\bykr.net\app.py", line 54, in post
+    placeDeets = GeoHandler.placeDetails(GeoHandler, data['pid'])
+KeyError: 'pid'
+
+14:13:48 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:13:48] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+14:13:48 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:13:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+14:13:48 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:13:48] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+14:13:48 :: INFO : root: Location data by count(): {'lat': 41.8713, 'lng': -87.6277}
+14:13:48 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:13:48] "GET /locate HTTP/1.1" 200 -

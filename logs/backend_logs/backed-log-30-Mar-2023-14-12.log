@@ -1,0 +1,27 @@
+14:12:00 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+14:12:01 :: WARNING : werkzeug:  * Debugger is active!
+14:12:01 :: INFO : werkzeug:  * Debugger PIN: 919-660-729
+14:12:02 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:12:02] "GET /?fname=Union+Station+Transit+center,+West+Jackson+Boulevard,+Chicago,+IL,+USA HTTP/1.1" 200 -
+14:12:02 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:12:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+14:12:02 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:12:02] "GET /static/index.js HTTP/1.1" 200 -
+14:12:02 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:12:02] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+14:12:02 :: INFO : root: Location data by count(): {'lat': 41.8713, 'lng': -87.6277}
+14:12:02 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:12:02] "GET /locate HTTP/1.1" 200 -
+14:12:15 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:12:15] "GET /?fname=Union+Station+Transit+center,+West+Jackson+Boulevard,+Chicago,+IL,+USA HTTP/1.1" 200 -
+14:12:15 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:12:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+14:12:15 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:12:15] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+14:12:15 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:12:15] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+14:12:15 :: INFO : root: Location data by count(): {'lat': 41.8713, 'lng': -87.6277}
+14:12:15 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:12:15] "GET /locate HTTP/1.1" 200 -
+14:12:22 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:12:22] "GET /?fname=Union+Station+Transit+center,+West+Jackson+Boulevard,+Chicago,+IL,+USA HTTP/1.1" 200 -
+14:12:22 :: INFO : root: Post data: {'place_name': 'Union+Station+Transit+center,+West+Jackson+Boulevard,+Chicago,+IL,+USA', 'flag': 'place_details'}
+14:12:22 :: ERROR : root: Error in post request 'pid'Traceback (most recent call last):
+  File "c:\Users\rushi\Desktop\Projects\bykr.net\app.py", line 54, in post
+    placeDeets = GeoHandler.placeDetails(GeoHandler, data['pid'])
+KeyError: 'pid'
+
+14:12:22 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:12:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+14:12:22 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:12:22] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+14:12:22 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:12:22] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+14:12:22 :: INFO : root: Location data by count(): {'lat': 41.8713, 'lng': -87.6277}
+14:12:22 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 14:12:22] "GET /locate HTTP/1.1" 200 -

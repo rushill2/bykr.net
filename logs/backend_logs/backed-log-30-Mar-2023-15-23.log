@@ -1,0 +1,21 @@
+15:23:55 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+15:23:55 :: INFO : werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+15:23:55 :: INFO : werkzeug: [33mPress CTRL+C to quit[0m
+15:23:55 :: INFO : werkzeug:  * Restarting with stat
+15:23:56 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+15:23:56 :: WARNING : werkzeug:  * Debugger is active!
+15:23:56 :: INFO : werkzeug:  * Debugger PIN: 919-660-729
+15:23:56 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 15:23:56] "GET /?fname=Union+Station+Transit+center,+West+Jackson+Boulevard,+Chicago,+IL,+USA HTTP/1.1" 200 -
+15:23:56 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 15:23:56] "GET /static/index.js HTTP/1.1" 200 -
+15:23:56 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 15:23:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+15:23:56 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 15:23:56] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+15:23:56 :: INFO : root: Location data by count(): {'lat': 41.8713, 'lng': -87.6277}
+15:23:56 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 15:23:56] "GET /locate HTTP/1.1" 200 -
+15:24:01 :: INFO : root: Post data: {'place_name': 'Union+Station+Transit+center', 'flag': 'place_name'}
+15:24:01 :: INFO : root: nameSearch() suggestions url: https://maps.googleapis.com/maps/api/place/textsearch/json?query=Union+Station+Transit+center&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA
+15:24:01 :: INFO : root: Location data by count(): {'lat': 41.8713, 'lng': -87.6277}
+15:24:01 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 15:24:01] "GET /locate HTTP/1.1" 200 -
+15:24:01 :: INFO : root: Place nameSearch post request received
+15:24:01 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 15:24:01] "POST /post HTTP/1.1" 200 -
+15:24:01 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 15:24:01] "GET /details HTTP/1.1" 200 -

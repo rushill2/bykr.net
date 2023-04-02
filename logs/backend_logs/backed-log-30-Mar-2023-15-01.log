@@ -1,0 +1,16 @@
+15:01:19 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+15:01:19 :: INFO : werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+15:01:19 :: INFO : werkzeug: [33mPress CTRL+C to quit[0m
+15:01:19 :: INFO : werkzeug:  * Restarting with stat
+15:01:21 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+15:01:21 :: WARNING : werkzeug:  * Debugger is active!
+15:01:21 :: INFO : werkzeug:  * Debugger PIN: 919-660-729
+15:01:21 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 15:01:21] "GET /?fname=Union+Station+Transit+center,+West+Jackson+Boulevard,+Chicago,+IL,+USA HTTP/1.1" 200 -
+15:01:21 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 15:01:21] "GET /static/style.css HTTP/1.1" 200 -
+15:01:21 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 15:01:21] "GET /static/index.js HTTP/1.1" 200 -
+15:01:21 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 15:01:21] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+15:01:21 :: INFO : root: Location data by count(): {'lat': 41.8713, 'lng': -87.6277}
+15:01:21 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 15:01:21] "GET /locate HTTP/1.1" 200 -
+15:01:28 :: INFO : root: Location data by count(): {'lat': 41.8713, 'lng': -87.6277}
+15:01:28 :: INFO : werkzeug: 127.0.0.1 - - [30/Mar/2023 15:01:28] "GET /locate HTTP/1.1" 200 -
