@@ -1,0 +1,88 @@
+02:30:28 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+02:30:28 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+02:30:28 :: WARNING : werkzeug:  * Debugger is active!
+02:30:28 :: INFO : werkzeug:  * Debugger PIN: 144-772-890
+02:30:28 :: WARNING : werkzeug:  * Debugger is active!
+02:30:28 :: INFO : werkzeug:  * Debugger PIN: 144-772-890
+02:30:31 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+02:30:31 :: INFO : werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.4.58:5000
+02:30:31 :: INFO : werkzeug: [33mPress CTRL+C to quit[0m
+02:30:31 :: INFO : werkzeug:  * Restarting with stat
+02:30:32 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+02:30:32 :: WARNING : werkzeug:  * Debugger is active!
+02:30:32 :: INFO : werkzeug:  * Debugger PIN: 144-772-890
+02:30:35 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:35] "GET / HTTP/1.1" 200 -
+02:30:35 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:35] "[33mGET /path/to/owl.carousel.css HTTP/1.1[0m" 404 -
+02:30:35 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:35] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+02:30:35 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:35] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+02:30:35 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:35] "[36mGET /static/styles/tables.css HTTP/1.1[0m" 304 -
+02:30:35 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:35] "[36mGET /static/styles/modal.css HTTP/1.1[0m" 304 -
+02:30:35 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:35] "[36mGET /static/images/bykr_logo.jpg HTTP/1.1[0m" 304 -
+02:30:35 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:35] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+02:30:35 :: INFO : root: Location data by count(): {'lat': 41.8713, 'lng': -87.6277}
+02:30:35 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:35] "GET /locate HTTP/1.1" 200 -
+02:30:37 :: INFO : root: Location data by count(): {'lat': 41.8713, 'lng': -87.6277}
+02:30:37 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:37] "GET /locate HTTP/1.1" 200 -
+02:30:37 :: INFO : root: nearbySearch() suggestions url: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.8713,-87.6277&radius=5000&sensor=true&type=park&rankBy=distance&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA
+02:30:37 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:37] "GET /nearby HTTP/1.1" 200 -
+02:30:38 :: INFO : root: Post data: {'pid': 'ChIJhU2sZqAsDogRtIzPkFS5qj0', 'flag': 'place_details'}
+02:30:38 :: INFO : root: placeDetails() suggestions url: https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJhU2sZqAsDogRtIzPkFS5qj0&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA
+02:30:38 :: INFO : root: Placedetails post request received
+02:30:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:38] "POST /post HTTP/1.1" 200 -
+02:30:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:38] "GET /details HTTP/1.1" 200 -
+02:30:38 :: INFO : root: Post data: {'data': 'AUjq9jlSjolMVDFz5s-Dtd76TP10kiq96lIuV3rE9w5AV2gSdcomJxShQ7j_IN-PY4xSHxQEXX6zDbkaNr4Nt86xJY5NmRG5StMwLm-x-G5NeZ3BCjUpibzTnok6B4kWTWijMBia1rVSlLblTu27yI8RAtwu0x_ZXnRGroCV1yLqwg9v8Rsc', 'flag': 'get_images'}
+02:30:38 :: INFO : root: Place get_images post request received
+02:30:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:38] "POST /post HTTP/1.1" 200 -
+02:30:38 :: INFO : root: placeImages()  url: https://maps.googleapis.com/maps/api/place/photo?&photo_reference=AUjq9jlSjolMVDFz5s-Dtd76TP10kiq96lIuV3rE9w5AV2gSdcomJxShQ7j_IN-PY4xSHxQEXX6zDbkaNr4Nt86xJY5NmRG5StMwLm-x-G5NeZ3BCjUpibzTnok6B4kWTWijMBia1rVSlLblTu27yI8RAtwu0x_ZXnRGroCV1yLqwg9v8Rsc&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA
+02:30:38 :: INFO : root: Post data: {'data': 'AUjq9jkSakGXExfH6OJuwKnzxIF5PPN8oV9zvuY9lN_HfbhG-sWkqC8lcYaS1ZKsgv1-JlOCXVwueM2GuYc59rFzgzG4-TZ4j_TEeBwBeWMgxlhQBjCq97iv0jsEc0bLrvnbvUfTS3Zgv299IKwIaDdIcJ3t2plZzPbLJklKUXtspqDuKpo5', 'flag': 'get_images'}
+02:30:38 :: INFO : root: Place get_images post request received
+02:30:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:38] "POST /post HTTP/1.1" 200 -
+02:30:38 :: INFO : root: placeImages()  url: https://maps.googleapis.com/maps/api/place/photo?&photo_reference=AUjq9jkSakGXExfH6OJuwKnzxIF5PPN8oV9zvuY9lN_HfbhG-sWkqC8lcYaS1ZKsgv1-JlOCXVwueM2GuYc59rFzgzG4-TZ4j_TEeBwBeWMgxlhQBjCq97iv0jsEc0bLrvnbvUfTS3Zgv299IKwIaDdIcJ3t2plZzPbLJklKUXtspqDuKpo5&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA
+02:30:38 :: INFO : root: Post data: {'data': 'AUjq9jnak8VEWFIXzOz-WrvWU_WqFquNXom-PkDpa4Uk7nOk6j2DaRy3kP9Lxc-Eb74Hm0rZVe5Mt5jv8qD0NA0a-ZaA41VGBj2xBIKwYXHDq4XTNseBgz8umidKTDWn_ltpzAG13ZlbcVhLMTHBQH9PBzfu2khXyaHJ2vyJHXiX_2jcWCgS', 'flag': 'get_images'}
+02:30:38 :: INFO : root: Place get_images post request received
+02:30:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:38] "POST /post HTTP/1.1" 200 -
+02:30:38 :: INFO : root: placeImages()  url: https://maps.googleapis.com/maps/api/place/photo?&photo_reference=AUjq9jnak8VEWFIXzOz-WrvWU_WqFquNXom-PkDpa4Uk7nOk6j2DaRy3kP9Lxc-Eb74Hm0rZVe5Mt5jv8qD0NA0a-ZaA41VGBj2xBIKwYXHDq4XTNseBgz8umidKTDWn_ltpzAG13ZlbcVhLMTHBQH9PBzfu2khXyaHJ2vyJHXiX_2jcWCgS&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA
+02:30:38 :: INFO : root: Post data: {'data': 'AUjq9jmiIR8x2TTnz4RTpaINhnXCdbebr9alHt7fQBskud-OIitsUmodEZoqXp_HJyFWSog_p3RkNHIIDokKR6PaugT3D0ynO-yCmWfg0EY1Zqpr90wZVbDUSiZKJ3HwLfk91tK2NqYRGkz88EtvHsLeg8hEgOOaIMgt2UtRL6KAxcxMYC6R', 'flag': 'get_images'}
+02:30:38 :: INFO : root: Place get_images post request received
+02:30:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:38] "POST /post HTTP/1.1" 200 -
+02:30:38 :: INFO : root: placeImages()  url: https://maps.googleapis.com/maps/api/place/photo?&photo_reference=AUjq9jmiIR8x2TTnz4RTpaINhnXCdbebr9alHt7fQBskud-OIitsUmodEZoqXp_HJyFWSog_p3RkNHIIDokKR6PaugT3D0ynO-yCmWfg0EY1Zqpr90wZVbDUSiZKJ3HwLfk91tK2NqYRGkz88EtvHsLeg8hEgOOaIMgt2UtRL6KAxcxMYC6R&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA
+02:30:38 :: INFO : root: Post data: {'data': 'AUjq9jmujRdhqG2GPzxXcrJ5VKl1CaKlND448iNBAlRz7TIg7qhECKI_oAr2lB0mGrB6zyNfmC-YApQ0OQPljIYjyUQUzO2J3n-cr7rWGF-A3-Dph2EtuwiBqO3y02YAznV4rmZ8qEglc7wpUOViul9evNSFAqeyTf6yTZWaOCa5ZTdssr2l', 'flag': 'get_images'}
+02:30:38 :: INFO : root: Place get_images post request received
+02:30:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:38] "POST /post HTTP/1.1" 200 -
+02:30:38 :: INFO : root: placeImages()  url: https://maps.googleapis.com/maps/api/place/photo?&photo_reference=AUjq9jmujRdhqG2GPzxXcrJ5VKl1CaKlND448iNBAlRz7TIg7qhECKI_oAr2lB0mGrB6zyNfmC-YApQ0OQPljIYjyUQUzO2J3n-cr7rWGF-A3-Dph2EtuwiBqO3y02YAznV4rmZ8qEglc7wpUOViul9evNSFAqeyTf6yTZWaOCa5ZTdssr2l&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA
+02:30:38 :: INFO : root: Post data: {'data': 'AUjq9jmrUzOAiRQgDuZD-ySR6_YrmjznGjOxECfg4nSsKwQbyCu26PW4jAbzwHFxKLPY3rQZu-5LKG3SlBghxK-BrV2-FcaqH4ifmXmrItHw1i4TMqYG9jGd5FPhcIs5fOYgTf2GRGf7CZ6tAo3mNezjKtNY5CwOaI9UbmbHyX74Esy5_EW6', 'flag': 'get_images'}
+02:30:38 :: INFO : root: Place get_images post request received
+02:30:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:38] "POST /post HTTP/1.1" 200 -
+02:30:38 :: INFO : root: placeImages()  url: https://maps.googleapis.com/maps/api/place/photo?&photo_reference=AUjq9jmrUzOAiRQgDuZD-ySR6_YrmjznGjOxECfg4nSsKwQbyCu26PW4jAbzwHFxKLPY3rQZu-5LKG3SlBghxK-BrV2-FcaqH4ifmXmrItHw1i4TMqYG9jGd5FPhcIs5fOYgTf2GRGf7CZ6tAo3mNezjKtNY5CwOaI9UbmbHyX74Esy5_EW6&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA
+02:30:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:38] "GET /getImages HTTP/1.1" 200 -
+02:30:38 :: INFO : root: Post data: {'data': 'AUjq9jkwEqiYr39ggIYJRM9tV5rheq-FjxtlHVM8MtO7YkaZTAJ5UVSohjnF2z0uDXySEeHwF8P5Em_E9xRARTaPCsLQnlj7rYZSie8ha8blGpjaSETv-6Gi5oUyIlso6rHnYCQ-p6lIcdft880aLc8qXPtGkQ7VNUh00kN899X327XsU6ly', 'flag': 'get_images'}
+02:30:38 :: INFO : root: Place get_images post request received
+02:30:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:38] "POST /post HTTP/1.1" 200 -
+02:30:38 :: INFO : root: placeImages()  url: https://maps.googleapis.com/maps/api/place/photo?&photo_reference=AUjq9jkwEqiYr39ggIYJRM9tV5rheq-FjxtlHVM8MtO7YkaZTAJ5UVSohjnF2z0uDXySEeHwF8P5Em_E9xRARTaPCsLQnlj7rYZSie8ha8blGpjaSETv-6Gi5oUyIlso6rHnYCQ-p6lIcdft880aLc8qXPtGkQ7VNUh00kN899X327XsU6ly&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA
+02:30:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:38] "GET /getImages HTTP/1.1" 200 -
+02:30:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:38] "GET /getImages HTTP/1.1" 200 -
+02:30:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:38] "GET /getImages HTTP/1.1" 200 -
+02:30:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:38] "GET /getImages HTTP/1.1" 200 -
+02:30:38 :: INFO : root: Post data: {'data': 'AUjq9jn0-9XjMhUYaMgxV84xfODHLr4KFbhAT-NeganBSrKP72TWgutxwwFlJTOGQICxbVQEx6IO9x8OUD3D5gajjmgZN5YXC48X6SyQse78rZKTTotMwD561hx7jYaj4f25Lq_jPeiD6BKn4-K66IVp2AlJ61VolhHSbsmkwIOHYnwUTorW', 'flag': 'get_images'}
+02:30:38 :: INFO : root: Place get_images post request received
+02:30:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:38] "POST /post HTTP/1.1" 200 -
+02:30:38 :: INFO : root: placeImages()  url: https://maps.googleapis.com/maps/api/place/photo?&photo_reference=AUjq9jn0-9XjMhUYaMgxV84xfODHLr4KFbhAT-NeganBSrKP72TWgutxwwFlJTOGQICxbVQEx6IO9x8OUD3D5gajjmgZN5YXC48X6SyQse78rZKTTotMwD561hx7jYaj4f25Lq_jPeiD6BKn4-K66IVp2AlJ61VolhHSbsmkwIOHYnwUTorW&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA
+02:30:38 :: INFO : root: Post data: {'data': 'AUjq9jmdsOuwct2qh_jeaP_ML-7x7RgXbP79AFNfzC5HvyBZHMBtyun_dDxmBJ-AUvqDrdO7k-szCGVrdUAHAwBzMO6JJjVlNIgpICrdHQB7r1XJvb4m66Vu5Bc-HY_Kvyy3B3j6bnYtKIN-Foh-RwXw-ku_aaW-0mrUtletHDvUJYnMArsu', 'flag': 'get_images'}
+02:30:38 :: INFO : root: Place get_images post request received
+02:30:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:38] "POST /post HTTP/1.1" 200 -
+02:30:38 :: INFO : root: placeImages()  url: https://maps.googleapis.com/maps/api/place/photo?&photo_reference=AUjq9jmdsOuwct2qh_jeaP_ML-7x7RgXbP79AFNfzC5HvyBZHMBtyun_dDxmBJ-AUvqDrdO7k-szCGVrdUAHAwBzMO6JJjVlNIgpICrdHQB7r1XJvb4m66Vu5Bc-HY_Kvyy3B3j6bnYtKIN-Foh-RwXw-ku_aaW-0mrUtletHDvUJYnMArsu&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA
+02:30:38 :: INFO : root: Post data: {'data': 'AUjq9jlI7d5Vfa475R38kT4qwewCJeXO8kaaeNjIOLUvETCcWg0ge1-UbxNdunVRFRRFSRGq8PYb98MTxLS9LiyXI-LDbCoWCO7dLOsq0aGtj9w2j0uSn_AG2gxeLE1u5CbKVAEamoZlkCdtBGxmMZQt_1bCjNu-uMCMfqrVy8nR7ECY749o', 'flag': 'get_images'}
+02:30:38 :: INFO : root: Place get_images post request received
+02:30:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:38] "POST /post HTTP/1.1" 200 -
+02:30:38 :: INFO : root: placeImages()  url: https://maps.googleapis.com/maps/api/place/photo?&photo_reference=AUjq9jlI7d5Vfa475R38kT4qwewCJeXO8kaaeNjIOLUvETCcWg0ge1-UbxNdunVRFRRFSRGq8PYb98MTxLS9LiyXI-LDbCoWCO7dLOsq0aGtj9w2j0uSn_AG2gxeLE1u5CbKVAEamoZlkCdtBGxmMZQt_1bCjNu-uMCMfqrVy8nR7ECY749o&key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA
+02:30:39 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:39] "GET /getImages HTTP/1.1" 200 -
+02:30:39 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:39] "GET /getImages HTTP/1.1" 200 -
+02:30:39 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:39] "GET /getImages HTTP/1.1" 200 -
+02:30:39 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:39] "GET /getImages HTTP/1.1" 200 -
+02:30:39 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 02:30:39] "GET /getImages HTTP/1.1" 200 -
+02:31:29 :: INFO : werkzeug:  * Detected change in 'c:\\Users\\rushi\\Desktop\\Projects\\bykr.net\\config\\apiConfig.py', reloading
+02:31:29 :: INFO : werkzeug:  * Detected change in 'c:\\Users\\rushi\\Desktop\\Projects\\bykr.net\\config\\apiConfig.py', reloading
+02:31:29 :: INFO : werkzeug:  * Restarting with stat

@@ -1,4 +1,4 @@
-# from GoogleNews import GoogleNews
+from GoogleNews import GoogleNews
 from difflib import SequenceMatcher
 from datetime import date, timedelta
 import requests

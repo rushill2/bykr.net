@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
+
+    <!-- Owl Carousel JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
+
     <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
     <title>bykr.net</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
-    <link rel="stylesheet" type="text/css" href="./static/style.css" />
+    <link rel="stylesheet" type="text/css" href="./static/styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="./static/styles/tables.css" />
+    <link rel="stylesheet" type="text/css" href="./static/styles/modal.css" />
+
+
     <script type="module" src="./static/index.js"></script>
   </head>
-  <body style="background-color:black;">
+  <body>
+    <div id="map"></div>
+
     <h3 style="text-align:center;">
       <button id = "logo">
-        <img src=".\images\bykr_logo.jpg" border="0" alt="bykr.net"/>
+        <img src="static/images/bykr_logo.jpg" border="0" alt="bykr.net"/>
       </button>
     </h3>
-    <!--The div element for the map -->
-     <div class="row">
-      <div class="column"></div>
-      <div class="column"></div>
-      <div class="column"></div>
-    </div>
 
     <div id= "start">
-      <button id="start-btn" style="text-align:center;font-size:20px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Start Ride</button>
+      <button id="start-btn" class = 'button'>Start Ride</button>
     </div>
     <div id= "Directions">
     </div id>
@@ -34,8 +44,8 @@
         <span class="close" id = "cross">&times;</span>
         <p>Would you like to track your activity or get directions?</p>
         <div class="modal-footer">
-        <button type="button" id="track-btn" style="text-align:center;font-size:20px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Track</button>
-          <button type="button" id="dir-btn" style="text-align:center;font-size:20px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Get Directions</button>
+        <button type="button" class = 'button' id="track-btn" style="text-align:center;font-size:20px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Track</button>
+          <button type="button" class = 'button' id="dir-btn" style="text-align:center;font-size:20px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Get Directions</button>
       </div>
       </div>
     </div>
@@ -51,7 +61,7 @@
           <p id = "rating" style="color:yellow"></p>
           <img id="loc-img" src = "" width="400" height="300" style="text-align:center" class="free-img">
         <div class="modal-footer">
-        <button type="button" id="stop-trip" style="text-align:center;font-size:20px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Start Ride</button>
+        <button type="button" class = 'button' id="stop-trip" style="text-align:center;font-size:20px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Start Ride</button>
           
       </div>
       </div>
@@ -76,37 +86,43 @@
          <table id = "near-tbl" border=1 frame=void rules=rows>
              <thead>
                 <tr id="desc-row">
-                  <th scope="col">Location</th>
+                  <th scope="col" style="width:100px">Location</th>
                   <th scope="col">Rating</th>
                   <th scope="col">Open?</th>
-                  <th scope="col">Photos</th>
                 </tr>
              </thead>
            <tbody id = "sugg-entries">
-
            </tbody>
-
          </table>
       </div>
 
     </div>
-    
-    <div id="sugg-details" class="modal">
+    <!-- This is the modal for when you start a trip from suggestions -->
+    <div id="trip-details" class="modal">
       <!-- Modal content -->
       <div class="modal-content" style="text-align:center">
         <span class="close" id = "cross-details">&times;</span>  
+        <h3 class="place-name"></h3>
+        <div class="owl-carousel" id="carousel"></div>
+        <p class="place-address"></p>
+        <a class="place-phone"  target="_blank"></a>
+        <p class="place-summary"></p>
+        <a class="place-website"  target="_blank"></a>
+        <p class="place-wheelchair"></p>
       </div>
 
     </div>
 
+    
+
     <div id= "suggest">
-      <button id="sugg-btn" style="text-align:center;font-size:20px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Suggest Ride</button>
+      <button id="sugg-btn" class = 'button' style="text-align:center;font-size:20px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Suggest Ride</button>
     </div>
 
     <div id="bike-routes">
-      <button id="bike-routes-btn" style="text-align:center;font-size:15px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Show Bike Routes</button>
+      <button id="bike-routes-btn" class = 'button' style="text-align:center;font-size:15px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Show Bike Routes</button>
     </div>
-    <div id="map"></div>
+    
 
     <!-- 
      The `defer` attribute causes the callback to execute after the full HTML
@@ -114,6 +130,15 @@
      and consistent behavior across browsers, consider loading using Promises
      with https://www.npmjs.com/package/@googlemaps/js-api-loader.
     -->
+    <script>
+      // Get all elements with inline styles
+      const elementsWithStyle = document.querySelectorAll('[style]');
+  
+      // Loop through all elements and remove their inline styles
+      elementsWithStyle.forEach(element => {
+        element.removeAttribute('style');
+      });
+    </script>
   </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="/static/index.js"></script>

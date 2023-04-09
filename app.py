@@ -1,11 +1,10 @@
 import logging
 import sys, os
 import traceback,json
-import requests
 from flask import Flask, render_template, request, jsonify
 from maps import GeoHandler
 import _thread
-from config import logconfig, apiConfig
+from config import logconfig
 
 logger = logging.getLogger()
 logger.propagate = False
@@ -18,6 +17,7 @@ logger.addHandler(file_handler)
 datag = None
 placeDeets = None
 placeName = None
+picref = None
 app = Flask(__name__, template_folder='templates')
 import geocoder
 geodata = geocoder.ip('me')
@@ -56,6 +56,10 @@ def post():
         elif data['flag'] == 'place_name':
             placeDeets = GeoHandler.nameSearch(GeoHandler, data['place_name'])
             logger.info("Place nameSearch post request received")
+        elif data['flag'] == 'get_images':
+            global picref
+            picref = data['data']
+            logger.info("Place get_images post request received")
 
         return jsonify({"message": "Request received successfully"})
     except Exception as e:
@@ -80,6 +84,10 @@ def details():
 @app.route('/nameSearch')
 def name():
     return placeName
+
+@app.route('/getImages')
+def getimages():
+    return GeoHandler.placeImages(GeoHandler, picref)
 
 
 if __name__ == "__main__":

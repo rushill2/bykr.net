@@ -348,7 +348,6 @@ document.getElementById("start-btn").onclick = function(ps){
         alert("Error in start ride");}
 
     function success(pos){
-            alert(pos);
             $.ajax({
             type : "POST",
             contentType: "application/json", 
@@ -385,6 +384,7 @@ document.getElementById("start-btn").onclick = function() {
 document.getElementById("cross").onclick = function() {
   document.getElementById("myModal").style.display = "none";
   document.getElementById("suggest").style.visibility = "visible";
+  directionsDisplay.setMap(null);
 }
 
 
@@ -421,6 +421,7 @@ function findRoute(coord){
     var el = document.getElementById("dest-text");
     console.log('findRoute directionsdisplay:', window.directionsDisplay);
     console.log('map:', window.mp);  
+    document.getElementById('directions-form').setAttribute("style","height:400px");
       var geocoder = new google.maps.Geocoder();
       geocoder.geocode( { 'address': el.value}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK)
@@ -498,7 +499,8 @@ document.getElementById("cross-dir").onclick = function() {
 }
 
 document.getElementById("cross-details").onclick = function() {
-  document.getElementById("sugg-details").style.display = "none";
+  document.getElementById("trip-details").style.display = "none";
+
   document.getElementById("start").style.visibility = "visible";
 }
 
@@ -560,11 +562,9 @@ document.getElementById("sugg-btn").onclick = function(){
         var tbody = document.getElementById("sugg-entries")
         var row = tbody.insertRow();
         row.id = 'suggestion'.concat(String(i));
-        var rank = row.insertCell();
         var cell_name = row.insertCell();
         var cell_rating = row.insertCell();
         var cell_hours = row.insertCell();
-        rank.innerHTML = i+1;
         cell_name.innerHTML = dict[i]['name'];
         cell_rating.innerHTML = dict[i]['rating'];
         cell_hours.innerHTML = dict[i]['open_now'];
@@ -573,18 +573,19 @@ document.getElementById("sugg-btn").onclick = function(){
         }
         for (i = 0; i < rows.length; i++) {
           var currentRow = tbl.rows[i];
-          // responsible for highlighting hovered row
-          if (currentRow.id != 'desc-row'){
-            currentRow.onmouseover = function() {
-              this.style.backgroundColor = "#ff0000";
-            }
-            currentRow.onmouseout = function() {
-              this.style.backgroundColor = "#000000";  
-            }
-          }
+          // // responsible for highlighting hovered row
+          // if (currentRow.id != 'desc-row'){
+          //   currentRow.onmouseover = function() {
+          //     this.style.backgroundColor = "#00000046";
+          //   }
+          //   currentRow.onmouseout = function() {
+          //     this.style.backgroundColor = rgba(0,0,0,0.5);  
+          //   }
+          // }
           
           var createClickHandler = function(row, cnt) {
             return function() {
+              console.log("createClickHandler");
               var cell = row.getElementsByTagName("td");
               modal.style.display = "none";
               // make call to places details for maps api from backend
@@ -603,9 +604,11 @@ document.getElementById("sugg-btn").onclick = function(){
                     url: '/details'
                   }).done(function(res, data) {
                     // get the place details and create info page
-                    console.log(res, data);
-                    var detailspopup = document.getElementById("sugg-details"); 
+                    // console.log(data, res.result);
+                    var detailspopup = document.getElementById("trip-details"); 
                     detailspopup.style.display = "block";
+                    tripDetails(res.result);
+
                   })
                 },error: function(XMLHttpRequest, textStatus, errorThrown) {
                   console.log("ERRRR");
@@ -645,11 +648,15 @@ document.getElementById("deets_cross").onclick = function() {
 }
 
 document.getElementById("stop-trip").onclick = function() {
-  document.getElementById("deets-modal").style.display = "none";
-  destmarker = new google.maps.Marker({map:window.mp});
-  destmarker.setVisible(false);
-  directionsDisplay.setMap(null);
-  window.mp.setCenter(homemarker.position);
+  var infomodal = document.getElementById("deets-modal");
+  infomodal.style.display = "none";
+  var detailspopup = document.getElementById("trip-details"); 
+  detailspopup.style.display = "block";
+  // document.getElementById("deets-modal").style.display = "none";
+  // destmarker = new google.maps.Marker({map:window.mp});
+  // destmarker.setVisible(false);
+  // directionsDisplay.setMap(null);
+  // window.mp.setCenter(homemarker.position);
 }
 
 /* Inputs- None;
@@ -766,4 +773,128 @@ const trackLocation = ({ onSuccess, onError = () => { } }) => {
 document.getElementById("logo").onclick=function(){
   window.location.href = '/';
   window.location.reload();
+}
+
+function tripDetails(place){
+  console.log('place', place);
+  var modal = document.getElementById("trip-details");
+  const name = place.name;
+  const address = place.formatted_address;
+  const phone = place.formatted_phone_number;
+  const summary = place.editorial_summary.overview;
+  const website = place.website;
+  const wheelchair = place.wheelchar_accessible_entrance;
+
+  // Get references to the elements in the modal
+  const nameEl = modal.querySelector(".place-name");
+  const addressEl = modal.querySelector(".place-address");
+  const phoneEl = modal.querySelector(".place-phone");
+  const summaryEl = modal.querySelector(".place-summary");
+  const websiteE1 = modal.querySelector(".place-website");
+  const wheelchairE1 = modal.querySelector(".place-wheelchair");
+  var destmarker = new google.maps.Marker({map: window.mp});
+  destmarker.setPosition(new google.maps.LatLng(place.geometry.location.lat, place.geometry.location.lng));
+  destmarker.setVisible(true);
+  var latlngbounds = new google.maps.LatLngBounds();
+  var dest_coord = new google.maps.LatLng(place.geometry.location.lat, place.geometry.location.lng);
+  // latlngbounds.extend(curr_coords);
+  latlngbounds.extend(dest_coord);
+  window.mp.fitBounds(latlngbounds);
+  window.mp.setZoom(15)
+
+  // Populate the elements with the data
+  nameEl.textContent = name;
+  addressEl.textContent = address;
+  phoneEl.textContent = phone;
+  summaryEl.textContent = summary;
+  websiteE1.textContent = website;
+  websiteE1.href = website;
+  wheelchairE1.textContent = wheelchair;
+
+  $(document).ready(function() {
+  const carouselDiv = document.getElementById('carousel');
+
+  var carousel = document.querySelector('.owl-carousel');
+
+// Initialize the Owl Carousel plugin
+  $(carousel).owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    autoplay:true,
+    autoplayTimeout:3000,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
+        }
+    }
+});
+  });
+  const carouselDiv = document.getElementById('carousel');
+  for (let i = 0; i < place.photos.length; i++) {
+    var pic = place.photos[i];
+    const img = document.createElement('img');
+    postHelper(pic.photo_reference)
+    try{
+        
+        img.setAttribute('src', './static/images/' + pic.photo_reference + '.jpg');
+        // Add the image element to the carousel
+        carouselDiv.appendChild(img);
+                }
+    catch(err){
+      console.log(err);
+    }
+
+}
+
+
+  var carousel = document.querySelector('.owl-carousel');
+
+// Initialize the Owl Carousel plugin
+  $(carousel).owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    autoplay:true,
+    autoplayTimeout:3000,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
+        }
+    }
+});
+  // Open the modal
+  modal.style.display = "block";
+
+
+}
+
+function postHelper(data=null){
+  $.ajax({
+    type : "POST",
+    contentType: "application/json", 
+    url : '/post',
+    dataType: "json",
+    data: JSON.stringify({'data':data, 'flag': 'get_images'}),
+    success: function(result) {
+      return;
+},error: function(XMLHttpRequest, textStatus, errorThrown) {
+  console.log("Status: " + textStatus);
+  console.log("Error: " + errorThrown);
+}
+});
 }

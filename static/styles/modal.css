@@ -1,0 +1,79 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    overflow: auto;
+    background-color: transparent;
+  }
+  
+  /* Modal content */
+  .modal-content {
+    margin: 20px 0 0 20px; /* Adjust the margin to move the modal to the left */
+    position: relative;
+    text-align:center;
+    padding: 20px;
+    left : 0%;
+    /* width: 50%; */
+    max-width: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Modal close button */
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .modal-close:hover {
+    color: #f00;
+  }
+  
+  /* Modal title */
+  .modal-title {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  /* Modal text */
+  .modal-text {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Modal buttons */
+  .modal-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: #fff;
+    color: #444;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .modal-button:hover {
+    background-color: #444;
+    color: #fff;
+  }
