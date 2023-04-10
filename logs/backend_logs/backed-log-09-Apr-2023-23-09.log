@@ -1,0 +1,21 @@
+23:09:37 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+23:09:37 :: INFO : werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.4.58:5000
+23:09:37 :: INFO : werkzeug: [33mPress CTRL+C to quit[0m
+23:09:37 :: INFO : werkzeug:  * Restarting with stat
+23:09:38 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+23:09:38 :: WARNING : werkzeug:  * Debugger is active!
+23:09:38 :: INFO : werkzeug:  * Debugger PIN: 144-772-890
+23:09:39 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:09:39] "GET /?fname=Willis+Tower,+South+Wacker+Drive,+Chicago,+IL,+USA HTTP/1.1" 200 -
+23:09:40 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:09:40] "GET /static/index.js HTTP/1.1" 200 -
+23:09:40 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:09:40] "GET /static/crimeMap.js HTTP/1.1" 200 -
+23:09:40 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:09:40] "GET /static/styles/style.css HTTP/1.1" 200 -
+23:09:40 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:09:40] "[36mGET /static/styles/modal.css HTTP/1.1[0m" 304 -
+23:09:40 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:09:40] "[36mGET /static/styles/wheel.css HTTP/1.1[0m" 304 -
+23:09:40 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:09:40] "GET /static/styles/tables.css HTTP/1.1" 200 -
+23:09:40 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:09:40] "GET /static/styles/carousel.css HTTP/1.1" 200 -
+23:09:40 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:09:40] "GET /static/images/bykr_logo.jpg HTTP/1.1" 200 -
+23:09:40 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:09:40] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+23:09:40 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:09:40] "[33mGET /data.json HTTP/1.1[0m" 404 -

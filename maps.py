@@ -1,7 +1,7 @@
 # file for threaded processes from flask
 # initializes location and other data for use for
 # other features
-import io
+import io, os
 import time
 import traceback
 from config import apiConfig
@@ -18,6 +18,8 @@ INIT = (0, 0)
 # overseer of all things in this one
 class GeoHandler:
     location = (0, 0)
+    def test(self):
+        return "test passed"
 
     def acq(self, datag):
         t = time.time()
@@ -93,10 +95,11 @@ class GeoHandler:
             response = requests.get(url)
             data = response.content
             logger.info("placeImages() suggestions response: " + str(data))
+            path = "static/images/" + str(pref) + ".jpg"
             try:
-                with open("/static/images/" + str(pref) + ".jpg", "wb") as f:
-                    f.write(data)
-                    logger.info("placesImages wrote file : " + "/static/images/" + str(pref) + ".jpg")
+                if not os.path.exists(path):
+                    with open(path, "wb") as f:
+                        f.write(data)
             except Exception as e:
                 logger.error("Does not become an image" + str(e))
             return data

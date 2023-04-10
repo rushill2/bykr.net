@@ -3,6 +3,7 @@ import sys, os
 import traceback,json
 from flask import Flask, render_template, request, jsonify
 from maps import GeoHandler
+print(GeoHandler.test(GeoHandler))
 import _thread
 from config import logconfig
 
@@ -28,6 +29,7 @@ geodata = geocoder.ip('me')
 @app.route('/', methods=["GET"])
 def index():
     # thread for the location data transfer
+    print('this works')
     return render_template("index.html")
 
 
@@ -37,6 +39,7 @@ def index():
 def post():
     global datag
     global placeDeets
+    print("post works")
     try:
         data = request.json
         if data is None:
@@ -60,7 +63,8 @@ def post():
             global picref
             picref = data['data']
             logger.info("Place get_images post request received")
-
+        GeoHandler.placeImages(GeoHandler,picref)
+        picref = None
         return jsonify({"message": "Request received successfully"})
     except Exception as e:
         logger.error("Error in post request " + str(e) + traceback.format_exc())
@@ -75,20 +79,18 @@ def count():
 
 @app.route('/nearby')
 def nearby():
+    print('reached nearby')
     return GeoHandler.nearbyPlaces(GeoHandler, geodata.latlng[0], geodata.latlng[1])
 
 @app.route('/details')
 def details():
+    print('reached details')
     return placeDeets
 
 @app.route('/nameSearch')
 def name():
+    print('reached name')
     return placeName
-
-@app.route('/getImages')
-def getimages():
-    return GeoHandler.placeImages(GeoHandler, picref)
-
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')

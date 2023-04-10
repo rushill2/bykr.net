@@ -1,0 +1,94 @@
+23:10:55 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+23:10:55 :: INFO : werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.4.58:5000
+23:10:55 :: INFO : werkzeug: [33mPress CTRL+C to quit[0m
+23:10:55 :: INFO : werkzeug:  * Restarting with stat
+23:10:55 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+23:10:55 :: WARNING : werkzeug:  * Debugger is active!
+23:10:55 :: INFO : werkzeug:  * Debugger PIN: 144-772-890
+23:10:58 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:10:58] "GET /?fname=Willis+Tower,+South+Wacker+Drive,+Chicago,+IL,+USA HTTP/1.1" 200 -
+23:10:59 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:10:59] "[36mGET /static/styles/tables.css HTTP/1.1[0m" 304 -
+23:10:59 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:10:59] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+23:10:59 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:10:59] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+23:10:59 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:10:59] "[36mGET /static/styles/carousel.css HTTP/1.1[0m" 304 -
+23:10:59 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:10:59] "[36mGET /static/styles/modal.css HTTP/1.1[0m" 304 -
+23:10:59 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:10:59] "[36mGET /static/styles/wheel.css HTTP/1.1[0m" 304 -
+23:10:59 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:10:59] "GET /static/index.js HTTP/1.1" 200 -
+23:10:59 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:10:59] "[36mGET /static/images/bykr_logo.jpg HTTP/1.1[0m" 304 -
+23:10:59 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:10:59] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+23:10:59 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:10:59] "[33mGET /data.json HTTP/1.1[0m" 404 -
+23:11:25 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:11:25] "GET /?fname=Willis+Tower,+South+Wacker+Drive,+Chicago,+IL,+USA HTTP/1.1" 200 -
+23:11:25 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:11:25] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+23:11:25 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:11:25] "[36mGET /static/styles/carousel.css HTTP/1.1[0m" 304 -
+23:11:25 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:11:25] "[36mGET /static/styles/wheel.css HTTP/1.1[0m" 304 -
+23:11:25 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:11:25] "[36mGET /static/styles/modal.css HTTP/1.1[0m" 304 -
+23:11:25 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:11:25] "[36mGET /static/styles/tables.css HTTP/1.1[0m" 304 -
+23:11:25 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:11:25] "GET /static/index.js HTTP/1.1" 200 -
+23:11:25 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:11:25] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+23:11:25 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:11:25] "[36mGET /static/images/bykr_logo.jpg HTTP/1.1[0m" 304 -
+23:11:25 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:11:25] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+23:11:25 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:11:25] "[33mGET /data.json HTTP/1.1[0m" 404 -
+23:13:27 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:13:27] "GET /?fname=Willis+Tower,+South+Wacker+Drive,+Chicago,+IL,+USA HTTP/1.1" 200 -
+23:13:27 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:13:27] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+23:13:27 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:13:27] "[36mGET /static/styles/carousel.css HTTP/1.1[0m" 304 -
+23:13:27 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:13:27] "[36mGET /static/styles/tables.css HTTP/1.1[0m" 304 -
+23:13:27 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:13:27] "[36mGET /static/styles/wheel.css HTTP/1.1[0m" 304 -
+23:13:27 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:13:27] "[36mGET /static/styles/modal.css HTTP/1.1[0m" 304 -
+23:13:27 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:13:27] "GET /static/index.js HTTP/1.1" 200 -
+23:13:27 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:13:27] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+23:13:28 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:13:28] "[36mGET /static/images/bykr_logo.jpg HTTP/1.1[0m" 304 -
+23:13:28 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:13:28] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+23:13:28 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:13:28] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+23:13:29 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:13:29] "[33mGET /data.json HTTP/1.1[0m" 404 -
+23:13:29 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:13:29] "[33mGET /data.json HTTP/1.1[0m" 404 -
+23:16:15 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:16:15] "GET /?fname=Willis+Tower,+South+Wacker+Drive,+Chicago,+IL,+USA HTTP/1.1" 200 -
+23:16:15 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:16:15] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+23:16:15 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:16:15] "[36mGET /static/styles/modal.css HTTP/1.1[0m" 304 -
+23:16:15 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:16:15] "GET /static/styles/carousel.css HTTP/1.1" 200 -
+23:16:15 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:16:15] "GET /static/styles/tables.css HTTP/1.1" 200 -
+23:16:15 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:16:15] "[36mGET /static/styles/wheel.css HTTP/1.1[0m" 304 -
+23:16:15 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:16:15] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+23:16:15 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:16:15] "GET /static/crimeMap.js HTTP/1.1" 200 -
+23:16:16 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:16:16] "[36mGET /static/images/bykr_logo.jpg HTTP/1.1[0m" 304 -
+23:16:16 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:16:16] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+23:16:16 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:16:16] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+23:16:17 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:16:17] "GET /static/crimedata/parsedNeighborhoods.json HTTP/1.1" 200 -
+23:17:19 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:17:19] "GET /?fname=Willis+Tower,+South+Wacker+Drive,+Chicago,+IL,+USA HTTP/1.1" 200 -
+23:17:19 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:17:19] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+23:17:19 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:17:19] "[36mGET /static/styles/carousel.css HTTP/1.1[0m" 304 -
+23:17:19 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:17:19] "[36mGET /static/styles/tables.css HTTP/1.1[0m" 304 -
+23:17:19 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:17:19] "[36mGET /static/styles/wheel.css HTTP/1.1[0m" 304 -
+23:17:19 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:17:19] "[36mGET /static/styles/modal.css HTTP/1.1[0m" 304 -
+23:17:19 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:17:19] "GET /static/crimeMap.js HTTP/1.1" 200 -
+23:17:19 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:17:19] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+23:17:20 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:17:20] "[36mGET /static/images/bykr_logo.jpg HTTP/1.1[0m" 304 -
+23:17:20 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:17:20] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+23:17:20 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:17:20] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+23:17:20 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:17:20] "[36mGET /static/crimedata/parsedNeighborhoods.json HTTP/1.1[0m" 304 -
+23:18:37 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:18:37] "GET /?fname=Willis+Tower,+South+Wacker+Drive,+Chicago,+IL,+USA HTTP/1.1" 200 -
+23:18:37 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:18:37] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+23:18:37 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:18:37] "[36mGET /static/styles/wheel.css HTTP/1.1[0m" 304 -
+23:18:37 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:18:37] "[36mGET /static/styles/modal.css HTTP/1.1[0m" 304 -
+23:18:37 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:18:37] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+23:18:37 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:18:37] "GET /static/crimeMap.js HTTP/1.1" 200 -
+23:18:37 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:18:37] "[36mGET /static/styles/carousel.css HTTP/1.1[0m" 304 -
+23:18:37 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:18:37] "[36mGET /static/styles/tables.css HTTP/1.1[0m" 304 -
+23:18:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:18:38] "[36mGET /static/images/bykr_logo.jpg HTTP/1.1[0m" 304 -
+23:18:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:18:38] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+23:18:38 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:18:38] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+23:18:39 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:18:39] "[36mGET /static/crimedata/parsedNeighborhoods.json HTTP/1.1[0m" 304 -
+23:18:39 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:18:39] "[36mGET /static/crimedata/parsedNeighborhoods.json HTTP/1.1[0m" 304 -
+23:20:01 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:20:01] "GET /?fname=Willis+Tower,+South+Wacker+Drive,+Chicago,+IL,+USA HTTP/1.1" 200 -
+23:20:01 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:20:01] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+23:20:01 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:20:01] "[36mGET /static/styles/carousel.css HTTP/1.1[0m" 304 -
+23:20:01 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:20:01] "[36mGET /static/styles/tables.css HTTP/1.1[0m" 304 -
+23:20:01 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:20:01] "[36mGET /static/styles/modal.css HTTP/1.1[0m" 304 -
+23:20:01 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:20:01] "[36mGET /static/styles/wheel.css HTTP/1.1[0m" 304 -
+23:20:01 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:20:01] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+23:20:01 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:20:01] "GET /static/crimeMap.js HTTP/1.1" 200 -
+23:20:01 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:20:01] "[36mGET /static/images/bykr_logo.jpg HTTP/1.1[0m" 304 -
+23:20:01 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:20:01] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+23:20:02 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:20:02] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+23:20:02 :: INFO : werkzeug: 127.0.0.1 - - [09/Apr/2023 23:20:02] "[36mGET /static/crimedata/parsedNeighborhoods.json HTTP/1.1[0m" 304 -

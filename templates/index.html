@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
-
-    <!-- Owl Carousel JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
-
-    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
-    <title>bykr.net</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
-    <link rel="stylesheet" type="text/css" href="./static/styles/style.css" />
-    <link rel="stylesheet" type="text/css" href="./static/styles/tables.css" />
-    <link rel="stylesheet" type="text/css" href="./static/styles/modal.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<!-- HTML content goes here -->
 
 
-    <script type="module" src="./static/index.js"></script>
+</body>
+  <div id="loading-indicator">
+    <p class="loading-text">Getting your location...</p>
+    <div class="spinner"></div>
+  </div>
+
+  <title>bykr.net</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+  <link rel="stylesheet" type="text/css" href="./static/styles/style.css" />
+  <link rel="stylesheet" type="text/css" href="./static/styles/carousel.css" />
+
+  <link rel="stylesheet" type="text/css" href="./static/styles/tables.css" />
+  <link rel="stylesheet" type="text/css" href="./static/styles/wheel.css" />
+
+  <link rel="stylesheet" type="text/css" href="./static/styles/modal.css" />
+
+
+    <script type="module" src="./static/index.js" defer></script>
+    <script type="module" src="./static/crimeMap.js" defer></script>
+
   </head>
   <body>
-    <div id="map"></div>
+    
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <div id="map"></div>
 
-    <h3 style="text-align:center;">
-      <button id = "logo">
-        <img src="static/images/bykr_logo.jpg" border="0" alt="bykr.net"/>
-      </button>
-    </h3>
+  <h3 style="text-align:center;">
+    <button id = "logo">
+      <img src="static/images/bykr_logo.jpg" border="0" alt="bykr.net"/>
+    </button>
+  </h3>
 
     <div id= "start">
       <button id="start-btn" class = 'button'>Start Ride</button>
@@ -59,9 +67,9 @@
         </p>
           <p id = "phone" style="color:yellow"></p>
           <p id = "rating" style="color:yellow"></p>
-          <img id="loc-img" src = "" width="400" height="300" style="text-align:center" class="free-img">
+          <img id="loc-img" src = "" style="text-align:center" class="free-img">
         <div class="modal-footer">
-        <button type="button" class = 'button' id="stop-trip" style="text-align:center;font-size:20px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Start Ride</button>
+        <button type="button" class = 'button' id="go-to-details" style="text-align:center;font-size:20px;font-family:Courier New;color:yellow;background-color:black;border: 1px solid">Start Ride</button>
           
       </div>
       </div>
@@ -101,17 +109,36 @@
     <div id="trip-details" class="modal">
       <!-- Modal content -->
       <div class="modal-content" style="text-align:center">
-        <span class="close" id = "cross-details">&times;</span>  
+        <span class="close" id="cross-details">&times;</span>  
         <h3 class="place-name"></h3>
-        <div class="owl-carousel" id="carousel"></div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="" alt="" />
+              <p class="caption"></p>
+            </div>
+            <div class="swiper-slide">
+              <img src="" alt="" />
+              <p class="caption"></p>
+            </div>
+            <div class="swiper-slide">
+              <img src="" alt="" />
+              <p class="caption"></p>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        
         <p class="place-address"></p>
         <a class="place-phone"  target="_blank"></a>
         <p class="place-summary"></p>
         <a class="place-website"  target="_blank"></a>
         <p class="place-wheelchair"></p>
       </div>
-
     </div>
+    
 
     
 
@@ -139,9 +166,12 @@
         element.removeAttribute('style');
       });
     </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="/static/index.js"></script>
+
 
     <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEGNwybqtkhb7f2HXEDGkWYqrkc9oRqNA&callback=initMap&libraries=places&v=weekly" defer

@@ -2,10 +2,72 @@
 var map, infoWindow;
 var ps;
 var homemarker, destmarker;
-var directionsDisplay;
 var currPos;
 //----------------------------------------------------------------------------------------------------------------------
-// handle logger
+// location constantly acquired here
+
+document.getElementById("loading-indicator").style.display = "block";
+
+var currentLocationPromise = new Promise(function(resolve, reject) {
+  if ("geolocation" in navigator) {
+    // geolocation is available
+    navigator.geolocation.getCurrentPosition(function(position) {
+      // update location
+      document.getElementById("loading-indicator").style.display = "none";
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+      var currentLocation = new google.maps.LatLng(latitude, longitude);
+      resolve(currentLocation);
+    }, function(error) {
+      // handle errors
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          document.getElementById("loading-indicator").style.display = "none";
+          console.log("User denied the request for Geolocation.");
+          break;
+        case error.POSITION_UNAVAILABLE:
+          document.getElementById("loading-indicator").style.display = "none";
+          console.log("Location information is unavailable.");
+          break;
+        case error.TIMEOUT:
+          document.getElementById("loading-indicator").style.display = "none";
+          console.log("The request to get user location timed out.");
+          break;
+        case error.UNKNOWN_ERROR:
+          document.getElementById("loading-indicator").style.display = "none";
+          console.log("An unknown error occurred.");
+          break;
+      }
+      reject(error);
+    },
+    {
+      maximumAge: 30000 // 5 minutes in milliseconds
+    }
+    );
+  } else {
+    // geolocation is not available
+    document.getElementById("loading-indicator").style.display = "none";
+    console.log("Geolocation is not supported by this browser.");
+    reject(new Error("Geolocation is not supported by this browser."));
+  }
+});
+
+currentLocationPromise.then(function(currentLocation) {
+  console.log("Current location: " + currentLocation.toString());
+  // do something with currentLocation
+}).catch(function(error) {
+  console.log("Error getting current location: " + error.message);
+});
+
+
+
+
+
+function doSomethingWithLocation() {
+  console.log("Current location: ", currentLocation);
+  // do something with currentLocation object
+}
+
 
 //----------------------------------------------------------------------------------------------------------------------
 // Map Init
@@ -21,7 +83,16 @@ function initMap() {
     mapTypeId: google.maps.MapTypeId.ROADMAP,
   }
   window.mp = new google.maps.Map(document.getElementById("map"), opt);
-  homemarker = new google.maps.Marker({
+  google.maps.event.addListenerOnce(window.mp, 'idle', function() {
+    // Load the file with your heatmap code
+    var script = document.createElement('script');
+    script.src = '/static/crimeMap.js';
+    document.getElementsByTagName('head')[0].appendChild(script);
+  });
+  currentLocationPromise.then(function(currentLocation) {
+    console.log("Current location: " + currentLocation.toString());
+    // do something with currentLocation
+    homemarker = new google.maps.Marker({
     icon: {url: "https://cdn.pixabay.com/photo/2014/04/03/10/53/bicycle-311656_960_720.png",
       scaledSize: new google.maps.Size(60, 50),
       fillOpacity: 1,
@@ -31,6 +102,23 @@ function initMap() {
     }, 
     map: window.mp
   });
+
+    flag = 1
+    try{
+      var latlng = new google.maps.LatLng(currentLocation.lat(), currentLocation.lng());
+      var pos = latlng;
+      homemarker.setPosition(pos);
+      homemarker.setVisible(true);
+      window.mp.setCenter(pos);
+      window.mp.panTo(pos);
+    }
+    catch(err){
+      console.log(err);
+    } 
+  }).catch(function(error) {
+    console.log("Error getting current location: " + error.message);
+  });
+  
   destmarker = new google.maps.Marker({map:window.mp});
   window.directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true, suppressBicyclingLayer: true});
 
@@ -295,27 +383,7 @@ function initMap() {
     }
   ]
 
-  $.ajax({
-    url: "/locate",
-  }).done(function(res, data) {
-    var fetchit = res;
-    flag = 1
-    try{
-      var latlng = new google.maps.LatLng(fetchit.lat, fetchit.lng);
-      window.mp.setCenter(latlng);
-      currPos = fetchit;
-      var pos = latlng;
-      console.log('pos', res);
-      homemarker.setPosition(pos);
-      homemarker.setVisible(true);
-      window.mp.setCenter(pos);
-      window.mp.panTo(pos);
-    }
-    catch(err){
-      console.log(err);
-    } 
-    });
-    console.log(document.getElementById('bike-routes').style);
+  
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -382,9 +450,13 @@ document.getElementById("start-btn").onclick = function() {
    Purpose -  Close button for popup
 */
 document.getElementById("cross").onclick = function() {
+  document.getElementById('deets_cross').marker.setMap(null);
+  window.directionsDisplay.setMap(null);
+  document.getElementById("deets-modal").style.display = "none";
   document.getElementById("myModal").style.display = "none";
   document.getElementById("suggest").style.visibility = "visible";
-  directionsDisplay.setMap(null);
+  console.log('window.directionsDisplay', window.directionsDisplay);
+  destmarker.setMap(null);
 }
 
 
@@ -405,21 +477,23 @@ document.getElementById("dir-btn").onclick = function(map) {
     // get the actual latitude and longitude from the place name
     var place1 = comp.getPlace();
     usearr = fetchmoredeets(place1.name);
-    console.log('usearr:', usearr);
     destmarker = new google.maps.Marker({map:window.mp});
+    document.getElementById('deets_cross').marker = destmarker;
     destmarker.setPosition(place1.geometry.location);
     destmarker.setVisible(true);
-    findRoute(place1.geometry.location);
+    findRoute(place1);
+    document.getElementById("go-to-details").loc = place1;
   }
 }
 
-function findRoute(coord){
+function findRoute(place){
+    var coord = place.geometry.location;
     var dest;
     var l, ln;
-    console.log('window.directionsDisplay:', window.directionsDisplay);
+    console.log('window.window.directionsDisplay:', window.directionsDisplay);
     var dest_coord;     // for get directions
     var el = document.getElementById("dest-text");
-    console.log('findRoute directionsdisplay:', window.directionsDisplay);
+    console.log('findRoute window.directionsDisplay:', window.directionsDisplay);
     console.log('map:', window.mp);  
     document.getElementById('directions-form').setAttribute("style","height:400px");
       var geocoder = new google.maps.Geocoder();
@@ -427,63 +501,66 @@ function findRoute(coord){
       if (status == google.maps.GeocoderStatus.OK)
       {
         dest_coord = results[0].geometry.location;
-        console.log('dest_coord:', dest_coord);
+        console.log('coord:', dest_coord);
         // get location of bike now
-        $.ajax({
-          type:'GET', 
-          url: '/locate'
-        }).done(function(location, status){
-          console.log(location, status);
           destmarker = new google.maps.Marker({map:window.mp});
           destmarker.setPosition(dest_coord);
           destmarker.setVisible(true);
           destmarker.setMap(window.mp);
+          document.getElementById('deets_cross').marker = destmarker;
           var latlngbounds = new google.maps.LatLngBounds();
           
           // scalr map
-          var curr_coords = new google.maps.LatLng(location.lat, location.lng);
-          console.log(curr_coords);
-          latlngbounds.extend(curr_coords);
-          console.log(dest_coord);
-          latlngbounds.extend(dest_coord);
-          window.mp.fitBounds(latlngbounds);
-
-          // call directions service
-          var directionsService = new google.maps.DirectionsService();
-
-          document.getElementById("directions-form").style.display = "none";
-          document.getElementById("deets-modal").style.display = "block";
-          var deetsreq = {
-            placeId: "ChIJ7XUlvEHXDIgRZ-s1ZkNU2yg",
-            fields: ['name', 'rating', 'formatted_phone_number', 'geometry', 'international_phone_number', 'address_component']
-          };
-
-          // send places service request
-          var service = new google.maps.places.PlacesService(window.mp);
-          // service.getDetails(deetsreq, callback);
-          window.directionsDisplay.setMap(window.mp);
-          console.log('location:', location);
-          var request =  { 
-          origin: curr_coords,
-          destination: dest_coord,
-          travelMode: google.maps.TravelMode.BICYCLING
+          // console.log(1, currentLocation.lat(), currentLocation.lng());
+          currentLocationPromise.then(function(currentLocation) {
+            console.log("Current location: " + currentLocation.toString());
+            // do something with currentLocation
+            console.log(2, currentLocation);
+            var curr_coords = new google.maps.LatLng(currentLocation.lat(), currentLocation.lng());
+            console.log('findroute curr', curr_coords);
+            latlngbounds.extend(curr_coords);
+            latlngbounds.extend(dest_coord);
+            window.mp.fitBounds(latlngbounds);
+  
+            // call directions service
+            var directionsService = new google.maps.DirectionsService();
+  
+            document.getElementById("directions-form").style.display = "none";
+            document.getElementById("deets-modal").style.display = "block";
+            var deetsreq = {
+              placeId: "ChIJ7XUlvEHXDIgRZ-s1ZkNU2yg",
+              fields: ['name', 'rating', 'formatted_phone_number', 'geometry', 'international_phone_number', 'address_component']
             };
-          window.directionsDisplay.setOptions({
-            polylineOptions: {
-              strokeColor: 'green',
-            }
-          });
-          // actual directions
-          directionsService.route(request, function (response, status) {
-              if (status == google.maps.DirectionsStatus.OK) {
-                  window.directionsDisplay.setDirections(response);
-                  window.directionsDisplay.setMap(window.mp);
+  
+            // send places service request
+            var service = new google.maps.places.PlacesService(window.mp);
+            // service.getDetails(deetsreq, callback);
+            window.window.directionsDisplay.setMap(window.mp);
+            console.log('location:', location);
+            var request =  { 
+            origin: curr_coords,
+            destination: dest_coord,
+            travelMode: google.maps.TravelMode.BICYCLING
+              };
+            window.window.directionsDisplay.setOptions({
+              polylineOptions: {
+                strokeColor: 'green',
               }
-    });
-        });
+            });
+            // actual directions
+            directionsService.route(request, function (response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    window.directionsDisplay.setDirections(response);
+                    window.directionsDisplay.setMap(window.mp);
+                }
+          });
+          }).catch(function(error) {
+            console.log("Error getting current location: " + error.message);
+          });
+         
         
       }
-    });
+  });
 
 }
 
@@ -499,9 +576,18 @@ document.getElementById("cross-dir").onclick = function() {
 }
 
 document.getElementById("cross-details").onclick = function() {
-  document.getElementById("trip-details").style.display = "none";
+  currentLocationPromise.then(function(currentLocation) {
+    console.log("Current location: " + currentLocation.toString());
+    // do something with currentLocation
+    document.getElementById("trip-details").style.display = "none";
+    document.getElementById("cross-details").marker.setMap(null);
+    window.mp.setCenter(currentLocation);
+    window.directionsDisplay.setMap(null);
+    document.getElementById("start").style.visibility = "visible";
+  }).catch(function(error) {
+    console.log("Error getting current location: " + error.message);
+  });
 
-  document.getElementById("start").style.visibility = "visible";
 }
 
 /* Function Interface - track-btn
@@ -528,11 +614,11 @@ document.getElementById("sugg-btn").onclick = function(){
     var dict = new Array();
     var lt, ln;
     document.getElementById("start").style.visibility = "hidden";
-    $.ajax({
-      url: "/locate"
-    }).done(function(res, data) {
-      lt = res['lat'];
-      ln = res['lng'];
+    currentLocationPromise.then(function(currentLocation) {
+      console.log("Current location: " + currentLocation.toString());
+      // do something with currentLocation
+      lt = currentLocation.lat();
+      ln = currentLocation.lng();
       
       // gets list of nearby places for suggestions
       var suggestions;
@@ -607,6 +693,7 @@ document.getElementById("sugg-btn").onclick = function(){
                     // console.log(data, res.result);
                     var detailspopup = document.getElementById("trip-details"); 
                     detailspopup.style.display = "block";
+                    document.getElementById("cross-dir").loc = new google.maps.LatLng(res.result.geometry.location.lat, res.result.geometry.location.lng);
                     tripDetails(res.result);
 
                   })
@@ -621,10 +708,13 @@ document.getElementById("sugg-btn").onclick = function(){
 
 
       });
+    }).catch(function(error) {
+      console.log("Error getting current location: " + error.message);
+    });
+      
       // table display
       var modal = document.getElementById("nearby-srch");
       modal.style.display = "block";
-    });
     
 }
 
@@ -640,22 +730,25 @@ document.getElementById("cross-srch").onclick = function() {
 }
 
 document.getElementById("deets_cross").onclick = function() {
-    document.getElementById("rating").innerHTML = '';
-    document.getElementById("phone").innerHTML = '';
-    document.getElementById("addr").innerHTML = '';
+    document.getElementById('deets_cross').marker.setMap(null);
+    console.log('marker', document.getElementById('deets_cross').marker)
+    window.directionsDisplay.setMap(null);
     document.getElementById("deets-modal").style.display = "none";
 
 }
 
-document.getElementById("stop-trip").onclick = function() {
+document.getElementById("go-to-details").onclick = function() {
   var infomodal = document.getElementById("deets-modal");
   infomodal.style.display = "none";
-  var detailspopup = document.getElementById("trip-details"); 
+  console.log('pass to tripdetails', document.getElementById("go-to-details").loc)
+  tripDetails(document.getElementById("go-to-details").loc);
+  var detailspopup = document.getElementById("trip-details");
   detailspopup.style.display = "block";
+
   // document.getElementById("deets-modal").style.display = "none";
   // destmarker = new google.maps.Marker({map:window.mp});
   // destmarker.setVisible(false);
-  // directionsDisplay.setMap(null);
+  // window.directionsDisplay.setMap(null);
   // window.mp.setCenter(homemarker.position);
 }
 
@@ -720,6 +813,8 @@ function fetchmoredeets(addr) {
     catch(err){
       console.log('fetch error:', err);
     }
+
+    
     
     
 
@@ -781,7 +876,6 @@ function tripDetails(place){
   const name = place.name;
   const address = place.formatted_address;
   const phone = place.formatted_phone_number;
-  const summary = place.editorial_summary.overview;
   const website = place.website;
   const wheelchair = place.wheelchar_accessible_entrance;
 
@@ -789,98 +883,73 @@ function tripDetails(place){
   const nameEl = modal.querySelector(".place-name");
   const addressEl = modal.querySelector(".place-address");
   const phoneEl = modal.querySelector(".place-phone");
-  const summaryEl = modal.querySelector(".place-summary");
   const websiteE1 = modal.querySelector(".place-website");
   const wheelchairE1 = modal.querySelector(".place-wheelchair");
   var destmarker = new google.maps.Marker({map: window.mp});
-  destmarker.setPosition(new google.maps.LatLng(place.geometry.location.lat, place.geometry.location.lng));
+  document.getElementById("cross-details").marker = destmarker;
+  var dest_coord = new google.maps.LatLng(place.geometry.location.lat, place.geometry.location.lng);
+  destmarker.setPosition(dest_coord);
   destmarker.setVisible(true);
   var latlngbounds = new google.maps.LatLngBounds();
-  var dest_coord = new google.maps.LatLng(place.geometry.location.lat, place.geometry.location.lng);
-  // latlngbounds.extend(curr_coords);
-  latlngbounds.extend(dest_coord);
-  window.mp.fitBounds(latlngbounds);
-  window.mp.setZoom(15)
+  $.ajax({
+    type: "GET",
+    url: '/locate'
+  }).done(function(data, response) {
+    var curr_coord = new google.maps.LatLng(data.lat, data.lng);
+    latlngbounds.extend(curr_coord);
+    latlngbounds.extend(dest_coord);
+    window.mp.fitBounds(latlngbounds);
+    window.mp.setZoom(15)
+  });
+  
 
   // Populate the elements with the data
   nameEl.textContent = name;
   addressEl.textContent = address;
   phoneEl.textContent = phone;
-  summaryEl.textContent = summary;
-  websiteE1.textContent = website;
+  websiteE1.textContent = website
   websiteE1.href = website;
   wheelchairE1.textContent = wheelchair;
-
-  $(document).ready(function() {
-  const carouselDiv = document.getElementById('carousel');
-
-  var carousel = document.querySelector('.owl-carousel');
-
-// Initialize the Owl Carousel plugin
-  $(carousel).owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    autoplay:true,
-    autoplayTimeout:3000,
-    autoplayHoverPause:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:2
-        },
-        1000:{
-            items:3
-        }
-    }
-});
+  const carouselDiv = document.querySelector('.swiper-container');
+  const swiper = new Swiper(carouselDiv, {
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
   });
-  const carouselDiv = document.getElementById('carousel');
+  
   for (let i = 0; i < place.photos.length; i++) {
-    var pic = place.photos[i];
+    const pic = place.photos[i];
     const img = document.createElement('img');
-    postHelper(pic.photo_reference)
-    try{
-        
-        img.setAttribute('src', './static/images/' + pic.photo_reference + '.jpg');
-        // Add the image element to the carousel
-        carouselDiv.appendChild(img);
-                }
-    catch(err){
-      console.log(err);
-    }
-
-}
-
-
-  var carousel = document.querySelector('.owl-carousel');
-
-// Initialize the Owl Carousel plugin
-  $(carousel).owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    autoplay:true,
-    autoplayTimeout:3000,
-    autoplayHoverPause:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:2
-        },
-        1000:{
-            items:3
-        }
-    }
-});
-  // Open the modal
-  modal.style.display = "block";
-
-
+    postHelper(pic.photo_reference);
+    img.onload = () => {
+      img.src = './static/images/' + pic.photo_reference + '.jpg';
+      img.className = 'insertedImg';
+      carouselDiv.appendChild(img);
+      // Update Swiper instance
+      swiper.update();
+    };
+  
+    img.onerror = (e) => {
+      console.log('Error loading image: ', img.src, e);
+    };
+  }
+  // Get the carousel slides
+  const carouselSlides = document.querySelectorAll('.swiper-slide');
+  
+  // Populate the slides with images and captions
+  carouselSlides.forEach((slide, index) => {
+    slide.querySelector('img').src = './static/images/' + place.photos[index].photo_reference + '.jpg';
+  });
+  
+  modal.style.display = 'block';
+  
 }
 
 function postHelper(data=null){

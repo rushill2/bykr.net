@@ -1,0 +1,4527 @@
+{
+    "011XX S WHIPPLE ST": {
+        "count": 1,
+        "latitude": "41.867287894",
+        "longitude": "-87.702029138"
+    },
+    "031XX S EMERALD AVE": {
+        "count": 1,
+        "latitude": "41.837157868",
+        "longitude": "-87.645042344"
+    },
+    "006XX E 75TH ST": {
+        "count": 1,
+        "latitude": "41.758493431",
+        "longitude": "-87.609825873"
+    },
+    "007XX E 60TH ST": {
+        "count": 1,
+        "latitude": "41.785848109",
+        "longitude": "-87.607582382"
+    },
+    "005XX N STATE ST": {
+        "count": 1,
+        "latitude": "41.891404732",
+        "longitude": "-87.628061509"
+    },
+    "007XX W MONTROSE AVE": {
+        "count": 1,
+        "latitude": "41.961867922",
+        "longitude": "-87.648430138"
+    },
+    "037XX W 56TH ST": {
+        "count": 1,
+        "latitude": "41.791489679",
+        "longitude": "-87.716924517"
+    },
+    "014XX W SHERWIN AVE": {
+        "count": 1,
+        "latitude": "42.014987595",
+        "longitude": "-87.666664466"
+    },
+    "001XX E 28TH PL": {
+        "count": 1,
+        "latitude": "41.842712713",
+        "longitude": "-87.622144722"
+    },
+    "048XX S ELIZABETH ST": {
+        "count": 1,
+        "latitude": "41.806440125",
+        "longitude": "-87.656400549"
+    },
+    "063XX S LONG AVE": {
+        "count": 1,
+        "latitude": "41.77685289",
+        "longitude": "-87.756813633"
+    },
+    "038XX W 57TH PL": {
+        "count": 1,
+        "latitude": "41.788735926",
+        "longitude": "-87.718744"
+    },
+    "012XX E 71ST ST": {
+        "count": 1,
+        "latitude": "41.765992241",
+        "longitude": "-87.594947387"
+    },
+    "014XX W 49TH PL": {
+        "count": 1,
+        "latitude": "41.804103232",
+        "longitude": "-87.660815441"
+    },
+    "042XX W 31ST ST": {
+        "count": 1,
+        "latitude": "41.836806313",
+        "longitude": "-87.73095549"
+    },
+    "007XX W FULTON MARKET": {
+        "count": 2,
+        "latitude": "41.886801163",
+        "longitude": "-87.64591996"
+    },
+    "008XX N LA SALLE DR": {
+        "count": 1,
+        "latitude": "41.897621548",
+        "longitude": "-87.632727723"
+    },
+    "026XX N HALSTED ST": {
+        "count": 1,
+        "latitude": "41.9307324",
+        "longitude": "-87.648943393"
+    },
+    "067XX N OLMSTED AVE": {
+        "count": 1,
+        "latitude": "42.003030966",
+        "longitude": "-87.818606037"
+    },
+    "013XX W 82ND ST": {
+        "count": 1,
+        "latitude": "41.744977895",
+        "longitude": "-87.657625527"
+    },
+    "004XX W HARRISON ST": {
+        "count": 2,
+        "latitude": "41.8744162",
+        "longitude": "-87.638591667"
+    },
+    "113XX S DR MARTIN LUTHER KING JR DR": {
+        "count": 1,
+        "latitude": "41.688400406",
+        "longitude": "-87.613247823"
+    },
+    "055XX W 63RD PL": {
+        "count": 1,
+        "latitude": "41.777189773",
+        "longitude": "-87.759970898"
+    },
+    "013XX N MILWAUKEE AVE": {
+        "count": 2,
+        "latitude": "41.906863573",
+        "longitude": "-87.671967508"
+    },
+    "087XX S SAGINAW AVE": {
+        "count": 1,
+        "latitude": "41.736522647",
+        "longitude": "-87.559715992"
+    },
+    "017XX S RUBLE ST": {
+        "count": 1,
+        "latitude": "41.858503586",
+        "longitude": "-87.643815023"
+    },
+    "113XX S NORMAL AVE": {
+        "count": 1,
+        "latitude": "41.688040611",
+        "longitude": "-87.634991702"
+    },
+    "006XX W ROOSEVELT RD": {
+        "count": 1,
+        "latitude": "41.867195372",
+        "longitude": "-87.643938241"
+    },
+    "039XX W ARGYLE ST": {
+        "count": 1,
+        "latitude": "41.971892257",
+        "longitude": "-87.727466904"
+    },
+    "056XX W 61ST ST": {
+        "count": 1,
+        "latitude": "41.781689654",
+        "longitude": "-87.763677952"
+    },
+    "069XX S CORNELL AVE": {
+        "count": 1,
+        "latitude": "41.769132178",
+        "longitude": "-87.584420011"
+    },
+    "051XX S ASHLAND AVE": {
+        "count": 1,
+        "latitude": "41.800490057",
+        "longitude": "-87.664755486"
+    },
+    "043XX W KAMERLING AVE": {
+        "count": 1,
+        "latitude": "41.905249142",
+        "longitude": "-87.734849363"
+    },
+    "046XX S WHIPPLE ST": {
+        "count": 1,
+        "latitude": "41.809303246",
+        "longitude": "-87.700346598"
+    },
+    "0000X E 8TH ST": {
+        "count": 2,
+        "latitude": "41.871811902",
+        "longitude": "-87.627340674"
+    },
+    "022XX W PALMER ST": {
+        "count": 1,
+        "latitude": "41.921902397",
+        "longitude": "-87.684066643"
+    },
+    "063XX S RACINE AVE": {
+        "count": 2,
+        "latitude": "41.778969503",
+        "longitude": "-87.654486077"
+    },
+    "046XX S FAIRFIELD AVE": {
+        "count": 1,
+        "latitude": "41.809462972",
+        "longitude": "-87.693019918"
+    },
+    "076XX S CICERO AVE": {
+        "count": 3,
+        "latitude": "41.754592961",
+        "longitude": "-87.741528537"
+    },
+    "003XX S MAPLEWOOD AVE": {
+        "count": 1,
+        "latitude": "41.876637074",
+        "longitude": "-87.690073243"
+    },
+    "112XX S FORRESTVILLE AVE": {
+        "count": 1,
+        "latitude": "41.690402629",
+        "longitude": "-87.609571541"
+    },
+    "073XX S CLAREMONT AVE": {
+        "count": 1,
+        "latitude": "41.760353917",
+        "longitude": "-87.681801536"
+    },
+    "040XX S OAKENWALD AVE": {
+        "count": 1,
+        "latitude": "41.821135742",
+        "longitude": "-87.600074081"
+    },
+    "041XX W CHICAGO AVE": {
+        "count": 1,
+        "latitude": "41.895312205",
+        "longitude": "-87.729076417"
+    },
+    "034XX W DOUGLAS BLVD": {
+        "count": 1,
+        "latitude": "41.862897608",
+        "longitude": "-87.711176677"
+    },
+    "016XX N KEDVALE AVE": {
+        "count": 1,
+        "latitude": "41.910569642",
+        "longitude": "-87.730019998"
+    },
+    "069XX S MICHIGAN AVE": {
+        "count": 1,
+        "latitude": "41.768669818",
+        "longitude": "-87.621775434"
+    },
+    "063XX S DAMEN AVE": {
+        "count": 1,
+        "latitude": "41.778849296",
+        "longitude": "-87.673896777"
+    },
+    "024XX W VAN BUREN ST": {
+        "count": 1,
+        "latitude": "41.876072567",
+        "longitude": "-87.686796259"
+    },
+    "079XX S ESSEX AVE": {
+        "count": 1,
+        "latitude": "41.750971339",
+        "longitude": "-87.563793592"
+    },
+    "069XX S STEWART AVE": {
+        "count": 1,
+        "latitude": "41.768540876",
+        "longitude": "-87.634749833"
+    },
+    "054XX N CLARK ST": {
+        "count": 1,
+        "latitude": "41.981051896",
+        "longitude": "-87.668375719"
+    },
+    "012XX N CLYBOURN AVE": {
+        "count": 1,
+        "latitude": "41.904579871",
+        "longitude": "-87.640696598"
+    },
+    "071XX S CHAMPLAIN AVE": {
+        "count": 1,
+        "latitude": "41.765320132",
+        "longitude": "-87.609214012"
+    },
+    "059XX S WOLCOTT AVE": {
+        "count": 1,
+        "latitude": "41.785867256",
+        "longitude": "-87.671650508"
+    },
+    "075XX S EGGLESTON AVE": {
+        "count": 1,
+        "latitude": "41.757080828",
+        "longitude": "-87.635676779"
+    },
+    "055XX S CARPENTER ST": {
+        "count": 1,
+        "latitude": "41.793223108",
+        "longitude": "-87.65120397"
+    },
+    "008XX N TRUMBULL AVE": {
+        "count": 1,
+        "latitude": "41.896190725",
+        "longitude": "-87.712679136"
+    },
+    "088XX S ADA ST": {
+        "count": 1,
+        "latitude": "41.733263704",
+        "longitude": "-87.656909327"
+    },
+    "111XX S EDBROOKE AVE": {
+        "count": 1,
+        "latitude": "41.691730552",
+        "longitude": "-87.619610725"
+    },
+    "052XX S TRUMBULL AVE": {
+        "count": 1,
+        "latitude": "41.797927807",
+        "longitude": "-87.709810417"
+    },
+    "021XX S WABASH AVE": {
+        "count": 2,
+        "latitude": "41.853836827",
+        "longitude": "-87.625519566"
+    },
+    "065XX N CLARK ST": {
+        "count": 1,
+        "latitude": "42.001092412",
+        "longitude": "-87.671643792"
+    },
+    "008XX W WILSON AVE": {
+        "count": 1,
+        "latitude": "41.965486378",
+        "longitude": "-87.651002044"
+    },
+    "074XX S PRAIRIE AVE": {
+        "count": 1,
+        "latitude": "41.759364472",
+        "longitude": "-87.618330334"
+    },
+    "012XX N WOLCOTT AVE": {
+        "count": 1,
+        "latitude": "41.905189882",
+        "longitude": "-87.674883196"
+    },
+    "030XX N MENARD AVE": {
+        "count": 1,
+        "latitude": "41.935652616",
+        "longitude": "-87.771259212"
+    },
+    "048XX W DIVERSEY AVE": {
+        "count": 1,
+        "latitude": "41.931518158",
+        "longitude": "-87.747863421"
+    },
+    "041XX W 21ST ST": {
+        "count": 1,
+        "latitude": "41.853449659",
+        "longitude": "-87.72822628"
+    },
+    "033XX W MAYPOLE AVE": {
+        "count": 1,
+        "latitude": "41.883578698",
+        "longitude": "-87.709734846"
+    },
+    "061XX S KARLOV AVE": {
+        "count": 1,
+        "latitude": "41.781720667",
+        "longitude": "-87.725289657"
+    },
+    "012XX W AUGUSTA BLVD": {
+        "count": 1,
+        "latitude": "41.899855057",
+        "longitude": "-87.658335041"
+    },
+    "030XX E 81ST ST": {
+        "count": 1,
+        "latitude": "41.74830225",
+        "longitude": "-87.550955539"
+    },
+    "025XX S TROY ST": {
+        "count": 1,
+        "latitude": "41.845708759",
+        "longitude": "-87.703841502"
+    },
+    "020XX W THOMAS ST": {
+        "count": 1,
+        "latitude": "41.901352716",
+        "longitude": "-87.678114725"
+    },
+    "025XX W MADISON ST": {
+        "count": 1,
+        "latitude": "41.881128702",
+        "longitude": "-87.689947408"
+    },
+    "086XX S HOUSTON AVE": {
+        "count": 2,
+        "latitude": "41.738593411",
+        "longitude": "-87.550223346"
+    },
+    "017XX E 84TH ST": {
+        "count": 1,
+        "latitude": "41.742427443",
+        "longitude": "-87.582323012"
+    },
+    "045XX W 63RD ST": {
+        "count": 1,
+        "latitude": "41.77849578",
+        "longitude": "-87.736740624"
+    },
+    "081XX S COTTAGE GROVE AVE": {
+        "count": 1,
+        "latitude": "41.747170897",
+        "longitude": "-87.605119541"
+    },
+    "043XX N SACRAMENTO AVE": {
+        "count": 1,
+        "latitude": "41.960113144",
+        "longitude": "-87.703323408"
+    },
+    "032XX W WALNUT ST": {
+        "count": 1,
+        "latitude": "41.885384249",
+        "longitude": "-87.707183335"
+    },
+    "031XX W ADDISON ST": {
+        "count": 1,
+        "latitude": "41.94664158",
+        "longitude": "-87.706290191"
+    },
+    "002XX W 111TH PL": {
+        "count": 1,
+        "latitude": "41.691611069",
+        "longitude": "-87.62871049"
+    },
+    "0000X E LAKE ST": {
+        "count": 1,
+        "latitude": "41.885729587",
+        "longitude": "-87.625821329"
+    },
+    "026XX N RUTHERFORD AVE": {
+        "count": 1,
+        "latitude": "41.928136217",
+        "longitude": "-87.794157059"
+    },
+    "019XX N DAMEN AVE": {
+        "count": 1,
+        "latitude": "41.916613148",
+        "longitude": "-87.677591232"
+    },
+    "010XX E 80TH ST": {
+        "count": 1,
+        "latitude": "41.749528306",
+        "longitude": "-87.598661467"
+    },
+    "051XX S DR MARTIN LUTHER KING JR DR": {
+        "count": 1,
+        "latitude": "41.801311004",
+        "longitude": "-87.616140438"
+    },
+    "015XX W FULLERTON AVE": {
+        "count": 1,
+        "latitude": "41.925160357",
+        "longitude": "-87.667394686"
+    },
+    "075XX N WESTERN AVE": {
+        "count": 1,
+        "latitude": "42.018244679",
+        "longitude": "-87.690186314"
+    },
+    "036XX W DOUGLAS BLVD": {
+        "count": 1,
+        "latitude": "41.862850968",
+        "longitude": "-87.715755"
+    },
+    "091XX S STEWART AVE": {
+        "count": 1,
+        "latitude": "41.728466759",
+        "longitude": "-87.632656393"
+    },
+    "014XX W 72ND ST": {
+        "count": 1,
+        "latitude": "41.763157901",
+        "longitude": "-87.659322505"
+    },
+    "064XX S DAMEN AVE": {
+        "count": 1,
+        "latitude": "41.776587626",
+        "longitude": "-87.673831958"
+    },
+    "010XX W MONROE ST": {
+        "count": 1,
+        "latitude": "41.880398291",
+        "longitude": "-87.652737921"
+    },
+    "022XX S KILDARE AVE": {
+        "count": 1,
+        "latitude": "41.850819964",
+        "longitude": "-87.731227775"
+    },
+    "085XX S BURNHAM AVE": {
+        "count": 2,
+        "latitude": "41.740204661",
+        "longitude": "-87.55633747"
+    },
+    "096XX S LOWE AVE": {
+        "count": 1,
+        "latitude": "41.718719318",
+        "longitude": "-87.639501994"
+    },
+    "050XX W WASHINGTON BLVD": {
+        "count": 1,
+        "latitude": "41.88173662",
+        "longitude": "-87.751432105"
+    },
+    "029XX E 91ST ST": {
+        "count": 1,
+        "latitude": "41.730046419",
+        "longitude": "-87.553675621"
+    },
+    "040XX S DEARBORN ST": {
+        "count": 1,
+        "latitude": "41.821461437",
+        "longitude": "-87.627534502"
+    },
+    "002XX N CENTRAL AVE": {
+        "count": 1,
+        "latitude": "41.884743767",
+        "longitude": "-87.765021942"
+    },
+    "048XX N MAGNOLIA AVE": {
+        "count": 1,
+        "latitude": "41.969371082",
+        "longitude": "-87.66105086"
+    },
+    "016XX N LARAMIE AVE": {
+        "count": 1,
+        "latitude": "41.909793443",
+        "longitude": "-87.755718175"
+    },
+    "026XX W SUPERIOR ST": {
+        "count": 1,
+        "latitude": "41.894764124",
+        "longitude": "-87.692763612"
+    },
+    "061XX N CAMPBELL AVE": {
+        "count": 1,
+        "latitude": "41.993075169",
+        "longitude": "-87.69217974"
+    },
+    "048XX N LAMON AVE": {
+        "count": 1,
+        "latitude": "41.969320983",
+        "longitude": "-87.750264271"
+    },
+    "035XX S COTTAGE GROVE AVE": {
+        "count": 1,
+        "latitude": "41.830530933",
+        "longitude": "-87.610277459"
+    },
+    "0000X S WABASH AVE": {
+        "count": 1,
+        "latitude": "41.881234004",
+        "longitude": "-87.626183058"
+    },
+    "002XX E 121ST ST": {
+        "count": 1,
+        "latitude": "41.67443174",
+        "longitude": "-87.616320857"
+    },
+    "064XX S DR MARTIN LUTHER KING JR DR": {
+        "count": 4,
+        "latitude": "41.777783389",
+        "longitude": "-87.615563072"
+    },
+    "035XX W LEXINGTON ST": {
+        "count": 1,
+        "latitude": "41.87178116",
+        "longitude": "-87.713789176"
+    },
+    "010XX W 87TH ST": {
+        "count": 1,
+        "latitude": "41.735979311",
+        "longitude": "-87.650201602"
+    },
+    "037XX S WOLCOTT AVE": {
+        "count": 1,
+        "latitude": "41.82614572",
+        "longitude": "-87.672718203"
+    },
+    "121XX S LAFLIN ST": {
+        "count": 2,
+        "latitude": "41.672932549",
+        "longitude": "-87.658804154"
+    },
+    "035XX W CHICAGO AVE": {
+        "count": 1,
+        "latitude": "41.895480257",
+        "longitude": "-87.714258048"
+    },
+    "003XX N GREEN ST": {
+        "count": 1,
+        "latitude": "41.887116764",
+        "longitude": "-87.64867829"
+    },
+    "0000X E 9TH ST": {
+        "count": 1,
+        "latitude": "41.870550571",
+        "longitude": "-87.626168646"
+    },
+    "011XX N HONORE ST": {
+        "count": 2,
+        "latitude": "41.90269612",
+        "longitude": "-87.673579053"
+    },
+    "074XX S KIMBARK AVE": {
+        "count": 1,
+        "latitude": "41.759532208",
+        "longitude": "-87.593247491"
+    },
+    "027XX N SAWYER AVE": {
+        "count": 2,
+        "latitude": "41.930645827",
+        "longitude": "-87.709368494"
+    },
+    "105XX S EGGLESTON AVE": {
+        "count": 1,
+        "latitude": "41.702929662",
+        "longitude": "-87.634263011"
+    },
+    "027XX N KOSTNER AVE": {
+        "count": 1,
+        "latitude": "41.931112761",
+        "longitude": "-87.736812665"
+    },
+    "008XX S KARLOV AVE": {
+        "count": 1,
+        "latitude": "41.87055502",
+        "longitude": "-87.727782272"
+    },
+    "093XX S INDIANA AVE": {
+        "count": 1,
+        "latitude": "41.724560174",
+        "longitude": "-87.61905336"
+    },
+    "009XX W ADDISON ST": {
+        "count": 1,
+        "latitude": "41.947252263",
+        "longitude": "-87.65350869"
+    },
+    "072XX N WOLCOTT AVE": {
+        "count": 1,
+        "latitude": "42.013053518",
+        "longitude": "-87.678202218"
+    },
+    "016XX S BLUE ISLAND AVE": {
+        "count": 1,
+        "latitude": "41.858389699",
+        "longitude": "-87.660705812"
+    },
+    "056XX N SPAULDING AVE": {
+        "count": 1,
+        "latitude": "41.984253748",
+        "longitude": "-87.711346419"
+    },
+    "006XX W 79TH ST": {
+        "count": 1,
+        "latitude": "41.75069035",
+        "longitude": "-87.640832587"
+    },
+    "039XX S STATE ST": {
+        "count": 1,
+        "latitude": "41.823274065",
+        "longitude": "-87.62642495"
+    },
+    "049XX W HURON ST": {
+        "count": 1,
+        "latitude": "41.89313201",
+        "longitude": "-87.748981736"
+    },
+    "033XX W ARTHINGTON ST": {
+        "count": 2,
+        "latitude": "41.870028132",
+        "longitude": "-87.708823855"
+    },
+    "006XX E 73RD ST": {
+        "count": 1,
+        "latitude": "41.762156533",
+        "longitude": "-87.609740739"
+    },
+    "059XX W WILSON AVE": {
+        "count": 1,
+        "latitude": "41.964014307",
+        "longitude": "-87.776367262"
+    },
+    "009XX W 35TH ST": {
+        "count": 1,
+        "latitude": "41.830701322",
+        "longitude": "-87.649756804"
+    },
+    "020XX S STATE ST": {
+        "count": 1,
+        "latitude": "41.854963672",
+        "longitude": "-87.627133239"
+    },
+    "056XX S WENTWORTH AVE": {
+        "count": 1,
+        "latitude": "41.791701001",
+        "longitude": "-87.630424337"
+    },
+    "049XX S DREXEL BLVD": {
+        "count": 1,
+        "latitude": "41.805462577",
+        "longitude": "-87.604287425"
+    },
+    "090XX S JEFFERY BLVD": {
+        "count": 1,
+        "latitude": "41.73079388",
+        "longitude": "-87.575567369"
+    },
+    "077XX S HOYNE AVE": {
+        "count": 2,
+        "latitude": "41.752851558",
+        "longitude": "-87.675639873"
+    },
+    "014XX N CLEAVER ST": {
+        "count": 2,
+        "latitude": "41.907736497",
+        "longitude": "-87.663960909"
+    },
+    "017XX W HOWARD ST": {
+        "count": 3,
+        "latitude": "42.019399237",
+        "longitude": "-87.675049485"
+    },
+    "024XX N CLYBOURN AVE": {
+        "count": 1,
+        "latitude": "41.925287906",
+        "longitude": "-87.669517325"
+    },
+    "010XX W 63RD ST": {
+        "count": 1,
+        "latitude": "41.779667677",
+        "longitude": "-87.650508053"
+    },
+    "076XX S STEWART AVE": {
+        "count": 1,
+        "latitude": "41.755797128",
+        "longitude": "-87.634426259"
+    },
+    "011XX S CANAL ST": {
+        "count": 3,
+        "latitude": "41.868541914",
+        "longitude": "-87.639235361"
+    },
+    "013XX W ADDISON ST": {
+        "count": 1,
+        "latitude": "41.947104052",
+        "longitude": "-87.661898744"
+    },
+    "008XX W HURON ST": {
+        "count": 1,
+        "latitude": "41.895067176",
+        "longitude": "-87.649658537"
+    },
+    "116XX S ABERDEEN ST": {
+        "count": 1,
+        "latitude": "41.682451749",
+        "longitude": "-87.649362311"
+    },
+    "019XX S HARDING AVE": {
+        "count": 1,
+        "latitude": "41.854572204",
+        "longitude": "-87.723583358"
+    },
+    "021XX W 51ST ST": {
+        "count": 1,
+        "latitude": "41.801193244",
+        "longitude": "-87.67772408"
+    },
+    "075XX S HERMITAGE AVE": {
+        "count": 1,
+        "latitude": "41.756472278",
+        "longitude": "-87.667235634"
+    },
+    "004XX N RUSH ST": {
+        "count": 2,
+        "latitude": "41.890336879",
+        "longitude": "-87.625329768"
+    },
+    "008XX E MIDWAY PLAISANCE": {
+        "count": 1,
+        "latitude": "41.787141285",
+        "longitude": "-87.605078057"
+    },
+    "021XX N MILWAUKEE AVE": {
+        "count": 1,
+        "latitude": "41.920569748",
+        "longitude": "-87.693541763"
+    },
+    "055XX S SHORE DR": {
+        "count": 1,
+        "latitude": "41.794553894",
+        "longitude": "-87.580434936"
+    },
+    "037XX N CENTRAL PARK AVE": {
+        "count": 1,
+        "latitude": "41.948818987",
+        "longitude": "-87.717675591"
+    },
+    "026XX S KEDZIE AVE": {
+        "count": 2,
+        "latitude": "41.843838153",
+        "longitude": "-87.705023234"
+    },
+    "0000X W TERMINAL ST": {
+        "count": 1,
+        "latitude": "41.974861952",
+        "longitude": "-87.890372151"
+    },
+    "049XX S INDIANA AVE": {
+        "count": 1,
+        "latitude": "41.804898444",
+        "longitude": "-87.621099625"
+    },
+    "069XX S PEORIA ST": {
+        "count": 1,
+        "latitude": "41.768013221",
+        "longitude": "-87.646918312"
+    },
+    "031XX S KOMENSKY AVE": {
+        "count": 1,
+        "latitude": "41.836039629",
+        "longitude": "-87.725550055"
+    },
+    "090XX S COMMERCIAL AVE": {
+        "count": 3,
+        "latitude": "41.731185521",
+        "longitude": "-87.55128418"
+    },
+    "009XX W HURON ST": {
+        "count": 1,
+        "latitude": "41.895028832",
+        "longitude": "-87.651517456"
+    },
+    "027XX W LEXINGTON ST": {
+        "count": 1,
+        "latitude": "41.871992222",
+        "longitude": "-87.694213682"
+    },
+    "056XX S MARSHFIELD AVE": {
+        "count": 2,
+        "latitude": "41.7913847",
+        "longitude": "-87.665730199"
+    },
+    "012XX S WESTERN AVE": {
+        "count": 2,
+        "latitude": "41.866147762",
+        "longitude": "-87.68602617"
+    },
+    "0000X E CHICAGO AVE": {
+        "count": 1,
+        "latitude": "41.896703809",
+        "longitude": "-87.626269533"
+    },
+    "012XX S KEELER AVE": {
+        "count": 1,
+        "latitude": "41.86556965",
+        "longitude": "-87.730046763"
+    },
+    "053XX N WINTHROP AVE": {
+        "count": 1,
+        "latitude": "41.97887761",
+        "longitude": "-87.657883624"
+    },
+    "046XX S HONORE ST": {
+        "count": 1,
+        "latitude": "41.809596519",
+        "longitude": "-87.671076242"
+    },
+    "048XX S CHICAGO BEACH DR": {
+        "count": 1,
+        "latitude": "41.807101267",
+        "longitude": "-87.586402447"
+    },
+    "011XX S HOMAN AVE": {
+        "count": 2,
+        "latitude": "41.867051832",
+        "longitude": "-87.71056367"
+    },
+    "039XX W ARTHINGTON ST": {
+        "count": 1,
+        "latitude": "41.869822522",
+        "longitude": "-87.724191109"
+    },
+    "003XX E 26TH ST": {
+        "count": 1,
+        "latitude": "41.845691143",
+        "longitude": "-87.620078491"
+    },
+    "044XX W PARKER AVE": {
+        "count": 1,
+        "latitude": "41.930628127",
+        "longitude": "-87.738610577"
+    },
+    "037XX S ELLIS AVE": {
+        "count": 1,
+        "latitude": "41.827696353",
+        "longitude": "-87.607271352"
+    },
+    "055XX N CAMPBELL AVE": {
+        "count": 1,
+        "latitude": "41.982085476",
+        "longitude": "-87.69183394"
+    },
+    "077XX S LOOMIS BLVD": {
+        "count": 1,
+        "latitude": "41.753370612",
+        "longitude": "-87.658666285"
+    },
+    "041XX S WESTERN AVE": {
+        "count": 1,
+        "latitude": "41.818571207",
+        "longitude": "-87.684700579"
+    },
+    "054XX S HYDE PARK BLVD": {
+        "count": 2,
+        "latitude": "41.796939964",
+        "longitude": "-87.583989991"
+    },
+    "067XX S EAST END AVE": {
+        "count": 1,
+        "latitude": "41.772635626",
+        "longitude": "-87.58384403"
+    },
+    "037XX S VINCENNES AVE": {
+        "count": 1,
+        "latitude": "41.826230445",
+        "longitude": "-87.611987911"
+    },
+    "122XX S ADA ST": {
+        "count": 1,
+        "latitude": "41.671294303",
+        "longitude": "-87.655095177"
+    },
+    "001XX N STATE ST": {
+        "count": 7,
+        "latitude": "41.883500187",
+        "longitude": "-87.627876698"
+    },
+    "024XX N KOSTNER AVE": {
+        "count": 2,
+        "latitude": "41.924937175",
+        "longitude": "-87.73660562"
+    },
+    "054XX S SHORE DR": {
+        "count": 1,
+        "latitude": "41.79576708",
+        "longitude": "-87.58088648"
+    },
+    "048XX W NORTH AVE": {
+        "count": 2,
+        "latitude": "41.909612788",
+        "longitude": "-87.747145182"
+    },
+    "006XX N MICHIGAN AVE": {
+        "count": 4,
+        "latitude": "41.892816145",
+        "longitude": "-87.624193198"
+    },
+    "032XX W 63RD ST": {
+        "count": 1,
+        "latitude": "41.778954128",
+        "longitude": "-87.704337122"
+    },
+    "101XX S FOREST AVE": {
+        "count": 1,
+        "latitude": "41.710242245",
+        "longitude": "-87.616278302"
+    },
+    "002XX N KOLMAR AVE": {
+        "count": 1,
+        "latitude": "41.883614158",
+        "longitude": "-87.739197334"
+    },
+    "002XX N CLINTON ST": {
+        "count": 1,
+        "latitude": "41.885977661",
+        "longitude": "-87.64131255"
+    },
+    "060XX N NEWBURG AVE": {
+        "count": 1,
+        "latitude": "41.991301332",
+        "longitude": "-87.79214924"
+    },
+    "028XX W 66TH ST": {
+        "count": 1,
+        "latitude": "41.773640493",
+        "longitude": "-87.69377593"
+    },
+    "003XX S ST LOUIS AVE": {
+        "count": 1,
+        "latitude": "41.876617517",
+        "longitude": "-87.713463403"
+    },
+    "024XX W 46TH PL": {
+        "count": 1,
+        "latitude": "41.809330836",
+        "longitude": "-87.685604442"
+    },
+    "070XX S CLYDE AVE": {
+        "count": 3,
+        "latitude": "41.767419224",
+        "longitude": "-87.573890196"
+    },
+    "080XX S CICERO AVE": {
+        "count": 1,
+        "latitude": "41.746408057",
+        "longitude": "-87.741262915"
+    },
+    "001XX N GREEN ST": {
+        "count": 2,
+        "latitude": "41.883674915",
+        "longitude": "-87.648582834"
+    },
+    "046XX S HALSTED ST": {
+        "count": 1,
+        "latitude": "41.809786885",
+        "longitude": "-87.645562848"
+    },
+    "022XX N NATCHEZ AVE": {
+        "count": 1,
+        "latitude": "41.920844986",
+        "longitude": "-87.787806556"
+    },
+    "083XX S SOUTH SHORE DR": {
+        "count": 1,
+        "latitude": "41.744324123",
+        "longitude": "-87.547900148"
+    },
+    "030XX W WALNUT ST": {
+        "count": 1,
+        "latitude": "41.885441613",
+        "longitude": "-87.702621654"
+    },
+    "057XX S NARRAGANSETT AVE": {
+        "count": 1,
+        "latitude": "41.787844949",
+        "longitude": "-87.781638593"
+    },
+    "108XX S DOTY AVE W": {
+        "count": 1,
+        "latitude": "41.697521825",
+        "longitude": "-87.595822678"
+    },
+    "078XX S MAY ST": {
+        "count": 1,
+        "latitude": "41.751825217",
+        "longitude": "-87.65255864"
+    },
+    "034XX N SHEFFIELD AVE": {
+        "count": 1,
+        "latitude": "41.94480061",
+        "longitude": "-87.654255193"
+    },
+    "040XX N SHERIDAN RD": {
+        "count": 1,
+        "latitude": "41.954953245",
+        "longitude": "-87.654559181"
+    },
+    "045XX N MALDEN ST": {
+        "count": 1,
+        "latitude": "41.964436517",
+        "longitude": "-87.662374958"
+    },
+    "021XX W MADISON ST": {
+        "count": 1,
+        "latitude": "41.881258505",
+        "longitude": "-87.680369117"
+    },
+    "029XX W ADDISON ST": {
+        "count": 1,
+        "latitude": "41.946648722",
+        "longitude": "-87.702084879"
+    },
+    "069XX W 60TH ST": {
+        "count": 1,
+        "latitude": "41.782898667",
+        "longitude": "-87.795888869"
+    },
+    "001XX N MASON AVE": {
+        "count": 1,
+        "latitude": "41.882984279",
+        "longitude": "-87.773314816"
+    },
+    "059XX N NORTHWEST HWY": {
+        "count": 1,
+        "latitude": "41.989355175",
+        "longitude": "-87.793787887"
+    },
+    "028XX S DAMEN AVE": {
+        "count": 1,
+        "latitude": "41.841131287",
+        "longitude": "-87.675433919"
+    },
+    "076XX S PHILLIPS AVE": {
+        "count": 2,
+        "latitude": "41.756290353",
+        "longitude": "-87.565108099"
+    },
+    "001XX W HUBBARD ST": {
+        "count": 1,
+        "latitude": "41.890013771",
+        "longitude": "-87.631705393"
+    },
+    "053XX W BYRON ST": {
+        "count": 1,
+        "latitude": "41.951409742",
+        "longitude": "-87.760669395"
+    },
+    "034XX S LOWE AVE": {
+        "count": 1,
+        "latitude": "41.831802121",
+        "longitude": "-87.642476156"
+    },
+    "062XX S MARSHFIELD AVE": {
+        "count": 1,
+        "latitude": "41.780814883",
+        "longitude": "-87.665462205"
+    },
+    "118XX S Avenue O": {
+        "count": 1,
+        "latitude": "41.680481664",
+        "longitude": "-87.540099953"
+    },
+    "020XX N KIMBALL AVE": {
+        "count": 1,
+        "latitude": "41.917602535",
+        "longitude": "-87.711902199"
+    },
+    "050XX W FULLERTON AVE": {
+        "count": 1,
+        "latitude": "41.924163038",
+        "longitude": "-87.752068295"
+    },
+    "008XX N WALLER AVE": {
+        "count": 1,
+        "latitude": "41.895366973",
+        "longitude": "-87.767847785"
+    },
+    "008XX N FRANKLIN ST": {
+        "count": 1,
+        "latitude": "41.897930731",
+        "longitude": "-87.63573262"
+    },
+    "053XX S COTTAGE GROVE AVE": {
+        "count": 1,
+        "latitude": "41.797936811",
+        "longitude": "-87.606301777"
+    },
+    "016XX S LAWNDALE AVE": {
+        "count": 1,
+        "latitude": "41.858390795",
+        "longitude": "-87.717659037"
+    },
+    "027XX N KILPATRICK AVE": {
+        "count": 1,
+        "latitude": "41.930952927",
+        "longitude": "-87.744123752"
+    },
+    "094XX S HARVARD AVE": {
+        "count": 2,
+        "latitude": "41.724274891",
+        "longitude": "-87.631544367"
+    },
+    "024XX S WESTERN AVE": {
+        "count": 1,
+        "latitude": "41.84778309",
+        "longitude": "-87.685521331"
+    },
+    "003XX N JEFFERSON ST": {
+        "count": 1,
+        "latitude": "41.887238105",
+        "longitude": "-87.642819361"
+    },
+    "048XX S KEELER AVE": {
+        "count": 1,
+        "latitude": "41.805038871",
+        "longitude": "-87.728403265"
+    },
+    "029XX N ASHLAND AVE": {
+        "count": 1,
+        "latitude": "41.935432921",
+        "longitude": "-87.668504341"
+    },
+    "072XX S MILLARD AVE": {
+        "count": 1,
+        "latitude": "41.76137581",
+        "longitude": "-87.713734423"
+    },
+    "029XX W MONTROSE AVE": {
+        "count": 1,
+        "latitude": "41.961232178",
+        "longitude": "-87.701216639"
+    },
+    "051XX S LAKE PARK AVE": {
+        "count": 2,
+        "latitude": "41.801983471",
+        "longitude": "-87.587712546"
+    },
+    "098XX S COMMERCIAL AVE": {
+        "count": 1,
+        "latitude": "41.71681161",
+        "longitude": "-87.550996958"
+    },
+    "046XX S KEDZIE AVE": {
+        "count": 1,
+        "latitude": "41.809482639",
+        "longitude": "-87.704027561"
+    },
+    "084XX S WOLCOTT AVE": {
+        "count": 1,
+        "latitude": "41.740642648",
+        "longitude": "-87.670477124"
+    },
+    "012XX W 32ND PL": {
+        "count": 1,
+        "latitude": "41.835177296",
+        "longitude": "-87.65672163"
+    },
+    "079XX S KILDARE AVE": {
+        "count": 1,
+        "latitude": "41.747786003",
+        "longitude": "-87.728673535"
+    },
+    "045XX W DIVISION ST": {
+        "count": 1,
+        "latitude": "41.902443046",
+        "longitude": "-87.740381959"
+    },
+    "083XX S LA SALLE ST": {
+        "count": 1,
+        "latitude": "41.742975127",
+        "longitude": "-87.628039273"
+    },
+    "012XX E 79TH ST": {
+        "count": 1,
+        "latitude": "41.751407191",
+        "longitude": "-87.593806252"
+    },
+    "068XX S CAMPBELL AVE": {
+        "count": 1,
+        "latitude": "41.769141881",
+        "longitude": "-87.685810937"
+    },
+    "022XX W 111TH ST": {
+        "count": 1,
+        "latitude": "41.691818181",
+        "longitude": "-87.678096311"
+    },
+    "016XX N MAYFIELD AVE": {
+        "count": 1,
+        "latitude": "41.910264753",
+        "longitude": "-87.772742112"
+    },
+    "021XX W CULLERTON ST": {
+        "count": 1,
+        "latitude": "41.854880232",
+        "longitude": "-87.679312392"
+    },
+    "112XX S CORLISS AVE": {
+        "count": 1,
+        "latitude": "41.690085807",
+        "longitude": "-87.601146878"
+    },
+    "023XX E 93RD ST": {
+        "count": 2,
+        "latitude": "41.726219145",
+        "longitude": "-87.567294437"
+    },
+    "002XX S CANAL ST": {
+        "count": 1,
+        "latitude": "41.878840427",
+        "longitude": "-87.639582928"
+    },
+    "013XX W SUNNYSIDE AVE": {
+        "count": 1,
+        "latitude": "41.963492405",
+        "longitude": "-87.663296728"
+    },
+    "006XX W WRIGHTWOOD AVE": {
+        "count": 1,
+        "latitude": "41.92926824",
+        "longitude": "-87.644563855"
+    },
+    "004XX E 87TH PL": {
+        "count": 1,
+        "latitude": "41.735610264",
+        "longitude": "-87.613574398"
+    },
+    "0000X W 69TH ST": {
+        "count": 1,
+        "latitude": "41.769185486",
+        "longitude": "-87.625732415"
+    },
+    "016XX W LAKE ST": {
+        "count": 1,
+        "latitude": "41.885312381",
+        "longitude": "-87.667573631"
+    },
+    "016XX W 59TH ST": {
+        "count": 1,
+        "latitude": "41.786740885",
+        "longitude": "-87.664704019"
+    },
+    "034XX W CHICAGO AVE": {
+        "count": 2,
+        "latitude": "41.895490875",
+        "longitude": "-87.713174418"
+    },
+    "006XX N CLARK ST": {
+        "count": 1,
+        "latitude": "41.893646656",
+        "longitude": "-87.631177143"
+    },
+    "073XX N RIDGE BLVD": {
+        "count": 1,
+        "latitude": "42.014809612",
+        "longitude": "-87.68396521"
+    },
+    "075XX S SAGINAW AVE": {
+        "count": 1,
+        "latitude": "41.7584326",
+        "longitude": "-87.560042988"
+    },
+    "056XX W WASHINGTON BLVD": {
+        "count": 2,
+        "latitude": "41.882209791",
+        "longitude": "-87.76703474"
+    },
+    "078XX S DR MARTIN LUTHER KING JR DR": {
+        "count": 3,
+        "latitude": "41.751942164",
+        "longitude": "-87.614975155"
+    },
+    "0000X W 79TH ST": {
+        "count": 1,
+        "latitude": "41.750940757",
+        "longitude": "-87.625185222"
+    },
+    "017XX N Albany Ave": {
+        "count": 1,
+        "latitude": "41.912850941",
+        "longitude": "-87.704600351"
+    },
+    "002XX W 87TH ST": {
+        "count": 2,
+        "latitude": "41.736126864",
+        "longitude": "-87.629184056"
+    },
+    "072XX S COTTAGE GROVE AVE": {
+        "count": 1,
+        "latitude": "41.763244014",
+        "longitude": "-87.605513295"
+    },
+    "051XX S FAIRFIELD AVE": {
+        "count": 1,
+        "latitude": "41.800141922",
+        "longitude": "-87.692756971"
+    },
+    "064XX N CLARK ST": {
+        "count": 1,
+        "latitude": "41.999533347",
+        "longitude": "-87.671104423"
+    },
+    "001XX W ONTARIO ST": {
+        "count": 1,
+        "latitude": "41.893223483",
+        "longitude": "-87.63153437"
+    },
+    "026XX W 71ST ST": {
+        "count": 1,
+        "latitude": "41.76460796",
+        "longitude": "-87.68867896"
+    },
+    "016XX E 50TH PL": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "044XX W 55TH ST": {
+        "count": 1,
+        "latitude": "41.793115777",
+        "longitude": "-87.733271651"
+    },
+    "007XX E 106TH ST": {
+        "count": 1,
+        "latitude": "41.70195755",
+        "longitude": "-87.605432165"
+    },
+    "049XX W FERDINAND ST": {
+        "count": 2,
+        "latitude": "41.889534902",
+        "longitude": "-87.749098991"
+    },
+    "023XX E 70TH PL": {
+        "count": 1,
+        "latitude": "41.767133915",
+        "longitude": "-87.569351843"
+    },
+    "064XX S DREXEL AVE": {
+        "count": 1,
+        "latitude": "41.77772781",
+        "longitude": "-87.602827178"
+    },
+    "053XX W HARRISON ST": {
+        "count": 1,
+        "latitude": "41.872904542",
+        "longitude": "-87.758301167"
+    },
+    "099XX S HALSTED ST": {
+        "count": 1,
+        "latitude": "41.713734669",
+        "longitude": "-87.642987464"
+    },
+    "091XX S STONY ISLAND AVE": {
+        "count": 1,
+        "latitude": "41.729069527",
+        "longitude": "-87.585478997"
+    },
+    "005XX N LOWER MICHIGAN AVE": {
+        "count": 1,
+        "latitude": "41.891199446",
+        "longitude": "-87.624137626"
+    },
+    "004XX N SANGAMON ST": {
+        "count": 1,
+        "latitude": "41.889320953",
+        "longitude": "-87.651078681"
+    },
+    "055XX W JACKSON BLVD": {
+        "count": 1,
+        "latitude": "41.876552583",
+        "longitude": "-87.763442166"
+    },
+    "030XX N CLARK ST": {
+        "count": 1,
+        "latitude": "41.936880447",
+        "longitude": "-87.648190373"
+    },
+    "003XX E 116TH ST": {
+        "count": 1,
+        "latitude": "41.682596015",
+        "longitude": "-87.615421182"
+    },
+    "044XX W WELLINGTON AVE": {
+        "count": 1,
+        "latitude": "41.935306004",
+        "longitude": "-87.737354283"
+    },
+    "074XX S VERNON AVE": {
+        "count": 1,
+        "latitude": "41.759723846",
+        "longitude": "-87.613913426"
+    },
+    "010XX S THROOP ST": {
+        "count": 1,
+        "latitude": "41.869182191",
+        "longitude": "-87.659190185"
+    },
+    "046XX S LAKE PARK AVE": {
+        "count": 1,
+        "latitude": "41.810713018",
+        "longitude": "-87.593656375"
+    },
+    "014XX W 91ST ST": {
+        "count": 1,
+        "latitude": "41.728559956",
+        "longitude": "-87.659713584"
+    },
+    "123XX S UNION AVE": {
+        "count": 1,
+        "latitude": "41.670014123",
+        "longitude": "-87.639245641"
+    },
+    "026XX W PERSHING RD": {
+        "count": 1,
+        "latitude": "41.822860928",
+        "longitude": "-87.690633793"
+    },
+    "085XX S COLFAX AVE": {
+        "count": 1,
+        "latitude": "41.74043773",
+        "longitude": "-87.561193272"
+    },
+    "042XX N AUSTIN AVE": {
+        "count": 1,
+        "latitude": "41.95743913",
+        "longitude": "-87.776924528"
+    },
+    "118XX S LAFAYETTE AVE": {
+        "count": 1,
+        "latitude": "41.679023549",
+        "longitude": "-87.623924269"
+    },
+    "010XX N PAULINA ST": {
+        "count": 1,
+        "latitude": "41.901667777",
+        "longitude": "-87.669897946"
+    },
+    "057XX S CICERO AVE": {
+        "count": 1,
+        "latitude": "41.788987036",
+        "longitude": "-87.74147999"
+    },
+    "102XX S MAY ST": {
+        "count": 1,
+        "latitude": "41.708164398",
+        "longitude": "-87.651378763"
+    },
+    "0000X E HARRISON ST": {
+        "count": 2,
+        "latitude": "41.874382929",
+        "longitude": "-87.627286678"
+    },
+    "018XX N SAWYER AVE": {
+        "count": 1,
+        "latitude": "41.914642693",
+        "longitude": "-87.708580158"
+    },
+    "027XX E 92ND ST": {
+        "count": 1,
+        "latitude": "41.728175078",
+        "longitude": "-87.557365326"
+    },
+    "068XX S CRANDON AVE": {
+        "count": 1,
+        "latitude": "41.770886293",
+        "longitude": "-87.569904852"
+    },
+    "039XX E 106TH ST": {
+        "count": 1,
+        "latitude": "41.702695908",
+        "longitude": "-87.527716862"
+    },
+    "012XX E 96TH ST": {
+        "count": 1,
+        "latitude": "41.720377669",
+        "longitude": "-87.593011962"
+    },
+    "015XX W HADDON AVE": {
+        "count": 1,
+        "latitude": "41.902457845",
+        "longitude": "-87.666062114"
+    },
+    "090XX S BISHOP ST": {
+        "count": 1,
+        "latitude": "41.729597238",
+        "longitude": "-87.659233819"
+    },
+    "004XX E 34TH ST": {
+        "count": 1,
+        "latitude": "41.833139425",
+        "longitude": "-87.615319213"
+    },
+    "016XX N WHIPPLE ST": {
+        "count": 1,
+        "latitude": "41.910670881",
+        "longitude": "-87.703391007"
+    },
+    "030XX N LEAVITT ST": {
+        "count": 1,
+        "latitude": "41.93632616",
+        "longitude": "-87.683119144"
+    },
+    "059XX N CICERO AVE": {
+        "count": 1,
+        "latitude": "41.989044668",
+        "longitude": "-87.748322381"
+    },
+    "075XX S DANTE AVE": {
+        "count": 1,
+        "latitude": "41.758188443",
+        "longitude": "-87.589568485"
+    },
+    "068XX S PAXTON AVE": {
+        "count": 2,
+        "latitude": "41.77113044",
+        "longitude": "-87.571544262"
+    },
+    "020XX W 70TH PL": {
+        "count": 1,
+        "latitude": "41.765701532",
+        "longitude": "-87.67488184"
+    },
+    "016XX S CENTRAL PARK AVE": {
+        "count": 2,
+        "latitude": "41.858388522",
+        "longitude": "-87.715192247"
+    },
+    "004XX N STATE ST": {
+        "count": 2,
+        "latitude": "41.889453169",
+        "longitude": "-87.627994833"
+    },
+    "016XX W 57TH ST": {
+        "count": 1,
+        "latitude": "41.790368782",
+        "longitude": "-87.666111103"
+    },
+    "052XX N LINCOLN AVE": {
+        "count": 1,
+        "latitude": "41.977017622",
+        "longitude": "-87.692447486"
+    },
+    "022XX E 92ND PL": {
+        "count": 1,
+        "latitude": "41.727103086",
+        "longitude": "-87.568983733"
+    },
+    "014XX E 71ST PL": {
+        "count": 1,
+        "latitude": "41.765112907",
+        "longitude": "-87.590085995"
+    },
+    "077XX S DR MARTIN LUTHER KING JR DR": {
+        "count": 1,
+        "latitude": "41.75412419",
+        "longitude": "-87.615024122"
+    },
+    "012XX N LA SALLE DR": {
+        "count": 1,
+        "latitude": "41.90444226",
+        "longitude": "-87.63293969"
+    },
+    "005XX W BELMONT AVE": {
+        "count": 1,
+        "latitude": "41.940078259",
+        "longitude": "-87.64237086"
+    },
+    "015XX N SHEFFIELD AVE": {
+        "count": 1,
+        "latitude": "41.91007391",
+        "longitude": "-87.653106106"
+    },
+    "006XX S WABASH AVE": {
+        "count": 3,
+        "latitude": "41.873968788",
+        "longitude": "-87.625987769"
+    },
+    "022XX W DIVISION ST": {
+        "count": 1,
+        "latitude": "41.903077492",
+        "longitude": "-87.683673325"
+    },
+    "031XX W HARRISON ST": {
+        "count": 1,
+        "latitude": "41.873699424",
+        "longitude": "-87.704705156"
+    },
+    "002XX N LA SALLE ST": {
+        "count": 1,
+        "latitude": "41.885901992",
+        "longitude": "-87.632455489"
+    },
+    "038XX N PAULINA ST": {
+        "count": 1,
+        "latitude": "41.951270087",
+        "longitude": "-87.671405721"
+    },
+    "068XX S RIDGELAND AVE": {
+        "count": 1,
+        "latitude": "41.770802411",
+        "longitude": "-87.58257866"
+    },
+    "032XX W MAYPOLE AVE": {
+        "count": 1,
+        "latitude": "41.88361104",
+        "longitude": "-87.707105168"
+    },
+    "077XX S EGGLESTON AVE": {
+        "count": 1,
+        "latitude": "41.753979281",
+        "longitude": "-87.635596756"
+    },
+    "027XX N WHIPPLE ST": {
+        "count": 1,
+        "latitude": "41.930680811",
+        "longitude": "-87.703712338"
+    },
+    "013XX S HOMAN AVE": {
+        "count": 1,
+        "latitude": "41.863472736",
+        "longitude": "-87.710455229"
+    },
+    "055XX W CONGRESS PKWY": {
+        "count": 1,
+        "latitude": "41.873855027",
+        "longitude": "-87.762346249"
+    },
+    "043XX W 31ST ST": {
+        "count": 1,
+        "latitude": "41.836792471",
+        "longitude": "-87.732504198"
+    },
+    "017XX S STATE ST": {
+        "count": 1,
+        "latitude": "41.858605795",
+        "longitude": "-87.627214306"
+    },
+    "041XX S CALIFORNIA AVE": {
+        "count": 1,
+        "latitude": "41.818252978",
+        "longitude": "-87.694513511"
+    },
+    "077XX S ESSEX AVE": {
+        "count": 1,
+        "latitude": "41.754476264",
+        "longitude": "-87.563861673"
+    },
+    "061XX N DAMEN AVE": {
+        "count": 1,
+        "latitude": "41.993571267",
+        "longitude": "-87.679906603"
+    },
+    "020XX N AUSTIN AVE": {
+        "count": 1,
+        "latitude": "41.917234781",
+        "longitude": "-87.775491899"
+    },
+    "047XX S STATE ST": {
+        "count": 1,
+        "latitude": "41.808782124",
+        "longitude": "-87.626070778"
+    },
+    "039XX W GLADYS AVE": {
+        "count": 1,
+        "latitude": "41.876196319",
+        "longitude": "-87.723983712"
+    },
+    "028XX E 83RD ST": {
+        "count": 1,
+        "latitude": "41.744614234",
+        "longitude": "-87.554639013"
+    },
+    "027XX N TROY ST": {
+        "count": 1,
+        "latitude": "41.931169052",
+        "longitude": "-87.706177151"
+    },
+    "003XX S HALSTED ST": {
+        "count": 1,
+        "latitude": "41.877646013",
+        "longitude": "-87.647237171"
+    },
+    "041XX W BELMONT AVE": {
+        "count": 1,
+        "latitude": "41.939053565",
+        "longitude": "-87.730321282"
+    },
+    "068XX S ASHLAND AVE": {
+        "count": 1,
+        "latitude": "41.769916749",
+        "longitude": "-87.663954978"
+    },
+    "017XX N ST LOUIS AVE": {
+        "count": 1,
+        "latitude": "41.912558435",
+        "longitude": "-87.713387646"
+    },
+    "011XX S DELANO CT E": {
+        "count": 1,
+        "latitude": "41.868256175",
+        "longitude": "-87.632402287"
+    },
+    "067XX S RHODES AVE": {
+        "count": 1,
+        "latitude": "41.772581369",
+        "longitude": "-87.611804821"
+    },
+    "027XX W 109TH ST": {
+        "count": 1,
+        "latitude": "41.695350982",
+        "longitude": "-87.690392599"
+    },
+    "010XX N DEARBORN ST": {
+        "count": 1,
+        "latitude": "41.901133376",
+        "longitude": "-87.629904979"
+    },
+    "078XX S STEWART AVE": {
+        "count": 1,
+        "latitude": "41.75236624",
+        "longitude": "-87.634342541"
+    },
+    "081XX S DREXEL AVE": {
+        "count": 2,
+        "latitude": "41.747141404",
+        "longitude": "-87.602635345"
+    },
+    "038XX W ADAMS ST": {
+        "count": 1,
+        "latitude": "41.878028202",
+        "longitude": "-87.721678669"
+    },
+    "039XX W 71ST ST": {
+        "count": 1,
+        "latitude": "41.76412214",
+        "longitude": "-87.720250871"
+    },
+    "034XX W OGDEN AVE": {
+        "count": 2,
+        "latitude": "41.855574302",
+        "longitude": "-87.71189003"
+    },
+    "055XX W VAN BUREN ST": {
+        "count": 1,
+        "latitude": "41.874741802",
+        "longitude": "-87.763528016"
+    },
+    "005XX N CENTRAL AVE": {
+        "count": 1,
+        "latitude": "41.890222244",
+        "longitude": "-87.765215781"
+    },
+    "020XX N LEAMINGTON AVE": {
+        "count": 1,
+        "latitude": "41.917496431",
+        "longitude": "-87.754612582"
+    },
+    "055XX W MONROE ST": {
+        "count": 1,
+        "latitude": "41.879273376",
+        "longitude": "-87.763138916"
+    },
+    "003XX N MICHIGAN AVE": {
+        "count": 1,
+        "latitude": "41.887845852",
+        "longitude": "-87.624560336"
+    },
+    "008XX N ORLEANS ST": {
+        "count": 1,
+        "latitude": "41.897135527",
+        "longitude": "-87.637192135"
+    },
+    "046XX S SPAULDING AVE": {
+        "count": 1,
+        "latitude": "41.809454673",
+        "longitude": "-87.706441415"
+    },
+    "012XX N PULASKI RD": {
+        "count": 1,
+        "latitude": "41.903961313",
+        "longitude": "-87.726335284"
+    },
+    "020XX W HOMER ST": {
+        "count": 1,
+        "latitude": "41.916972311",
+        "longitude": "-87.678495084"
+    },
+    "035XX N WILTON AVE": {
+        "count": 1,
+        "latitude": "41.946256351",
+        "longitude": "-87.653085517"
+    },
+    "003XX W 92ND ST": {
+        "count": 1,
+        "latitude": "41.726610586",
+        "longitude": "-87.632489732"
+    },
+    "032XX N ORANGE AVE": {
+        "count": 1,
+        "latitude": "41.938469469",
+        "longitude": "-87.823874231"
+    },
+    "016XX W MADISON ST": {
+        "count": 1,
+        "latitude": "41.881440062",
+        "longitude": "-87.668014096"
+    },
+    "068XX S LOOMIS BLVD": {
+        "count": 1,
+        "latitude": "41.769893837",
+        "longitude": "-87.659098034"
+    },
+    "023XX S LEAVITT ST": {
+        "count": 2,
+        "latitude": "41.849767216",
+        "longitude": "-87.680678464"
+    },
+    "013XX N MAPLEWOOD AVE": {
+        "count": 1,
+        "latitude": "41.905617506",
+        "longitude": "-87.69078529"
+    },
+    "052XX W QUINCY ST": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "017XX W HARRISON ST": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "057XX N MAPLEWOOD AVE": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "061XX S MONITOR AVE": {
+        "count": 1,
+        "latitude": "41.780601979",
+        "longitude": "-87.767933288"
+    },
+    "056XX S MOZART ST": {
+        "count": 1,
+        "latitude": "41.791078764",
+        "longitude": "-87.694948409"
+    },
+    "097XX S MERRILL AVE": {
+        "count": 1,
+        "latitude": "41.718172653",
+        "longitude": "-87.570983257"
+    },
+    "047XX N MANOR AVE": {
+        "count": 1,
+        "latitude": "41.967418028",
+        "longitude": "-87.702288037"
+    },
+    "009XX W BELMONT AVE": {
+        "count": 1,
+        "latitude": "41.939920598",
+        "longitude": "-87.653193291"
+    },
+    "083XX S STEWART AVE": {
+        "count": 1,
+        "latitude": "41.742710224",
+        "longitude": "-87.634088181"
+    },
+    "038XX W LEXINGTON ST": {
+        "count": 1,
+        "latitude": "41.87167847",
+        "longitude": "-87.721250884"
+    },
+    "080XX S INGLESIDE AVE": {
+        "count": 2,
+        "latitude": "41.748890402",
+        "longitude": "-87.601479486"
+    },
+    "026XX S KOSTNER AVE": {
+        "count": 1,
+        "latitude": "41.843341211",
+        "longitude": "-87.734255911"
+    },
+    "010XX W BALMORAL AVE": {
+        "count": 1,
+        "latitude": "41.980045979",
+        "longitude": "-87.65544391"
+    },
+    "096XX S AVENUE N": {
+        "count": 1,
+        "latitude": "41.720735398",
+        "longitude": "-87.538912778"
+    },
+    "037XX W NORTH AVE": {
+        "count": 1,
+        "latitude": "41.909959927",
+        "longitude": "-87.719570087"
+    },
+    "011XX S LAFLIN ST": {
+        "count": 1,
+        "latitude": "41.868219921",
+        "longitude": "-87.664046556"
+    },
+    "062XX S MAY ST": {
+        "count": 1,
+        "latitude": "41.780713444",
+        "longitude": "-87.65331643"
+    },
+    "059XX S PEORIA ST": {
+        "count": 1,
+        "latitude": "41.786161249",
+        "longitude": "-87.647381107"
+    },
+    "040XX W MADISON ST": {
+        "count": 1,
+        "latitude": "41.880717301",
+        "longitude": "-87.72628358"
+    },
+    "005XX W MELROSE ST": {
+        "count": 1,
+        "latitude": "41.941161268",
+        "longitude": "-87.642667917"
+    },
+    "010XX W LAKE ST": {
+        "count": 2,
+        "latitude": "41.885557376",
+        "longitude": "-87.65364901"
+    },
+    "075XX S STONY ISLAND AVE": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "063XX S MAPLEWOOD AVE": {
+        "count": 2,
+        "latitude": "41.778508216",
+        "longitude": "-87.687282228"
+    },
+    "078XX S KINGSTON AVE": {
+        "count": 1,
+        "latitude": "41.753120521",
+        "longitude": "-87.562624493"
+    },
+    "096XX S RACINE AVE": {
+        "count": 1,
+        "latitude": "41.718936555",
+        "longitude": "-87.652883888"
+    },
+    "023XX N LINCOLN AVE": {
+        "count": 1,
+        "latitude": "41.924034609",
+        "longitude": "-87.646788167"
+    },
+    "071XX S LAFAYETTE AVE": {
+        "count": 2,
+        "latitude": "41.765230473",
+        "longitude": "-87.626545636"
+    },
+    "003XX W 105TH ST": {
+        "count": 1,
+        "latitude": "41.703419963",
+        "longitude": "-87.631408652"
+    },
+    "015XX N KEDZIE AVE": {
+        "count": 1,
+        "latitude": "41.909436507",
+        "longitude": "-87.706999769"
+    },
+    "028XX N AVERS AVE": {
+        "count": 1,
+        "latitude": "41.9328146",
+        "longitude": "-87.723312801"
+    },
+    "049XX N BROADWAY": {
+        "count": 1,
+        "latitude": "41.972146095",
+        "longitude": "-87.659752985"
+    },
+    "025XX N ELSTON AVE": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "104XX S LONGWOOD DR": {
+        "count": 1,
+        "latitude": "41.704161734",
+        "longitude": "-87.670837307"
+    },
+    "0000X N PULASKI RD": {
+        "count": 1,
+        "latitude": "41.881161426",
+        "longitude": "-87.725680815"
+    },
+    "031XX N CLARK ST": {
+        "count": 1,
+        "latitude": "41.93859561",
+        "longitude": "-87.649576033"
+    },
+    "033XX S CALUMET AVE": {
+        "count": 1,
+        "latitude": "41.834161702",
+        "longitude": "-87.618184643"
+    },
+    "007XX N SPAULDING AVE": {
+        "count": 1,
+        "latitude": "41.894493874",
+        "longitude": "-87.708967553"
+    },
+    "065XX W IRVING PARK RD": {
+        "count": 1,
+        "latitude": "41.952860694",
+        "longitude": "-87.789875421"
+    },
+    "048XX W CONGRESS PKWY": {
+        "count": 1,
+        "latitude": "41.874059526",
+        "longitude": "-87.745762799"
+    },
+    "062XX S CHAMPLAIN AVE": {
+        "count": 1,
+        "latitude": "41.781711555",
+        "longitude": "-87.609612588"
+    },
+    "059XX S LAFLIN ST": {
+        "count": 1,
+        "latitude": "41.786030519",
+        "longitude": "-87.661950363"
+    },
+    "001XX S CANAL ST": {
+        "count": 1,
+        "latitude": "41.880075611",
+        "longitude": "-87.639628321"
+    },
+    "082XX S ASHLAND AVE": {
+        "count": 2,
+        "latitude": "41.744346944",
+        "longitude": "-87.663289889"
+    },
+    "078XX S HOYNE AVE": {
+        "count": 1,
+        "latitude": "41.751234921",
+        "longitude": "-87.67559774"
+    },
+    "018XX W JACKSON BLVD": {
+        "count": 1,
+        "latitude": "41.877532811",
+        "longitude": "-87.672387519"
+    },
+    "037XX S LANGLEY AVE": {
+        "count": 1,
+        "latitude": "41.82632683",
+        "longitude": "-87.610295415"
+    },
+    "026XX N WILTON AVE": {
+        "count": 1,
+        "latitude": "41.929760377",
+        "longitude": "-87.652540522"
+    },
+    "028XX N BROADWAY": {
+        "count": 1,
+        "latitude": "41.933796108",
+        "longitude": "-87.644548217"
+    },
+    "026XX W 79TH ST": {
+        "count": 1,
+        "latitude": "41.749941059",
+        "longitude": "-87.689419401"
+    },
+    "023XX N MELVINA AVE": {
+        "count": 1,
+        "latitude": "41.92267906",
+        "longitude": "-87.780541066"
+    },
+    "0000X E 29TH ST": {
+        "count": 1,
+        "latitude": "41.841962091",
+        "longitude": "-87.625911017"
+    },
+    "047XX N VIRGINIA AVE": {
+        "count": 1,
+        "latitude": "41.967988684",
+        "longitude": "-87.699274507"
+    },
+    "030XX N FRANCISCO AVE": {
+        "count": 1,
+        "latitude": "41.936254156",
+        "longitude": "-87.700188026"
+    },
+    "078XX S EUCLID AVE": {
+        "count": 1,
+        "latitude": "41.752528738",
+        "longitude": "-87.577228473"
+    },
+    "035XX W 12TH PL": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "092XX S CALUMET AVE": {
+        "count": 1,
+        "latitude": "41.726563174",
+        "longitude": "-87.615474082"
+    },
+    "049XX S DAMEN AVE": {
+        "count": 1,
+        "latitude": "41.804034785",
+        "longitude": "-87.67457753"
+    },
+    "011XX W JACKSON BLVD": {
+        "count": 1,
+        "latitude": "41.877822179",
+        "longitude": "-87.655181405"
+    },
+    "043XX W WILCOX ST": {
+        "count": 1,
+        "latitude": "41.878768377",
+        "longitude": "-87.734024282"
+    },
+    "050XX S DAMEN AVE": {
+        "count": 1,
+        "latitude": "41.802302909",
+        "longitude": "-87.674536588"
+    },
+    "031XX S ASHLAND AVE": {
+        "count": 2,
+        "latitude": "41.836385231",
+        "longitude": "-87.66571041"
+    },
+    "029XX S THROOP ST": {
+        "count": 1,
+        "latitude": "41.84091182",
+        "longitude": "-87.651912438"
+    },
+    "027XX W FLOURNOY ST": {
+        "count": 1,
+        "latitude": "41.872888291",
+        "longitude": "-87.69546047"
+    },
+    "051XX S WENTWORTH AVE": {
+        "count": 1,
+        "latitude": "41.80171934",
+        "longitude": "-87.630703621"
+    },
+    "064XX N MAPLEWOOD AVE": {
+        "count": 1,
+        "latitude": "41.998417604",
+        "longitude": "-87.69356456"
+    },
+    "078XX S KEATING AVE": {
+        "count": 1,
+        "latitude": "41.750491521",
+        "longitude": "-87.740184619"
+    },
+    "047XX W GLADYS AVE": {
+        "count": 1,
+        "latitude": "41.875944197",
+        "longitude": "-87.743498359"
+    },
+    "106XX S BENSLEY AVE": {
+        "count": 1,
+        "latitude": "41.701794907",
+        "longitude": "-87.563215731"
+    },
+    "059XX W BELMONT AVE": {
+        "count": 1,
+        "latitude": "41.938476526",
+        "longitude": "-87.774090236"
+    },
+    "014XX S INDIANA AVE": {
+        "count": 2,
+        "latitude": "41.86315933",
+        "longitude": "-87.622454163"
+    },
+    "025XX S HILLOCK AVE": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "029XX S FEDERAL ST": {
+        "count": 1,
+        "latitude": "41.841904764",
+        "longitude": "-87.629533842"
+    },
+    "038XX N ASHLAND AVE": {
+        "count": 1,
+        "latitude": "41.951096855",
+        "longitude": "-87.668970217"
+    },
+    "057XX S SEELEY AVE": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "014XX N HALSTED ST": {
+        "count": 1,
+        "latitude": "41.90687774",
+        "longitude": "-87.648173298"
+    },
+    "027XX W 51ST ST": {
+        "count": 1,
+        "latitude": "41.8010155",
+        "longitude": "-87.692425524"
+    },
+    "015XX E 87TH ST": {
+        "count": 1,
+        "latitude": "41.736906629",
+        "longitude": "-87.586223454"
+    },
+    "005XX W 31ST ST": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "038XX W 83RD ST": {
+        "count": 1,
+        "latitude": "41.742242477",
+        "longitude": "-87.717817136"
+    },
+    "014XX W 95TH ST": {
+        "count": 1,
+        "latitude": "41.721251017",
+        "longitude": "-87.659573806"
+    },
+    "0000X N LA SALLE ST": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "016XX W JONQUIL TER": {
+        "count": 1,
+        "latitude": "42.021162341",
+        "longitude": "-87.671465188"
+    },
+    "023XX W MADISON ST": {
+        "count": 1,
+        "latitude": "41.881187597",
+        "longitude": "-87.684805801"
+    },
+    "030XX W MARQUETTE RD": {
+        "count": 1,
+        "latitude": "41.77172152",
+        "longitude": "-87.699590788"
+    },
+    "085XX S EXCHANGE AVE": {
+        "count": 1,
+        "latitude": "41.740029077",
+        "longitude": "-87.552701147"
+    },
+    "118XX S HALSTED ST": {
+        "count": 1,
+        "latitude": "41.679413382",
+        "longitude": "-87.641959693"
+    },
+    "045XX S PAULINA ST": {
+        "count": 1,
+        "latitude": "41.811485813",
+        "longitude": "-87.667491321"
+    },
+    "006XX W IRVING PARK RD": {
+        "count": 1,
+        "latitude": "41.954607083",
+        "longitude": "-87.647107189"
+    },
+    "026XX W LUTHER ST": {
+        "count": 1,
+        "latitude": "41.84712874",
+        "longitude": "-87.691169039"
+    },
+    "057XX S PAYNE DR": {
+        "count": 1,
+        "latitude": "41.790857624",
+        "longitude": "-87.607771565"
+    },
+    "059XX S CALUMET AVE": {
+        "count": 1,
+        "latitude": "41.786557348",
+        "longitude": "-87.617397586"
+    },
+    "024XX W WALTON ST": {
+        "count": 1,
+        "latitude": "41.898457811",
+        "longitude": "-87.687852437"
+    },
+    "003XX S TRUMBULL AVE": {
+        "count": 1,
+        "latitude": "41.876189434",
+        "longitude": "-87.711943714"
+    },
+    "005XX N SPRINGFIELD AVE": {
+        "count": 1,
+        "latitude": "41.890532455",
+        "longitude": "-87.723502246"
+    },
+    "053XX S HYDE PARK BLVD": {
+        "count": 2,
+        "latitude": "41.799204348",
+        "longitude": "-87.584044296"
+    },
+    "013XX W OHIO ST": {
+        "count": 1,
+        "latitude": "41.892517856",
+        "longitude": "-87.659888765"
+    },
+    "010XX W WELLINGTON AVE": {
+        "count": 1,
+        "latitude": "41.936244656",
+        "longitude": "-87.655735236"
+    },
+    "023XX N LAKEWOOD AVE": {
+        "count": 1,
+        "latitude": "41.924120571",
+        "longitude": "-87.660849988"
+    },
+    "031XX N DAMEN AVE": {
+        "count": 1,
+        "latitude": "41.938044121",
+        "longitude": "-87.678305276"
+    },
+    "048XX S ASHLAND AVE": {
+        "count": 1,
+        "latitude": "41.805993183",
+        "longitude": "-87.664900005"
+    },
+    "041XX N SACRAMENTO AVE": {
+        "count": 1,
+        "latitude": "41.956292522",
+        "longitude": "-87.703199275"
+    },
+    "026XX S CALUMET AVE": {
+        "count": 1,
+        "latitude": "41.845085249",
+        "longitude": "-87.618848403"
+    },
+    "043XX N ALBANY AVE": {
+        "count": 1,
+        "latitude": "41.960115558",
+        "longitude": "-87.70576838"
+    },
+    "009XX N LAKE SHORE DR": {
+        "count": 1,
+        "latitude": "41.900297377",
+        "longitude": "-87.619393984"
+    },
+    "055XX W CORCORAN PL": {
+        "count": 1,
+        "latitude": "41.887238373",
+        "longitude": "-87.763931133"
+    },
+    "036XX N LINCOLN AVE": {
+        "count": 1,
+        "latitude": "41.948319777",
+        "longitude": "-87.674696859"
+    },
+    "019XX W MONTROSE AVE": {
+        "count": 1,
+        "latitude": "41.961490618",
+        "longitude": "-87.676373879"
+    },
+    "008XX E HYDE PARK BLVD": {
+        "count": 1,
+        "latitude": "41.80226856",
+        "longitude": "-87.605636648"
+    },
+    "019XX W DIVERSEY PKWY": {
+        "count": 1,
+        "latitude": "41.932306457",
+        "longitude": "-87.676471317"
+    },
+    "012XX W FLOURNOY ST": {
+        "count": 1,
+        "latitude": "41.873219197",
+        "longitude": "-87.657825954"
+    },
+    "014XX S HARDING AVE": {
+        "count": 1,
+        "latitude": "41.861834823",
+        "longitude": "-87.723830073"
+    },
+    "045XX W VAN BUREN ST": {
+        "count": 1,
+        "latitude": "41.875110072",
+        "longitude": "-87.738203934"
+    },
+    "008XX N MICHIGAN AVE": {
+        "count": 1,
+        "latitude": "41.896943556",
+        "longitude": "-87.624206307"
+    },
+    "001XX S DEARBORN ST": {
+        "count": 1,
+        "latitude": "41.880559272",
+        "longitude": "-87.629366876"
+    },
+    "002XX S MICHIGAN AVE": {
+        "count": 1,
+        "latitude": "41.879235852",
+        "longitude": "-87.624347038"
+    },
+    "014XX N ASHLAND AVE": {
+        "count": 1,
+        "latitude": "41.907156625",
+        "longitude": "-87.66759285"
+    },
+    "010XX N SPRINGFIELD AVE": {
+        "count": 1,
+        "latitude": "41.899872567",
+        "longitude": "-87.723777036"
+    },
+    "010XX W LAWRENCE AVE": {
+        "count": 1,
+        "latitude": "41.969078381",
+        "longitude": "-87.65560801"
+    },
+    "013XX W HURON ST": {
+        "count": 1,
+        "latitude": "41.894367359",
+        "longitude": "-87.659869336"
+    },
+    "011XX S ST LOUIS AVE": {
+        "count": 1,
+        "latitude": "41.86694152",
+        "longitude": "-87.71299884"
+    },
+    "082XX S AVALON AVE": {
+        "count": 1,
+        "latitude": "41.745278475",
+        "longitude": "-87.594125766"
+    },
+    "049XX W WINONA ST": {
+        "count": 1,
+        "latitude": "41.974373409",
+        "longitude": "-87.75141338"
+    },
+    "018XX S KARLOV AVE": {
+        "count": 1,
+        "latitude": "41.855906242",
+        "longitude": "-87.727274434"
+    },
+    "030XX N PARKSIDE AVE": {
+        "count": 1,
+        "latitude": "41.935813115",
+        "longitude": "-87.767619263"
+    },
+    "014XX S MICHIGAN AVE": {
+        "count": 1,
+        "latitude": "41.863125321",
+        "longitude": "-87.624055146"
+    },
+    "061XX S BISHOP ST": {
+        "count": 1,
+        "latitude": "41.782669373",
+        "longitude": "-87.660647146"
+    },
+    "100XX W OHARE ST": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "104XX S EGGLESTON AVE": {
+        "count": 1,
+        "latitude": "41.70435974",
+        "longitude": "-87.634309776"
+    },
+    "013XX N WOLCOTT AVE": {
+        "count": 1,
+        "latitude": "41.90603901",
+        "longitude": "-87.674128735"
+    },
+    "028XX W 64TH ST": {
+        "count": 1,
+        "latitude": "41.777284135",
+        "longitude": "-87.694128349"
+    },
+    "057XX S MORGAN ST": {
+        "count": 1,
+        "latitude": "41.789658761",
+        "longitude": "-87.649899666"
+    },
+    "012XX S WABASH AVE": {
+        "count": 2,
+        "latitude": "41.866843668",
+        "longitude": "-87.625816668"
+    },
+    "021XX N KILBOURN AVE": {
+        "count": 1,
+        "latitude": "41.919715656",
+        "longitude": "-87.738866239"
+    },
+    "032XX W EASTWOOD AVE": {
+        "count": 1,
+        "latitude": "41.965574629",
+        "longitude": "-87.70944696"
+    },
+    "046XX N WINCHESTER AVE": {
+        "count": 1,
+        "latitude": "41.965833546",
+        "longitude": "-87.677612538"
+    },
+    "025XX N MASON AVE": {
+        "count": 1,
+        "latitude": "41.926429054",
+        "longitude": "-87.774588664"
+    },
+    "010XX N AUSTIN BLVD": {
+        "count": 1,
+        "latitude": "41.898885689",
+        "longitude": "-87.775262267"
+    },
+    "027XX S KOSTNER AVE": {
+        "count": 1,
+        "latitude": "41.841826163",
+        "longitude": "-87.734214995"
+    },
+    "015XX N LAWNDALE AVE": {
+        "count": 1,
+        "latitude": "41.908961798",
+        "longitude": "-87.719201252"
+    },
+    "010XX E 46TH ST": {
+        "count": 2,
+        "latitude": "41.811419728",
+        "longitude": "-87.600731459"
+    },
+    "036XX N HALSTED ST": {
+        "count": 1,
+        "latitude": "41.948131367",
+        "longitude": "-87.649510899"
+    },
+    "007XX E 47TH ST": {
+        "count": 1,
+        "latitude": "41.809508489",
+        "longitude": "-87.608324092"
+    },
+    "048XX S FORRESTVILLE AVE": {
+        "count": 1,
+        "latitude": "41.80694764",
+        "longitude": "-87.612615071"
+    },
+    "046XX S ELLIS AVE": {
+        "count": 1,
+        "latitude": "41.810729022",
+        "longitude": "-87.601726053"
+    },
+    "055XX S KOLIN AVE": {
+        "count": 1,
+        "latitude": "41.79254233",
+        "longitude": "-87.731718485"
+    },
+    "0000X N MENARD AVE": {
+        "count": 1,
+        "latitude": "41.880856671",
+        "longitude": "-87.769782433"
+    },
+    "032XX W WASHINGTON BLVD": {
+        "count": 1,
+        "latitude": "41.882784485",
+        "longitude": "-87.707006744"
+    },
+    "006XX N WELLS ST": {
+        "count": 1,
+        "latitude": "41.89344506",
+        "longitude": "-87.634117632"
+    },
+    "053XX W MONROE ST": {
+        "count": 2,
+        "latitude": "41.879334754",
+        "longitude": "-87.758386733"
+    },
+    "035XX S LEAVITT ST": {
+        "count": 1,
+        "latitude": "41.829580097",
+        "longitude": "-87.680142381"
+    },
+    "084XX W LAWRENCE AVE": {
+        "count": 1,
+        "latitude": "41.966560257",
+        "longitude": "-87.838524207"
+    },
+    "043XX W 25TH PL": {
+        "count": 1,
+        "latitude": "41.845045538",
+        "longitude": "-87.733230737"
+    },
+    "046XX W WEST END AVE": {
+        "count": 1,
+        "latitude": "41.883171412",
+        "longitude": "-87.741676547"
+    },
+    "044XX W 60TH ST": {
+        "count": 1,
+        "latitude": "41.783998689",
+        "longitude": "-87.734218321"
+    },
+    "015XX W AUGUSTA BLVD": {
+        "count": 1,
+        "latitude": "41.899728371",
+        "longitude": "-87.666241133"
+    },
+    "040XX W HARRISON ST": {
+        "count": 1,
+        "latitude": "41.873437732",
+        "longitude": "-87.726458948"
+    },
+    "019XX W WOLFRAM ST": {
+        "count": 1,
+        "latitude": "41.933217695",
+        "longitude": "-87.676498718"
+    },
+    "055XX N CHRISTIANA AVE": {
+        "count": 1,
+        "latitude": "41.981757163",
+        "longitude": "-87.712477774"
+    },
+    "028XX W NORTH AVE": {
+        "count": 1,
+        "latitude": "41.910213559",
+        "longitude": "-87.69759087"
+    },
+    "028XX S KENNETH AVE": {
+        "count": 1,
+        "latitude": "41.839741041",
+        "longitude": "-87.735368409"
+    },
+    "004XX S HAMLIN BLVD": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "038XX S NORMAL AVE": {
+        "count": 1,
+        "latitude": "41.82421031",
+        "longitude": "-87.638643068"
+    },
+    "065XX S DR MARTIN LUTHER KING JR DR": {
+        "count": 2,
+        "latitude": "41.776018543",
+        "longitude": "-87.615520426"
+    },
+    "024XX N CENTRAL AVE": {
+        "count": 1,
+        "latitude": "41.924902436",
+        "longitude": "-87.766025313"
+    },
+    "001XX W OAK ST": {
+        "count": 1,
+        "latitude": "41.900546929",
+        "longitude": "-87.633632427"
+    },
+    "044XX S CALIFORNIA AVE": {
+        "count": 1,
+        "latitude": "41.813169694",
+        "longitude": "-87.694354933"
+    },
+    "069XX S MORGAN ST": {
+        "count": 1,
+        "latitude": "41.76831036",
+        "longitude": "-87.649345507"
+    },
+    "001XX N LECLAIRE AVE": {
+        "count": 1,
+        "latitude": "41.883529716",
+        "longitude": "-87.752734188"
+    },
+    "081XX S MUSKEGON AVE": {
+        "count": 1,
+        "latitude": "41.747269282",
+        "longitude": "-87.555237223"
+    },
+    "011XX S SACRAMENTO BLVD": {
+        "count": 2,
+        "latitude": "41.86730314",
+        "longitude": "-87.700810096"
+    },
+    "0000X W HUBBARD ST": {
+        "count": 3,
+        "latitude": "41.890032024",
+        "longitude": "-87.630203077"
+    },
+    "020XX N LAVERGNE AVE": {
+        "count": 1,
+        "latitude": "41.917777093",
+        "longitude": "-87.750961509"
+    },
+    "049XX S KARLOV AVE": {
+        "count": 1,
+        "latitude": "41.803313246",
+        "longitude": "-87.72590345"
+    },
+    "005XX E 71ST ST": {
+        "count": 3,
+        "latitude": "41.765757658",
+        "longitude": "-87.612456775"
+    },
+    "079XX S KINGSTON AVE": {
+        "count": 1,
+        "latitude": "41.750987905",
+        "longitude": "-87.562580374"
+    },
+    "003XX W HURON ST": {
+        "count": 1,
+        "latitude": "41.894760587",
+        "longitude": "-87.63654578"
+    },
+    "031XX W WARREN BLVD": {
+        "count": 1,
+        "latitude": "41.881905272",
+        "longitude": "-87.704804668"
+    },
+    "019XX S LAWNDALE AVE": {
+        "count": 1,
+        "latitude": "41.854531798",
+        "longitude": "-87.717552894"
+    },
+    "002XX W HARRISON ST": {
+        "count": 1,
+        "latitude": "41.874484035",
+        "longitude": "-87.634394104"
+    },
+    "011XX W HUBBARD ST": {
+        "count": 1,
+        "latitude": "41.889999893",
+        "longitude": "-87.656367427"
+    },
+    "007XX W 95TH ST": {
+        "count": 1,
+        "latitude": "41.721482086",
+        "longitude": "-87.641651785"
+    },
+    "027XX S CHRISTIANA AVE": {
+        "count": 1,
+        "latitude": "41.84164587",
+        "longitude": "-87.708615489"
+    },
+    "004XX E 87TH ST": {
+        "count": 1,
+        "latitude": "41.736307208",
+        "longitude": "-87.634901408"
+    },
+    "106XX S YATES AVE": {
+        "count": 1,
+        "latitude": "41.702027818",
+        "longitude": "-87.563981957"
+    },
+    "014XX N SEDGWICK ST": {
+        "count": 1,
+        "latitude": "41.908430535",
+        "longitude": "-87.638509526"
+    },
+    "008XX E 80TH ST": {
+        "count": 1,
+        "latitude": "41.749477205",
+        "longitude": "-87.60356166"
+    },
+    "022XX E 70TH ST": {
+        "count": 1,
+        "latitude": "41.768033563",
+        "longitude": "-87.570932076"
+    },
+    "010XX N LEAVITT ST": {
+        "count": 1,
+        "latitude": "41.899797187",
+        "longitude": "-87.682053627"
+    },
+    "005XX W WALTON ST": {
+        "count": 1,
+        "latitude": "41.899837836",
+        "longitude": "-87.642062859"
+    },
+    "033XX S ASHLAND AVE": {
+        "count": 1,
+        "latitude": "41.833953446",
+        "longitude": "-87.665647616"
+    },
+    "056XX S HONORE ST": {
+        "count": 1,
+        "latitude": "41.7915912",
+        "longitude": "-87.670586876"
+    },
+    "018XX W 56TH ST": {
+        "count": 1,
+        "latitude": "41.792136419",
+        "longitude": "-87.670907628"
+    },
+    "021XX N LOREL AVE": {
+        "count": 1,
+        "latitude": "41.919596585",
+        "longitude": "-87.759697294"
+    },
+    "039XX W FLOURNOY ST": {
+        "count": 1,
+        "latitude": "41.872559006",
+        "longitude": "-87.723761244"
+    },
+    "066XX S MORGAN ST": {
+        "count": 1,
+        "latitude": "41.772877605",
+        "longitude": "-87.649469287"
+    },
+    "001XX W 87TH ST": {
+        "count": 1,
+        "latitude": "41.736259984",
+        "longitude": "-87.628068782"
+    },
+    "053XX W RACE AVE": {
+        "count": 1,
+        "latitude": "41.890022969",
+        "longitude": "-87.758808744"
+    },
+    "059XX N EAST CIRCLE AVE": {
+        "count": 1,
+        "latitude": "41.989618471",
+        "longitude": "-87.799626944"
+    },
+    "065XX S PROMONTORY DR": {
+        "count": 1,
+        "latitude": "41.776400433",
+        "longitude": "-87.570448042"
+    },
+    "079XX S VINCENNES AVE": {
+        "count": 1,
+        "latitude": "41.750472394",
+        "longitude": "-87.634297122"
+    },
+    "065XX S PAULINA ST": {
+        "count": 1,
+        "latitude": "41.775253179",
+        "longitude": "-87.666575747"
+    },
+    "057XX S MONITOR AVE": {
+        "count": 1,
+        "latitude": "41.788040487",
+        "longitude": "-87.768230949"
+    },
+    "043XX S PULASKI RD": {
+        "count": 1,
+        "latitude": "41.814737762",
+        "longitude": "-87.723843947"
+    },
+    "068XX S MORGAN ST": {
+        "count": 1,
+        "latitude": "41.769830953",
+        "longitude": "-87.649388007"
+    },
+    "028XX W PERSHING RD": {
+        "count": 1,
+        "latitude": "41.822762893",
+        "longitude": "-87.695694068"
+    },
+    "006XX N STATE ST": {
+        "count": 1,
+        "latitude": "41.894327846",
+        "longitude": "-87.62814321"
+    },
+    "046XX S AVERS AVE": {
+        "count": 1,
+        "latitude": "41.809063821",
+        "longitude": "-87.719950928"
+    },
+    "068XX S ELIZABETH ST": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "009XX W 63RD PKWY": {
+        "count": 1,
+        "latitude": "41.781326622",
+        "longitude": "-87.647516964"
+    },
+    "015XX S AVERS AVE": {
+        "count": 1,
+        "latitude": "41.859807229",
+        "longitude": "-87.721327397"
+    },
+    "078XX S EXCHANGE AVE": {
+        "count": 1,
+        "latitude": "41.752762491",
+        "longitude": "-87.553488733"
+    },
+    "072XX S LOWE AVE": {
+        "count": 1,
+        "latitude": "41.762809823",
+        "longitude": "-87.640027854"
+    },
+    "005XX S WESTERN AVE": {
+        "count": 1,
+        "latitude": "41.874697418",
+        "longitude": "-87.686259352"
+    },
+    "006XX N ARMOUR ST": {
+        "count": 1,
+        "latitude": "41.893596675",
+        "longitude": "-87.665585061"
+    },
+    "081XX S EBERHART AVE": {
+        "count": 1,
+        "latitude": "41.746673294",
+        "longitude": "-87.612377152"
+    },
+    "037XX W GRACE ST": {
+        "count": 1,
+        "latitude": "41.950092445",
+        "longitude": "-87.721809989"
+    },
+    "019XX E 95TH ST": {
+        "count": 1,
+        "latitude": "41.722445994",
+        "longitude": "-87.577280883"
+    },
+    "030XX N OAKLEY AVE": {
+        "count": 1,
+        "latitude": "41.937059002",
+        "longitude": "-87.685570514"
+    },
+    "016XX S CALIFORNIA BLVD": {
+        "count": 1,
+        "latitude": "41.85837508",
+        "longitude": "-87.695667123"
+    },
+    "023XX S MILLARD AVE": {
+        "count": 1,
+        "latitude": "41.849049417",
+        "longitude": "-87.716141018"
+    },
+    "034XX W 54TH PL": {
+        "count": 1,
+        "latitude": "41.794335405",
+        "longitude": "-87.709786562"
+    },
+    "005XX E 87TH ST": {
+        "count": 1,
+        "latitude": "41.736317661",
+        "longitude": "-87.636623321"
+    },
+    "002XX E 68TH ST": {
+        "count": 1,
+        "latitude": "41.771074666",
+        "longitude": "-87.619699641"
+    },
+    "088XX S EMERALD AVE": {
+        "count": 1,
+        "latitude": "41.733410196",
+        "longitude": "-87.642326181"
+    },
+    "130XX S ELLIS AVE": {
+        "count": 1,
+        "latitude": "41.658143623",
+        "longitude": "-87.597578556"
+    },
+    "047XX S WABASH AVE": {
+        "count": 1,
+        "latitude": "41.80841803",
+        "longitude": "-87.624435191"
+    },
+    "004XX N WABASH AVE": {
+        "count": 2,
+        "latitude": "41.889551923",
+        "longitude": "-87.626649565"
+    },
+    "045XX S PRINCETON AVE": {
+        "count": 1,
+        "latitude": "41.811365677",
+        "longitude": "-87.633433697"
+    },
+    "011XX E HYDE PARK BLVD": {
+        "count": 1,
+        "latitude": "41.802341007",
+        "longitude": "-87.598909374"
+    },
+    "072XX S ABERDEEN ST": {
+        "count": 1,
+        "latitude": "41.762613015",
+        "longitude": "-87.651623574"
+    },
+    "121XX S EMERALD AVE": {
+        "count": 1,
+        "latitude": "41.673644634",
+        "longitude": "-87.64056828"
+    },
+    "112XX S NORMAL AVE": {
+        "count": 1,
+        "latitude": "41.690134956",
+        "longitude": "-87.635060582"
+    },
+    "014XX N ST LOUIS AVE": {
+        "count": 1,
+        "latitude": "41.906780995",
+        "longitude": "-87.714251742"
+    },
+    "008XX S BELL AVE": {
+        "count": 1,
+        "latitude": "41.871067422",
+        "longitude": "-87.682488541"
+    },
+    "038XX W 84TH PL": {
+        "count": 1,
+        "latitude": "41.739495442",
+        "longitude": "-87.717821385"
+    },
+    "002XX W GARFIELD BLVD": {
+        "count": 2,
+        "latitude": "41.794533814",
+        "longitude": "-87.631438536"
+    },
+    "054XX W OHIO ST": {
+        "count": 1,
+        "latitude": "41.891128091",
+        "longitude": "-87.761395461"
+    },
+    "030XX W FLOURNOY ST": {
+        "count": 1,
+        "latitude": "41.872815891",
+        "longitude": "-87.702224417"
+    },
+    "078XX S ELLIS AVE": {
+        "count": 1,
+        "latitude": "41.752316407",
+        "longitude": "-87.600363121"
+    },
+    "069XX S CRANDON AVE": {
+        "count": 2,
+        "latitude": "41.769157039",
+        "longitude": "-87.569852041"
+    },
+    "0000X E GARFIELD BLVD": {
+        "count": 1,
+        "latitude": "41.7943228",
+        "longitude": "-87.624781229"
+    },
+    "008XX S STATE ST": {
+        "count": 1,
+        "latitude": "41.871371147",
+        "longitude": "-87.627514417"
+    },
+    "031XX W FILLMORE ST": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "117XX S YALE AVE": {
+        "count": 1,
+        "latitude": "41.680886456",
+        "longitude": "-87.628750624"
+    },
+    "021XX N AVERS AVE": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "030XX S HAYNES CT": {
+        "count": 1,
+        "latitude": "41.838820048",
+        "longitude": "-87.656444726"
+    },
+    "005XX S WOOD ST": {
+        "count": 1,
+        "latitude": "41.874844276",
+        "longitude": "-87.671578052"
+    },
+    "003XX W 93RD ST": {
+        "count": 1,
+        "latitude": "41.725756222",
+        "longitude": "-87.632345159"
+    },
+    "064XX S EBERHART AVE": {
+        "count": 1,
+        "latitude": "41.777622832",
+        "longitude": "-87.613148814"
+    },
+    "056XX W EDDY ST": {
+        "count": 1,
+        "latitude": "41.944947788",
+        "longitude": "-87.768005345"
+    },
+    "047XX S KEDZIE AVE": {
+        "count": 1,
+        "latitude": "41.806523779",
+        "longitude": "-87.70393181"
+    },
+    "065XX N SHERIDAN RD": {
+        "count": 1,
+        "latitude": "42.000543176",
+        "longitude": "-87.660715471"
+    },
+    "0000X S STATE ST": {
+        "count": 2,
+        "latitude": "41.88171846",
+        "longitude": "-87.627760426"
+    },
+    "014XX N LAKE SHORE DR": {
+        "count": 1,
+        "latitude": "41.908435968",
+        "longitude": "-87.625915985"
+    },
+    "029XX S MICHIGAN AVE": {
+        "count": 1,
+        "latitude": "41.841825184",
+        "longitude": "-87.623292218"
+    },
+    "053XX W MONTROSE AVE": {
+        "count": 1,
+        "latitude": "41.960559572",
+        "longitude": "-87.760793372"
+    },
+    "003XX E 48TH ST": {
+        "count": 1,
+        "latitude": "41.807526491",
+        "longitude": "-87.61873404"
+    },
+    "006XX S MICHIGAN AVE": {
+        "count": 1,
+        "latitude": "41.873883785",
+        "longitude": "-87.624218932"
+    },
+    "023XX N CICERO AVE": {
+        "count": 1,
+        "latitude": "41.923689051",
+        "longitude": "-87.746285109"
+    },
+    "079XX S CARPENTER ST": {
+        "count": 1,
+        "latitude": "41.749927951",
+        "longitude": "-87.650086717"
+    },
+    "087XX S SANGAMON ST": {
+        "count": 1,
+        "latitude": "41.735563992",
+        "longitude": "-87.647282257"
+    },
+    "029XX S STATE ST": {
+        "count": 1,
+        "latitude": "41.841325782",
+        "longitude": "-87.626861182"
+    },
+    "073XX S GREEN ST": {
+        "count": 1,
+        "latitude": "41.760957478",
+        "longitude": "-87.645516402"
+    },
+    "073XX S EXCHANGE AVE": {
+        "count": 1,
+        "latitude": "41.76220193",
+        "longitude": "-87.563113279"
+    },
+    "019XX N CAMPBELL AVE": {
+        "count": 2,
+        "latitude": "41.91600173",
+        "longitude": "-87.689814038"
+    },
+    "024XX W CORTLAND ST": {
+        "count": 1,
+        "latitude": "41.915750665",
+        "longitude": "-87.688596747"
+    },
+    "021XX W RANDOLPH ST": {
+        "count": 1,
+        "latitude": "41.884542766",
+        "longitude": "-87.679781153"
+    },
+    "075XX S SOUTH SHORE DR": {
+        "count": 1,
+        "latitude": "41.76015578",
+        "longitude": "-87.556752911"
+    },
+    "091XX S DAUPHIN AVE": {
+        "count": 1,
+        "latitude": "41.728756819",
+        "longitude": "-87.602993921"
+    },
+    "004XX S MICHIGAN AVE": {
+        "count": 1,
+        "latitude": "41.876488439",
+        "longitude": "-87.624278264"
+    },
+    "009XX E 80TH ST": {
+        "count": 1,
+        "latitude": "41.749502163",
+        "longitude": "-87.601014459"
+    },
+    "027XX E 93RD ST": {
+        "count": 1,
+        "latitude": "41.726338568",
+        "longitude": "-87.557687817"
+    },
+    "012XX S SPAULDING AVE": {
+        "count": 1,
+        "latitude": "41.865603099",
+        "longitude": "-87.70808127"
+    },
+    "048XX N ASHLAND AVE": {
+        "count": 1,
+        "latitude": "41.969620333",
+        "longitude": "-87.669458059"
+    },
+    "060XX S KEDZIE AVE": {
+        "count": 1,
+        "latitude": "41.783673944",
+        "longitude": "-87.703268017"
+    },
+    "039XX W 31ST ST": {
+        "count": 1,
+        "latitude": "41.836893606",
+        "longitude": "-87.723575057"
+    },
+    "015XX W FULTON ST": {
+        "count": 2,
+        "latitude": "41.886517165",
+        "longitude": "-87.666165588"
+    },
+    "015XX W 115TH ST": {
+        "count": 1,
+        "latitude": "41.684845437",
+        "longitude": "-87.659690168"
+    },
+    "003XX N PINE AVE": {
+        "count": 1,
+        "latitude": "41.886643019",
+        "longitude": "-87.763407584"
+    },
+    "012XX W LOYOLA AVE": {
+        "count": 2,
+        "latitude": "42.001064985",
+        "longitude": "-87.661254473"
+    },
+    "046XX W ERIE ST": {
+        "count": 1,
+        "latitude": "41.892327179",
+        "longitude": "-87.742396402"
+    },
+    "059XX W IOWA ST": {
+        "count": 1,
+        "latitude": "41.896553567",
+        "longitude": "-87.773670106"
+    },
+    "001XX N SANGAMON ST": {
+        "count": 1,
+        "latitude": "41.885055691",
+        "longitude": "-87.650958805"
+    },
+    "100XX S CALUMET AVE": {
+        "count": 1,
+        "latitude": "41.711815615",
+        "longitude": "-87.615099806"
+    },
+    "042XX W POTOMAC AVE": {
+        "count": 1,
+        "latitude": "41.904381013",
+        "longitude": "-87.732565215"
+    },
+    "005XX E 49TH ST": {
+        "count": 1,
+        "latitude": "41.805789369",
+        "longitude": "-87.613460652"
+    },
+    "008XX E 44TH ST": {
+        "count": 1,
+        "latitude": "41.815003431",
+        "longitude": "-87.605863012"
+    },
+    "061XX S ST LAWRENCE AVE": {
+        "count": 1,
+        "latitude": "41.783420923",
+        "longitude": "-87.610869329"
+    },
+    "099XX S TORRENCE AVE": {
+        "count": 1,
+        "latitude": "41.71468101",
+        "longitude": "-87.559765537"
+    },
+    "037XX W AINSLIE ST": {
+        "count": 1,
+        "latitude": "41.97012549",
+        "longitude": "-87.722383285"
+    },
+    "032XX N LARAMIE AVE": {
+        "count": 1,
+        "latitude": "41.93917266",
+        "longitude": "-87.756710134"
+    },
+    "116XX S LOWE AVE": {
+        "count": 1,
+        "latitude": "41.682384097",
+        "longitude": "-87.638541632"
+    },
+    "002XX N PINE AVE": {
+        "count": 1,
+        "latitude": "41.884886395",
+        "longitude": "-87.763346076"
+    },
+    "005XX N RACINE AVE": {
+        "count": 1,
+        "latitude": "41.891929716",
+        "longitude": "-87.657404807"
+    },
+    "046XX W IRVING PARK RD": {
+        "count": 1,
+        "latitude": "41.953443342",
+        "longitude": "-87.744957048"
+    },
+    "0000X N ASHLAND AVE": {
+        "count": 1,
+        "latitude": "41.881839265",
+        "longitude": "-87.666816493"
+    },
+    "072XX S WESTERN AVE": {
+        "count": 1,
+        "latitude": "41.762419957",
+        "longitude": "-87.683180808"
+    },
+    "040XX W MONROE ST": {
+        "count": 1,
+        "latitude": "41.879750124",
+        "longitude": "-87.726575484"
+    },
+    "079XX S MORGAN ST": {
+        "count": 1,
+        "latitude": "41.750112843",
+        "longitude": "-87.648875415"
+    },
+    "039XX W LEXINGTON ST": {
+        "count": 1,
+        "latitude": "41.871648155",
+        "longitude": "-87.723806615"
+    },
+    "029XX E 78TH ST": {
+        "count": 1,
+        "latitude": "41.754929677",
+        "longitude": "-87.552157782"
+    },
+    "029XX N LONG AVE": {
+        "count": 1,
+        "latitude": "41.933457998",
+        "longitude": "-87.761410683"
+    },
+    "004XX N Sangamon St": {
+        "count": 1,
+        "latitude": "41.889460945",
+        "longitude": "-87.651084537"
+    },
+    "016XX W NORTH AVE": {
+        "count": 1,
+        "latitude": "41.910608022",
+        "longitude": "-87.669342474"
+    },
+    "023XX S CALIFORNIA AVE": {
+        "count": 1,
+        "latitude": "41.848919426",
+        "longitude": "-87.695364645"
+    },
+    "043XX S ARTESIAN AVE": {
+        "count": 1,
+        "latitude": "41.815111881",
+        "longitude": "-87.685887355"
+    },
+    "045XX W LAKE ST": {
+        "count": 1,
+        "latitude": "41.886226157",
+        "longitude": "-87.739096012"
+    },
+    "016XX S KOMENSKY AVE": {
+        "count": 1,
+        "latitude": "41.858079279",
+        "longitude": "-87.726156337"
+    },
+    "026XX E 74TH PL": {
+        "count": 1,
+        "latitude": "41.760301092",
+        "longitude": "-87.559987568"
+    },
+    "026XX N KIMBALL AVE": {
+        "count": 1,
+        "latitude": "41.928559123",
+        "longitude": "-87.712203782"
+    },
+    "062XX S KIMBARK AVE": {
+        "count": 1,
+        "latitude": "41.781885411",
+        "longitude": "-87.594673414"
+    },
+    "047XX N KEDVALE AVE": {
+        "count": 1,
+        "latitude": "41.967490957",
+        "longitude": "-87.731718901"
+    },
+    "026XX N CENTRAL AVE": {
+        "count": 1,
+        "latitude": "41.928020397",
+        "longitude": "-87.766129983"
+    },
+    "026XX N ELSTON AVE": {
+        "count": 2,
+        "latitude": "41.929743818",
+        "longitude": "-87.684273777"
+    },
+    "010XX N CALIFORNIA AVE": {
+        "count": 1,
+        "latitude": "41.899542317",
+        "longitude": "-87.696796793"
+    },
+    "044XX W RICE ST": {
+        "count": 1,
+        "latitude": "41.896116481",
+        "longitude": "-87.736991525"
+    },
+    "003XX N MENARD AVE": {
+        "count": 1,
+        "latitude": "41.886288459",
+        "longitude": "-87.769969735"
+    },
+    "014XX W LAKE ST": {
+        "count": 1,
+        "latitude": "41.885393253",
+        "longitude": "-87.663547848"
+    },
+    "019XX S SPRINGFIELD AVE": {
+        "count": 1,
+        "latitude": "41.854280106",
+        "longitude": "-87.72232344"
+    },
+    "016XX S DRAKE AVE": {
+        "count": 1,
+        "latitude": "41.85826392",
+        "longitude": "-87.713967384"
+    },
+    "004XX N UNION AVE": {
+        "count": 2,
+        "latitude": "41.890516252",
+        "longitude": "-87.645817694"
+    },
+    "007XX W 31ST ST": {
+        "count": 1,
+        "latitude": "41.83805499",
+        "longitude": "-87.645458414"
+    },
+    "033XX S MICHIGAN AVE": {
+        "count": 1,
+        "latitude": "41.833875213",
+        "longitude": "-87.623317713"
+    },
+    "061XX N NORTHWEST HWY": {
+        "count": 1,
+        "latitude": "41.993704168",
+        "longitude": "-87.801310729"
+    },
+    "008XX N LOCKWOOD AVE": {
+        "count": 1,
+        "latitude": "41.895422651",
+        "longitude": "-87.758062487"
+    },
+    "079XX S AVALON AVE": {
+        "count": 1,
+        "latitude": "41.750460516",
+        "longitude": "-87.594249551"
+    },
+    "005XX N HARDING AVE": {
+        "count": 1,
+        "latitude": "41.890687124",
+        "longitude": "-87.724723785"
+    },
+    "104XX S PRAIRIE AVE": {
+        "count": 1,
+        "latitude": "41.704494076",
+        "longitude": "-87.617349244"
+    },
+    "015XX E 63RD ST": {
+        "count": 1,
+        "latitude": "41.780586406",
+        "longitude": "-87.588151131"
+    },
+    "007XX W GARFIELD BLVD": {
+        "count": 1,
+        "latitude": "41.793979431",
+        "longitude": "-87.643208858"
+    },
+    "087XX S STONY ISLAND AVE": {
+        "count": 1,
+        "latitude": "41.736345716",
+        "longitude": "-87.585636406"
+    },
+    "073XX S HERMITAGE AVE": {
+        "count": 1,
+        "latitude": "41.760756792",
+        "longitude": "-87.667348933"
+    },
+    "012XX S HOMAN AVE": {
+        "count": 1,
+        "latitude": "41.86602806",
+        "longitude": "-87.710533222"
+    },
+    "093XX S PERRY AVE": {
+        "count": 1,
+        "latitude": "41.724874089",
+        "longitude": "-87.626325065"
+    },
+    "040XX N HERMITAGE AVE": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "007XX N MONTICELLO AVE": {
+        "count": 1,
+        "latitude": "41.894221609",
+        "longitude": "-87.717498685"
+    },
+    "003XX W ADAMS ST": {
+        "count": 1,
+        "latitude": "41.879361356",
+        "longitude": "-87.635879544"
+    },
+    "016XX S THROOP ST": {
+        "count": 1,
+        "latitude": "41.858947199",
+        "longitude": "-87.65890491"
+    },
+    "039XX S CALUMET AVE": {
+        "count": 1,
+        "latitude": "41.823033098",
+        "longitude": "-87.618528623"
+    },
+    "109XX S VERNON AVE": {
+        "count": 1,
+        "latitude": "41.695787307",
+        "longitude": "-87.612239051"
+    },
+    "007XX W HUBBARD ST": {
+        "count": 1,
+        "latitude": "41.890100695",
+        "longitude": "-87.646538319"
+    },
+    "021XX W 21ST PL": {
+        "count": 1,
+        "latitude": "41.853050384",
+        "longitude": "-87.678930944"
+    },
+    "016XX N RICHMOND ST": {
+        "count": 1,
+        "latitude": "41.911073553",
+        "longitude": "-87.70026426"
+    },
+    "003XX W ERIE ST": {
+        "count": 1,
+        "latitude": "41.893942752",
+        "longitude": "-87.637895271"
+    },
+    "087XX S NORMAL AVE": {
+        "count": 1,
+        "latitude": "41.735061505",
+        "longitude": "-87.636292498"
+    },
+    "012XX W 76TH ST": {
+        "count": 1,
+        "latitude": "41.756057234",
+        "longitude": "-87.654929158"
+    },
+    "004XX E 70TH ST": {
+        "count": 2,
+        "latitude": "41.767536032",
+        "longitude": "-87.614658256"
+    },
+    "005XX W MARQUETTE RD": {
+        "count": 1,
+        "latitude": "41.772582874",
+        "longitude": "-87.637858691"
+    },
+    "050XX N PULASKI RD": {
+        "count": 1,
+        "latitude": "41.97284539",
+        "longitude": "-87.728156581"
+    },
+    "110XX S WENTWORTH AVE": {
+        "count": 1,
+        "latitude": "41.693875874",
+        "longitude": "-87.627935169"
+    },
+    "075XX S NORMAL AVE": {
+        "count": 1,
+        "latitude": "41.757377709",
+        "longitude": "-87.636663136"
+    },
+    "003XX N JUSTINE ST": {
+        "count": 1,
+        "latitude": "41.887053842",
+        "longitude": "-87.665487939"
+    },
+    "049XX W ADAMS ST": {
+        "count": 1,
+        "latitude": "41.878560874",
+        "longitude": "-87.748064308"
+    },
+    "033XX E 91ST ST": {
+        "count": 1,
+        "latitude": "41.730165631",
+        "longitude": "-87.543804638"
+    },
+    "019XX S CHRISTIANA AVE": {
+        "count": 1,
+        "latitude": "41.854565146",
+        "longitude": "-87.708988987"
+    },
+    "013XX S WASHTENAW AVE": {
+        "count": 1,
+        "latitude": "41.863847885",
+        "longitude": "-87.693336625"
+    },
+    "001XX N MORGAN ST": {
+        "count": 1,
+        "latitude": "41.885106529",
+        "longitude": "-87.65212608"
+    },
+    "108XX S WENTWORTH AVE": {
+        "count": 1,
+        "latitude": "41.697553839",
+        "longitude": "-87.628026799"
+    },
+    "015XX W FARWELL AVE": {
+        "count": 1,
+        "latitude": "42.006641921",
+        "longitude": "-87.668451473"
+    },
+    "040XX W GLADYS AVE": {
+        "count": 1,
+        "latitude": "41.876166158",
+        "longitude": "-87.726580011"
+    },
+    "064XX S MARYLAND AVE": {
+        "count": 1,
+        "latitude": "41.777928723",
+        "longitude": "-87.604647024"
+    },
+    "080XX S EVANS AVE": {
+        "count": 1,
+        "latitude": "41.748885854",
+        "longitude": "-87.606382768"
+    },
+    "013XX E 73RD ST": {
+        "count": 1,
+        "latitude": "41.762358747",
+        "longitude": "-87.592808156"
+    },
+    "022XX N MANGO AVE": {
+        "count": 1,
+        "latitude": "41.920731952",
+        "longitude": "-87.769519891"
+    },
+    "095XX S JEFFERY AVE": {
+        "count": 1,
+        "latitude": "41.722013357",
+        "longitude": "-87.575344529"
+    },
+    "0000X E CERMAK RD": {
+        "count": 1,
+        "latitude": "41.85284385",
+        "longitude": "-87.626037047"
+    },
+    "114XX S CALUMET AVE": {
+        "count": 1,
+        "latitude": "41.68573179",
+        "longitude": "-87.614383206"
+    },
+    "008XX N PULASKI RD": {
+        "count": 1,
+        "latitude": "41.895919443",
+        "longitude": "-87.726099235"
+    },
+    "056XX S BLACKSTONE AVE": {
+        "count": 1,
+        "latitude": "41.792491176",
+        "longitude": "-87.590279511"
+    },
+    "060XX S FAIRFIELD AVE": {
+        "count": 1,
+        "latitude": "41.783978289",
+        "longitude": "-87.692305562"
+    },
+    "032XX S EMERALD AVE": {
+        "count": 1,
+        "latitude": "41.835598896",
+        "longitude": "-87.645004005"
+    },
+    "009XX N MASSASOIT AVE": {
+        "count": 1,
+        "latitude": "41.897450688",
+        "longitude": "-87.769133351"
+    },
+    "078XX S SOUTH SHORE DR": {
+        "count": 1,
+        "latitude": "41.754823635",
+        "longitude": "-87.551092573"
+    },
+    "111XX S VERNON AVE": {
+        "count": 1,
+        "latitude": "41.692158707",
+        "longitude": "-87.612144109"
+    },
+    "003XX W SCHILLER ST": {
+        "count": 1,
+        "latitude": "41.907611349",
+        "longitude": "-87.637824086"
+    },
+    "043XX S VINCENNES AVE": {
+        "count": 1,
+        "latitude": "41.81604574",
+        "longitude": "-87.614061149"
+    },
+    "023XX W 103RD ST": {
+        "count": 1,
+        "latitude": "41.706378988",
+        "longitude": "-87.680881899"
+    },
+    "005XX E 33RD ST": {
+        "count": 1,
+        "latitude": "41.834690813",
+        "longitude": "-87.613705645"
+    },
+    "001XX W 35TH ST": {
+        "count": 1,
+        "latitude": "41.830954079",
+        "longitude": "-87.630703226"
+    },
+    "074XX S KENWOOD AVE": {
+        "count": 1,
+        "latitude": "41.760026698",
+        "longitude": "-87.59205061"
+    },
+    "025XX W CHICAGO AVE": {
+        "count": 1,
+        "latitude": "41.895712503",
+        "longitude": "-87.689617405"
+    },
+    "057XX N KENMORE AVE": {
+        "count": 1,
+        "latitude": "41.986392486",
+        "longitude": "-87.656700734"
+    },
+    "091XX S COTTAGE GROVE AVE": {
+        "count": 1,
+        "latitude": "41.729126787",
+        "longitude": "-87.604641957"
+    },
+    "034XX W ROOSEVELT RD": {
+        "count": 1,
+        "latitude": "41.86633932",
+        "longitude": "-87.711253448"
+    },
+    "052XX S ASHLAND AVE": {
+        "count": 1,
+        "latitude": "41.79862914",
+        "longitude": "-87.664705148"
+    },
+    "012XX W ERIE ST": {
+        "count": 1,
+        "latitude": "41.893481171",
+        "longitude": "-87.658501324"
+    },
+    "052XX W CHICAGO AVE": {
+        "count": 1,
+        "latitude": "41.894925002",
+        "longitude": "-87.756234153"
+    },
+    "083XX S HOUSTON AVE": {
+        "count": 1,
+        "latitude": "41.744208813",
+        "longitude": "-87.55030535"
+    },
+    "0000X W CHECKPOINT 1 ST": {
+        "count": 1,
+        "latitude": "41.979796719",
+        "longitude": "-87.906487299"
+    },
+    "033XX W NORTH AVE": {
+        "count": 1,
+        "latitude": "41.91006774",
+        "longitude": "-87.7105425"
+    },
+    "047XX N ARTESIAN AVE": {
+        "count": 1,
+        "latitude": "41.967361296",
+        "longitude": "-87.690087978"
+    },
+    "017XX W CARMEN AVE": {
+        "count": 1,
+        "latitude": "41.974293023",
+        "longitude": "-87.673145872"
+    },
+    "013XX W 63RD ST": {
+        "count": 1,
+        "latitude": "41.779567057",
+        "longitude": "-87.657625501"
+    },
+    "066XX N LAKEWOOD AVE": {
+        "count": 1,
+        "latitude": "42.002787046",
+        "longitude": "-87.663381287"
+    },
+    "049XX W WELLINGTON AVE": {
+        "count": 1,
+        "latitude": "41.935142198",
+        "longitude": "-87.749807563"
+    },
+    "094XX S GREEN ST": {
+        "count": 1,
+        "latitude": "41.722514339",
+        "longitude": "-87.644457639"
+    },
+    "024XX E 75TH ST": {
+        "count": 1,
+        "latitude": "41.758991698",
+        "longitude": "-87.566072806"
+    },
+    "079XX S LOWE AVE": {
+        "count": 1,
+        "latitude": "41.750015145",
+        "longitude": "-87.640359773"
+    },
+    "004XX W 25TH PL": {
+        "count": 1,
+        "latitude": "41.846071802",
+        "longitude": "-87.638755278"
+    },
+    "038XX N FREMONT ST": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "092XX S RACINE AVE": {
+        "count": 1,
+        "latitude": "41.725987767",
+        "longitude": "-87.653062258"
+    },
+    "082XX S KEDZIE AVE": {
+        "count": 1,
+        "latitude": "41.743735878",
+        "longitude": "-87.702225879"
+    },
+    "048XX N MONTICELLO AVE": {
+        "count": 1,
+        "latitude": "41.968864189",
+        "longitude": "-87.719490358"
+    },
+    "021XX W WINDSOR AVE": {
+        "count": 1,
+        "latitude": "41.964129113",
+        "longitude": "-87.682869617"
+    },
+    "013XX N HUDSON AVE": {
+        "count": 1,
+        "latitude": "41.907153315",
+        "longitude": "-87.639680572"
+    },
+    "015XX N SEDGWICK ST": {
+        "count": 1,
+        "latitude": "41.909860541",
+        "longitude": "-87.638552799"
+    },
+    "122XX S LOWE AVE": {
+        "count": 1,
+        "latitude": "41.671453418",
+        "longitude": "-87.638091856"
+    },
+    "052XX S GREEN ST": {
+        "count": 1,
+        "latitude": "41.799317665",
+        "longitude": "-87.646514657"
+    },
+    "007XX N ORLEANS ST": {
+        "count": 1,
+        "latitude": "41.895859252",
+        "longitude": "-87.637158246"
+    },
+    "118XX S VINCENNES AVE": {
+        "count": 1,
+        "latitude": "41.678345928",
+        "longitude": "-87.671340082"
+    },
+    "033XX W 16TH ST": {
+        "count": 1,
+        "latitude": "41.859036393",
+        "longitude": "-87.709650307"
+    },
+    "033XX W IRVING PARK RD": {
+        "count": 1,
+        "latitude": "41.953870828",
+        "longitude": "-87.712024254"
+    },
+    "057XX N BROADWAY": {
+        "count": 1,
+        "latitude": "41.985534487",
+        "longitude": "-87.660126814"
+    },
+    "012XX W 81ST ST": {
+        "count": 1,
+        "latitude": "41.746832751",
+        "longitude": "-87.65524615"
+    },
+    "050XX W WOLFRAM ST": {
+        "count": 1,
+        "latitude": "41.932372226",
+        "longitude": "-87.752306149"
+    },
+    "070XX S PULASKI RD": {
+        "count": 1,
+        "latitude": "41.765533359",
+        "longitude": "-87.722433103"
+    },
+    "039XX W ROSCOE ST": {
+        "count": 1,
+        "latitude": "41.942743912",
+        "longitude": "-87.726555687"
+    },
+    "013XX W 48TH ST": {
+        "count": 1,
+        "latitude": "41.806868474",
+        "longitude": "-87.658307018"
+    },
+    "002XX N ASHLAND AVE": {
+        "count": 1,
+        "latitude": "41.886261339",
+        "longitude": "-87.667005567"
+    },
+    "077XX S AVALON AVE": {
+        "count": 1,
+        "latitude": "41.754198826",
+        "longitude": "-87.594338601"
+    },
+    "077XX S RACINE AVE": {
+        "count": 1,
+        "latitude": "41.753460038",
+        "longitude": "-87.653816736"
+    },
+    "066XX S ST LAWRENCE AVE": {
+        "count": 1,
+        "latitude": "41.774347006",
+        "longitude": "-87.610663222"
+    },
+    "014XX S KOSTNER AVE": {
+        "count": 1,
+        "latitude": "41.861607236",
+        "longitude": "-87.734823319"
+    },
+    "025XX W LYNDALE ST": {
+        "count": 1,
+        "latitude": "41.922441281",
+        "longitude": "-87.692060608"
+    },
+    "098XX S AVENUE L": {
+        "count": 1,
+        "latitude": "41.71724161",
+        "longitude": "-87.536494412"
+    },
+    "030XX W 40TH ST": {
+        "count": 1,
+        "latitude": "41.820864929",
+        "longitude": "-87.700353812"
+    },
+    "011XX W 16TH ST": {
+        "count": 1,
+        "latitude": "41.859794582",
+        "longitude": "-87.654612034"
+    },
+    "005XX W LAKE ST": {
+        "count": 1,
+        "latitude": "41.885702079",
+        "longitude": "-87.642031644"
+    },
+    "016XX W DIVISION ST": {
+        "count": 1,
+        "latitude": "41.90331846",
+        "longitude": "-87.669190255"
+    },
+    "0000X E JACKSON BLVD": {
+        "count": 1,
+        "latitude": "41.878229908",
+        "longitude": "-87.626766976"
+    },
+    "079XX S COTTAGE GROVE AVE": {
+        "count": 1,
+        "latitude": "41.750832464",
+        "longitude": "-87.605224746"
+    },
+    "022XX N WASHTENAW AVE": {
+        "count": 1,
+        "latitude": "41.922117632",
+        "longitude": "-87.695539927"
+    },
+    "049XX W THOMAS ST": {
+        "count": 1,
+        "latitude": "41.900478961",
+        "longitude": "-87.749642063"
+    },
+    "030XX S PULASKI RD": {
+        "count": 1,
+        "latitude": "41.837759526",
+        "longitude": "-87.724370496"
+    },
+    "026XX W CHICAGO AVE": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "044XX N ELSTON AVE": {
+        "count": 1,
+        "latitude": "41.961751197",
+        "longitude": "-87.730886794"
+    },
+    "011XX W CHESTNUT ST": {
+        "count": 1,
+        "latitude": "41.898388369",
+        "longitude": "-87.65579031"
+    },
+    "071XX S WESTERN AVE": {
+        "count": 1,
+        "latitude": "41.764245207",
+        "longitude": "-87.683232026"
+    },
+    "110XX S VERNON AVE": {
+        "count": 1,
+        "latitude": "41.693588725",
+        "longitude": "-87.612179395"
+    },
+    "015XX N MAYFIELD AVE": {
+        "count": 1,
+        "latitude": "41.908274386",
+        "longitude": "-87.773141592"
+    },
+    "001XX W LAKE ST": {
+        "count": 1,
+        "latitude": "41.885731591",
+        "longitude": "-87.633313023"
+    },
+    "018XX S CENTRAL PARK AVE": {
+        "count": 1,
+        "latitude": "41.855863421",
+        "longitude": "-87.715121124"
+    },
+    "111XX S CHAMPLAIN AVE": {
+        "count": 1,
+        "latitude": "41.692149491",
+        "longitude": "-87.607194033"
+    },
+    "075XX S CALUMET AVE": {
+        "count": 1,
+        "latitude": "41.757383812",
+        "longitude": "-87.616684707"
+    },
+    "048XX S ADA ST": {
+        "count": 1,
+        "latitude": "41.806295249",
+        "longitude": "-87.658830205"
+    },
+    "053XX N WASHTENAW AVE": {
+        "count": 1,
+        "latitude": "41.978275425",
+        "longitude": "-87.696564963"
+    },
+    "001XX N MICHIGAN AVE": {
+        "count": 2,
+        "latitude": "41.884790951",
+        "longitude": "-87.624469241"
+    },
+    "096XX S BISHOP ST": {
+        "count": 1,
+        "latitude": "41.71883615",
+        "longitude": "-87.65866133"
+    },
+    "021XX W MELROSE ST": {
+        "count": 1,
+        "latitude": "41.940442982",
+        "longitude": "-87.681754122"
+    },
+    "012XX W 47TH ST": {
+        "count": 1,
+        "latitude": "41.808723632",
+        "longitude": "-87.655980364"
+    },
+    "001XX W DIVISION ST": {
+        "count": 1,
+        "latitude": "41.903890971",
+        "longitude": "-87.632089801"
+    },
+    "011XX W 63RD ST": {
+        "count": 1,
+        "latitude": "41.779618399",
+        "longitude": "-87.653767961"
+    },
+    "012XX W 48TH ST": {
+        "count": 2,
+        "latitude": "41.806899449",
+        "longitude": "-87.656109617"
+    },
+    "091XX S HARVARD AVE": {
+        "count": 1,
+        "latitude": "41.72716831",
+        "longitude": "-87.632142977"
+    },
+    "0000X W CHICAGO AVE": {
+        "count": 1,
+        "latitude": "41.896667744",
+        "longitude": "-87.628885133"
+    },
+    "076XX S STONY ISLAND AVE": {
+        "count": 1,
+        "latitude": "41.756714109",
+        "longitude": "-87.586085395"
+    },
+    "037XX W 55TH ST": {
+        "count": 1,
+        "latitude": "41.793307541",
+        "longitude": "-87.716114999"
+    },
+    "066XX W 59TH ST": {
+        "count": 1,
+        "latitude": "41.784916561",
+        "longitude": "-87.787336025"
+    },
+    "005XX W 46TH PL": {
+        "count": 1,
+        "latitude": "41.809893889",
+        "longitude": "-87.639171916"
+    },
+    "043XX W LAKE ST": {
+        "count": 1,
+        "latitude": "41.885918715",
+        "longitude": "-87.733799546"
+    },
+    "013XX S MICHIGAN AVE": {
+        "count": 1,
+        "latitude": "41.865145359",
+        "longitude": "-87.624098901"
+    },
+    "040XX S LAKE PARK AVE": {
+        "count": 1,
+        "latitude": "41.820982288",
+        "longitude": "-87.601400234"
+    },
+    "045XX S EMERALD AVE": {
+        "count": 1,
+        "latitude": "41.811928746",
+        "longitude": "-87.644410133"
+    },
+    "054XX S ST LOUIS AVE": {
+        "count": 1,
+        "latitude": "41.795003027",
+        "longitude": "-87.710938936"
+    },
+    "050XX N WINTHROP AVE": {
+        "count": 1,
+        "latitude": "41.973885119",
+        "longitude": "-87.657748827"
+    },
+    "118XX S MARSHFIELD AVE": {
+        "count": 1,
+        "latitude": "41.677976261",
+        "longitude": "-87.662488937"
+    },
+    "052XX N MAGNOLIA AVE": {
+        "count": 1,
+        "latitude": "41.977168018",
+        "longitude": "-87.661163776"
+    },
+    "105XX S MICHIGAN AVE": {
+        "count": 1,
+        "latitude": "41.7030247",
+        "longitude": "-87.620694297"
+    },
+    "035XX W JACKSON BLVD": {
+        "count": 1,
+        "latitude": "41.877233077",
+        "longitude": "-87.714129418"
+    },
+    "078XX S PHILLIPS AVE": {
+        "count": 1,
+        "latitude": "41.752996772",
+        "longitude": "-87.565044759"
+    },
+    "113XX S ST LAWRENCE AVE": {
+        "count": 1,
+        "latitude": "41.688438052",
+        "longitude": "-87.608323137"
+    },
+    "068XX S CORNELL AVE": {
+        "count": 1,
+        "latitude": "41.771062585",
+        "longitude": "-87.585020753"
+    },
+    "013XX E HYDE PARK BLVD": {
+        "count": 1,
+        "latitude": "41.8023908",
+        "longitude": "-87.594691016"
+    },
+    "086XX S UNION AVE": {
+        "count": 1,
+        "latitude": "41.736875022",
+        "longitude": "-87.641208185"
+    },
+    "019XX W DEVON AVE": {
+        "count": 1,
+        "latitude": "41.997929286",
+        "longitude": "-87.678504523"
+    },
+    "101XX S LA SALLE ST": {
+        "count": 1,
+        "latitude": "41.710161619",
+        "longitude": "-87.627189481"
+    },
+    "020XX W ARTHUR AVE": {
+        "count": 1,
+        "latitude": "41.999694408",
+        "longitude": "-87.681021229"
+    },
+    "001XX E CHICAGO AVE": {
+        "count": 1,
+        "latitude": "41.896714548",
+        "longitude": "-87.625340136"
+    },
+    "010XX N PULASKI RD": {
+        "count": 1,
+        "latitude": "41.899624779",
+        "longitude": "-87.726214733"
+    },
+    "009XX N MICHIGAN AVE": {
+        "count": 1,
+        "latitude": "41.899410159",
+        "longitude": "-87.624131266"
+    },
+    "018XX S ALLPORT ST": {
+        "count": 1,
+        "latitude": "41.857046142",
+        "longitude": "-87.657625432"
+    },
+    "077XX S JEFFERY BLVD": {
+        "count": 1,
+        "latitude": "41.754787799",
+        "longitude": "-87.576054836"
+    },
+    "003XX S PEORIA ST": {
+        "count": 1,
+        "latitude": "41.877500741",
+        "longitude": "-87.649566735"
+    },
+    "004XX E BOWEN AVE": {
+        "count": 1,
+        "latitude": "41.819351842",
+        "longitude": "-87.61569704"
+    },
+    "054XX W HADDON AVE": {
+        "count": 1,
+        "latitude": "41.901270856",
+        "longitude": "-87.761955133"
+    },
+    "016XX S CHRISTIANA AVE": {
+        "count": 1,
+        "latitude": "41.857855997",
+        "longitude": "-87.709078116"
+    },
+    "006XX E GRAND AVE": {
+        "count": 2,
+        "latitude": "41.891990384",
+        "longitude": "-87.611461502"
+    },
+    "003XX W JACKSON BLVD": {
+        "count": 1,
+        "latitude": "41.878095808",
+        "longitude": "-87.635805178"
+    },
+    "015XX W 59TH ST": {
+        "count": 1,
+        "latitude": "41.786774388",
+        "longitude": "-87.662448614"
+    },
+    "032XX W CHICAGO AVE": {
+        "count": 1,
+        "latitude": "41.895549905",
+        "longitude": "-87.706859996"
+    },
+    "0000X W CONGRESS PKWY": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "013XX W BRYN MAWR AVE": {
+        "count": 1,
+        "latitude": "41.98356006",
+        "longitude": "-87.664119887"
+    },
+    "012XX W 79TH ST": {
+        "count": 1,
+        "latitude": "41.750490827",
+        "longitude": "-87.654302474"
+    },
+    "010XX W 103RD PL": {
+        "count": 2,
+        "latitude": "41.705955444",
+        "longitude": "-87.648648161"
+    },
+    "052XX S PULASKI RD": {
+        "count": 1,
+        "latitude": "41.797201502",
+        "longitude": "-87.723272993"
+    },
+    "056XX W WABANSIA AVE": {
+        "count": 1,
+        "latitude": "41.911199773",
+        "longitude": "-87.765882143"
+    },
+    "046XX S CHRISTIANA AVE": {
+        "count": 1,
+        "latitude": "41.809290856",
+        "longitude": "-87.707602115"
+    },
+    "051XX S UNION AVE": {
+        "count": 1,
+        "latitude": "41.800706392",
+        "longitude": "-87.642872619"
+    },
+    "023XX S DR MARTIN LUTHER KING JR DR": {
+        "count": 1,
+        "latitude": "41.85102174",
+        "longitude": "-87.618954852"
+    },
+    "068XX S ADA ST": {
+        "count": 1,
+        "latitude": null,
+        "longitude": null
+    },
+    "069XX S ADA ST": {
+        "count": 1,
+        "latitude": "41.767647006",
+        "longitude": "-87.657823914"
+    },
+    "021XX E 87TH ST": {
+        "count": 1,
+        "latitude": "41.737094305",
+        "longitude": "-87.572998178"
+    },
+    "056XX S CAMPBELL AVE": {
+        "count": 1,
+        "latitude": "41.791332865",
+        "longitude": "-87.686409062"
+    },
+    "063XX S WESTERN AVE": {
+        "count": 1,
+        "latitude": "41.778693414",
+        "longitude": "-87.683625068"
+    },
+    "090XX S LANGLEY AVE": {
+        "count": 1,
+        "latitude": "41.730701146",
+        "longitude": "-87.607104396"
+    },
+    "001XX W CERMAK RD": {
+        "count": 1,
+        "latitude": "41.852868298",
+        "longitude": "-87.63091491"
+    },
+    "072XX S YATES BLVD": {
+        "count": 1,
+        "latitude": "41.763887469",
+        "longitude": "-87.566476327"
+    },
+    "005XX E 32ND ST": {
+        "count": 1,
+        "latitude": "41.836069707",
+        "longitude": "-87.613033345"
+    },
+    "075XX N PAULINA ST": {
+        "count": 1,
+        "latitude": "42.018760057",
+        "longitude": "-87.673175567"
+    },
+    "008XX W 63RD ST": {
+        "count": 1,
+        "latitude": "41.779723151",
+        "longitude": "-87.646463474"
+    },
+    "035XX W FLOURNOY ST": {
+        "count": 1,
+        "latitude": "41.872680563",
+        "longitude": "-87.714166016"
+    },
+    "102XX W ZEMKE RD": {
+        "count": 1,
+        "latitude": "41.994913946",
+        "longitude": "-87.881937669"
+    },
+    "007XX E 37TH PL": {
+        "count": 1,
+        "latitude": "41.82663397",
+        "longitude": "-87.609389378"
+    },
+    "042XX S COTTAGE GROVE AVE": {
+        "count": 1,
+        "latitude": "41.817401859",
+        "longitude": "-87.606719978"
+    },
+    "006XX E 133RD ST": {
+        "count": 1,
+        "latitude": "41.65449445",
+        "longitude": "-87.605897289"
+    },
+    "015XX W DIVISION ST": {
+        "count": 1,
+        "latitude": "41.903354552",
+        "longitude": "-87.666893991"
+    },
+    "096XX S BEVERLY AVE": {
+        "count": 1,
+        "latitude": "41.718578104",
+        "longitude": "-87.661927654"
+    },
+    "053XX W CHICAGO AVE": {
+        "count": 1,
+        "latitude": "41.894908283",
+        "longitude": "-87.758371958"
+    },
+    "047XX S INDIANA AVE": {
+        "count": 1,
+        "latitude": "41.808559899",
+        "longitude": "-87.621194785"
+    },
+    "019XX N NATOMA AVE": {
+        "count": 1,
+        "latitude": "41.915373128",
+        "longitude": "-87.791314179"
+    },
+    "071XX S JEFFERY BLVD": {
+        "count": 1,
+        "latitude": "41.76494313",
+        "longitude": "-87.576272654"
+    },
+    "020XX W JACKSON BLVD": {
+        "count": 1,
+        "latitude": "41.877470199",
+        "longitude": "-87.678222877"
+    },
+    "070XX S INDIANA AVE": {
+        "count": 1,
+        "latitude": "41.766681066",
+        "longitude": "-87.62014422"
+    },
+    "042XX W DEVON AVE": {
+        "count": 1,
+        "latitude": "41.997191375",
+        "longitude": "-87.735382937"
+    },
+    "019XX N AUSTIN AVE": {
+        "count": 1,
+        "latitude": "41.915187259",
+        "longitude": "-87.775425225"
+    },
+    "111XX S GREEN BAY AVE": {
+        "count": 1,
+        "latitude": "41.693020672",
+        "longitude": "-87.541318941"
+    },
+    "023XX E 70TH ST": {
+        "count": 1,
+        "latitude": "41.768069819",
+        "longitude": "-87.567306284"
+    },
+    "066XX S LOWE AVE": {
+        "count": 1,
+        "latitude": "41.773582519",
+        "longitude": "-87.64070371"
+    },
+    "009XX N LATROBE AVE": {
+        "count": 1,
+        "latitude": "41.897653343",
+        "longitude": "-87.756892787"
+    }
+}
