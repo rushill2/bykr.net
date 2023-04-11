@@ -1,7 +1,11 @@
+import mimetypes
+mimetypes.add_type('application/javascript', '.js')
+mimetypes.add_type('text/css', '.css')
+
 import logging
 import sys, os
 import traceback,json
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_from_directory
 from maps import GeoHandler
 print(GeoHandler.test(GeoHandler))
 import _thread
@@ -19,7 +23,7 @@ datag = None
 placeDeets = None
 placeName = None
 picref = None
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__, static_url_path='/static', static_folder='static', template_folder='templates')
 import geocoder
 geodata = geocoder.ip('me')
 
@@ -70,6 +74,10 @@ def post():
         logger.error("Error in post request " + str(e) + traceback.format_exc())
         sys.exit(-1)
 
+@app.route('/static/<path:filename>')
+def static_files(filename):
+    return send_from_directory(app.static_folder, filename)
+
 @app.route('/locate')
 def count():
     # GeoHandler.acq(GeoHandler, )
@@ -90,6 +98,16 @@ def details():
 @app.route('/nameSearch')
 def name():
     print('reached name')
+    return placeName
+
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.json
+    if data is None:
+        data = json.loads(request.json)
+    logger.info("Post data: " + str(data))
+    print(data)
+    print('reached login')
     return placeName
 
 if __name__ == "__main__":

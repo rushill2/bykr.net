@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "@firebase/analytics": "^0.9.5",
+    "@firebase/auth": "^0.22.0",
+    "firebase": "^9.19.1",
     "log4js": "^6.9.1"
   }
 }

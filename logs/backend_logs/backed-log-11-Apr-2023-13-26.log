@@ -1,0 +1,6 @@
+13:26:57 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+13:26:57 :: WARNING : werkzeug:  * Debugger is active!
+13:26:57 :: INFO : werkzeug:  * Debugger PIN: 144-772-890
+13:27:14 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:27:14] "[33mGET / HTTP/1.1[0m" 404 -
+13:27:15 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:27:15] "[33mGET / HTTP/1.1[0m" 404 -
+13:28:13 :: INFO : werkzeug:  * Detected change in 'c:\\Users\\rushi\\Desktop\\Projects\\bykr.net\\app.py', reloading

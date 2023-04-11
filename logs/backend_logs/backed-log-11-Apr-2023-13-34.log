@@ -1,0 +1,102 @@
+13:34:09 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+13:34:09 :: INFO : werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.4.58:5000
+13:34:09 :: INFO : werkzeug: [33mPress CTRL+C to quit[0m
+13:34:09 :: INFO : werkzeug:  * Restarting with stat
+13:34:10 :: INFO : geocoder.base: Requested http://ipinfo.io/json
+13:34:10 :: WARNING : werkzeug:  * Debugger is active!
+13:34:10 :: INFO : werkzeug:  * Debugger PIN: 144-772-890
+13:34:11 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:34:11] "GET / HTTP/1.1" 200 -
+13:34:12 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:34:12] "[36mGET /static/styles/wheel.css HTTP/1.1[0m" 304 -
+13:34:12 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:34:12] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+13:34:12 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:34:12] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+13:34:12 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:34:12] "[36mGET /static/styles/carousel.css HTTP/1.1[0m" 304 -
+13:34:12 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:34:12] "[36mGET /static/styles/modal.css HTTP/1.1[0m" 304 -
+13:34:12 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:34:12] "[36mGET /static/styles/tables.css HTTP/1.1[0m" 304 -
+13:34:12 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:34:12] "GET /static/libs/loader.js HTTP/1.1" 200 -
+13:34:12 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:34:12] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+13:34:12 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:34:12] "GET /static/images/bykr_logo.jpg HTTP/1.1" 200 -
+13:34:12 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:34:12] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+13:34:13 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:34:13] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+13:46:15 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:15] "GET / HTTP/1.1" 200 -
+13:46:15 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:15] "GET /static/styles/carousel.css HTTP/1.1" 200 -
+13:46:15 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:15] "GET /static/styles/wheel.css HTTP/1.1" 200 -
+13:46:15 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:15] "GET /static/styles/tables.css HTTP/1.1" 200 -
+13:46:15 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:15] "GET /static/styles/style.css HTTP/1.1" 200 -
+13:46:15 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:15] "GET /static/styles/modal.css HTTP/1.1" 200 -
+13:46:15 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:15] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+13:46:15 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:15] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+13:46:16 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:16] "GET /static/images/bykr_logo.jpg HTTP/1.1" 200 -
+13:46:16 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:16] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+13:46:16 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:16] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+13:46:17 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+13:46:35 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:35] "GET / HTTP/1.1" 200 -
+13:46:35 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:35] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+13:46:35 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:35] "[36mGET /static/styles/carousel.css HTTP/1.1[0m" 304 -
+13:46:35 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:35] "[36mGET /static/styles/tables.css HTTP/1.1[0m" 304 -
+13:46:35 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:35] "[36mGET /static/styles/wheel.css HTTP/1.1[0m" 304 -
+13:46:36 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:36] "[36mGET /static/styles/modal.css HTTP/1.1[0m" 304 -
+13:46:36 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:36] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+13:46:36 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:36] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+13:46:36 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:36] "[36mGET /static/images/bykr_logo.jpg HTTP/1.1[0m" 304 -
+13:46:36 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:36] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+13:46:36 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:46:36] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+13:47:37 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:37] "GET / HTTP/1.1" 200 -
+13:47:37 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:37] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+13:47:37 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:37] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+13:47:37 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:37] "[36mGET /static/styles/carousel.css HTTP/1.1[0m" 304 -
+13:47:37 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:37] "[36mGET /static/styles/tables.css HTTP/1.1[0m" 304 -
+13:47:37 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:37] "[36mGET /static/styles/wheel.css HTTP/1.1[0m" 304 -
+13:47:37 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:37] "[36mGET /static/styles/modal.css HTTP/1.1[0m" 304 -
+13:47:37 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:37] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+13:47:37 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:37] "[36mGET /static/images/bykr_logo.jpg HTTP/1.1[0m" 304 -
+13:47:37 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:37] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+13:47:38 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:38] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+13:47:53 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:53] "GET / HTTP/1.1" 200 -
+13:47:53 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:53] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+13:47:53 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:53] "GET /static/styles/style.css HTTP/1.1" 200 -
+13:47:53 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:53] "[36mGET /static/styles/carousel.css HTTP/1.1[0m" 304 -
+13:47:54 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:54] "[36mGET /static/styles/wheel.css HTTP/1.1[0m" 304 -
+13:47:54 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:54] "[36mGET /static/styles/tables.css HTTP/1.1[0m" 304 -
+13:47:54 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:54] "[36mGET /static/styles/modal.css HTTP/1.1[0m" 304 -
+13:47:54 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:54] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+13:47:54 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:54] "[36mGET /static/images/bykr_logo.jpg HTTP/1.1[0m" 304 -
+13:47:54 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:54] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+13:47:54 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:47:54] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+13:48:01 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:01] "GET / HTTP/1.1" 200 -
+13:48:01 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:01] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+13:48:01 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:01] "[36mGET /static/styles/carousel.css HTTP/1.1[0m" 304 -
+13:48:01 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:01] "[36mGET /static/styles/tables.css HTTP/1.1[0m" 304 -
+13:48:01 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:01] "[36mGET /static/styles/wheel.css HTTP/1.1[0m" 304 -
+13:48:01 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:01] "[36mGET /static/styles/modal.css HTTP/1.1[0m" 304 -
+13:48:01 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:01] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+13:48:01 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:01] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+13:48:02 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:02] "[36mGET /static/images/bykr_logo.jpg HTTP/1.1[0m" 304 -
+13:48:02 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:02] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+13:48:03 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:03] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+13:48:32 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:32] "GET / HTTP/1.1" 200 -
+13:48:32 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:32] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+13:48:32 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:32] "[36mGET /static/styles/carousel.css HTTP/1.1[0m" 304 -
+13:48:32 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:32] "[36mGET /static/styles/tables.css HTTP/1.1[0m" 304 -
+13:48:32 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:32] "[36mGET /static/styles/wheel.css HTTP/1.1[0m" 304 -
+13:48:32 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:32] "[36mGET /static/styles/modal.css HTTP/1.1[0m" 304 -
+13:48:32 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:32] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+13:48:32 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:32] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+13:48:32 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:32] "[36mGET /static/images/bykr_logo.jpg HTTP/1.1[0m" 304 -
+13:48:32 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:32] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+13:48:32 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:32] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+13:48:41 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:41] "GET / HTTP/1.1" 200 -
+13:48:41 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:41] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+13:48:41 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:41] "[36mGET /static/styles/carousel.css HTTP/1.1[0m" 304 -
+13:48:41 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:41] "[36mGET /static/styles/tables.css HTTP/1.1[0m" 304 -
+13:48:41 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:41] "[36mGET /static/styles/wheel.css HTTP/1.1[0m" 304 -
+13:48:41 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:41] "[36mGET /static/styles/modal.css HTTP/1.1[0m" 304 -
+13:48:41 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:41] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+13:48:41 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:41] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+13:48:42 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:42] "[36mGET /static/images/bykr_logo.jpg HTTP/1.1[0m" 304 -
+13:48:42 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:42] "[36mGET /static/index.js HTTP/1.1[0m" 304 -
+13:48:42 :: INFO : werkzeug: 127.0.0.1 - - [11/Apr/2023 13:48:42] "[36mGET /static/crimeMap.js HTTP/1.1[0m" 304 -
+13:54:40 :: INFO : werkzeug:  * Detected change in 'c:\\Users\\rushi\\Desktop\\Projects\\bykr.net\\app.py', reloading
+13:54:40 :: INFO : werkzeug:  * Restarting with stat

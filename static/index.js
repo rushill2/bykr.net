@@ -121,7 +121,20 @@ function initMap() {
   
   destmarker = new google.maps.Marker({map:window.mp});
   window.directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true, suppressBicyclingLayer: true});
+  const loadCharts = new Promise((resolve) => {
+    google.charts.load('current', {packages: ['corechart', 'table', 'geochart', 'map', 'visualization']});
+    google.charts.setOnLoadCallback(resolve);
+  });
 
+  // Use the Promise to ensure the google.charts library is loaded
+  loadCharts.then(() => {
+    fetch('/static/crimedata/parsedNeighborhoods.json')
+      .then(response => response.json())
+      .then(data => {
+        generateHeatmap(data); // Call the function from heatmap.js
+      })
+      .catch(error => console.error(error));
+  });
   var sty = [
     {
       "elementType": "geometry",

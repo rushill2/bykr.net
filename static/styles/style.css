@@ -63,6 +63,14 @@ body {
   height: 35px;
 }
 
+#google-login {
+  position: absolute;
+  top: 2x;
+  right: 20px;
+  width: 220px;
+  height: 35px;
+}
+
 .column {
   position: fixed;
   height: 400px;
@@ -148,6 +156,10 @@ top: 0;
 left: 0;
 z-index: -1;
 transition: all .4s;
+}
+
+.login-btn{
+  z-index: 1;
 }
 
 .btn-white::after {
@@ -384,6 +396,7 @@ h3 {
 }
 
 button {
+  z-index: 1;
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
