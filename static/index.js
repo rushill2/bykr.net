@@ -8,41 +8,39 @@ var currPos;
 
 document.getElementById("loading-indicator").style.display = "block";
 
-var currentLocationPromise = new Promise(function(resolve, reject) {
+const currentLocationPromise = new Promise((resolve, reject) => {
   if ("geolocation" in navigator) {
     // geolocation is available
-    navigator.geolocation.getCurrentPosition(function(position) {
-      // update location
-      document.getElementById("loading-indicator").style.display = "none";
-      var latitude = position.coords.latitude;
-      var longitude = position.coords.longitude;
-      var currentLocation = new google.maps.LatLng(latitude, longitude);
-      resolve(currentLocation);
-    }, function(error) {
-      // handle errors
-      switch (error.code) {
-        case error.PERMISSION_DENIED:
-          document.getElementById("loading-indicator").style.display = "none";
-          console.log("User denied the request for Geolocation.");
-          break;
-        case error.POSITION_UNAVAILABLE:
-          document.getElementById("loading-indicator").style.display = "none";
-          console.log("Location information is unavailable.");
-          break;
-        case error.TIMEOUT:
-          document.getElementById("loading-indicator").style.display = "none";
-          console.log("The request to get user location timed out.");
-          break;
-        case error.UNKNOWN_ERROR:
-          document.getElementById("loading-indicator").style.display = "none";
-          console.log("An unknown error occurred.");
-          break;
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        // update location
+        document.getElementById("loading-indicator").style.display = "none";
+        const { latitude, longitude } = position.coords;
+        const currentLocation = new google.maps.LatLng(latitude, longitude);
+        resolve(currentLocation);
+      },
+      (error) => {
+        // handle errors
+        document.getElementById("loading-indicator").style.display = "none";
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            console.log("User denied the request for Geolocation.");
+            break;
+          case error.POSITION_UNAVAILABLE:
+            console.log("Location information is unavailable.");
+            break;
+          case error.TIMEOUT:
+            console.log("The request to get user location timed out.");
+            break;
+          case error.UNKNOWN_ERROR:
+            console.log("An unknown error occurred.");
+            break;
+        }
+        reject(error);
+      },
+      {
+        maximumAge: 30000, // 5 minutes in milliseconds
       }
-      reject(error);
-    },
-    {
-      maximumAge: 30000 // 5 minutes in milliseconds
-    }
     );
   } else {
     // geolocation is not available
@@ -52,22 +50,13 @@ var currentLocationPromise = new Promise(function(resolve, reject) {
   }
 });
 
+
 currentLocationPromise.then(function(currentLocation) {
   console.log("Current location: " + currentLocation.toString());
   // do something with currentLocation
 }).catch(function(error) {
   console.log("Error getting current location: " + error.message);
 });
-
-
-
-
-
-function doSomethingWithLocation() {
-  console.log("Current location: ", currentLocation);
-  // do something with currentLocation object
-}
-
 
 //----------------------------------------------------------------------------------------------------------------------
 // Map Init
@@ -96,7 +85,6 @@ function initMap() {
   // Create an array to hold the features
 
 // Load the JSON data from the file
-var heatmapLayer; // Define the heatmap layer as a global variable
 
 fetch('/static/crimedata/parsedNeighborHoods.json')
 .then(function(response) {
@@ -122,7 +110,8 @@ fetch('/static/crimedata/parsedNeighborHoods.json')
   var heatmapLayer = new ol.layer.Heatmap({
     source: vectorSource, // Set the source to the vector source
     radius: 7, // Set the radius of the heatmap points
-    gradient: ['blue', 'lime', 'yellow', 'red'] // Set the gradient colors
+    gradient: ['blue', 'lime', 'yellow', 'red'], // Set the gradient colors
+    overlay: true
   });
 
   // Add the heatmap layer to the OpenLayers map
@@ -135,8 +124,12 @@ fetch('/static/crimedata/parsedNeighborHoods.json')
     view: new ol.View({
       center: ol.proj.fromLonLat([-87.623177, 41.881832]), // Set the initial center
       zoom: 12 // Set the initial zoom level
-    })
+    }),
+    useInterimTilesOnError: false
   });
+
+  // Disable interactions on the map
+  olMap.getInteractions().clear();
 
   // Convert the OpenLayers map to a Google Maps overlay
   olMap.once('ready', function() {
@@ -147,41 +140,32 @@ fetch('/static/crimedata/parsedNeighborHoods.json')
       stopEvent: true, // Allow events to propagate through the overlay
       insertFirst: false // Append the overlay element as the last child of its parent
     });
-    olMap.getViewport().style.pointerEvents = 'none';
-    olMap.getInteractions().forEach(function(interaction) {
-      if (interaction instanceof ol.interaction.KeyboardPan ||
-          interaction instanceof ol.interaction.KeyboardZoom ||
-          interaction instanceof ol.interaction.DragPan ||
-          interaction instanceof ol.interaction.DragZoom ||
-          interaction instanceof ol.interaction.MouseWheelZoom ||
-          interaction instanceof ol.interaction.PinchRotate ||
-          interaction instanceof ol.interaction.PinchZoom) {
-        interaction.setActive(false);
-      }
-    });
-    olOverlay.setMap(window.mp); // Use the olMap instance as the map for the overlay
+
+    // Set the position of the overlay element to be fixed
+    olOverlay.getElement().style.position = 'fixed';
+
+    // Set the map viewport to ignore pointer events
+    olMap.getViewport().style.pointerEvents = 'auto';
+
+    // Use the olMap instance as the map for the overlay
+    olOverlay.setMap(window.mp);
 
     // Hide the overlay
     olOverlay.setPosition(undefined);
 
-    // Disable the heatmap layer
-    heatmapLayer.setVisible(false);
+    // Disable pointer events on the heatmap layer's source
+    heatmapLayer.getSource().set('pointerEvents', 'none');
 
     // Add an event listener to the overlay close button to re-enable the heatmap layer
     document.getElementById('closeOverlay').addEventListener('click', function() {
       olOverlay.setPosition(undefined);
-      heatmapLayer.setVisible(true); // Re-enable the heatmap layer
+      heatmapLayer.getSource().set('pointerEvents', 'none'); // Re-enable pointer events on the heatmap layer's source
     });
   });
 })
 .catch(function(error) {
   console.error('Error: ', error);
 });
-
-
-
-
-
 
 
   // Add the heatmap layer to the map
@@ -218,371 +202,13 @@ fetch('/static/crimedata/parsedNeighborHoods.json')
   destmarker = new google.maps.Marker({map:window.mp});
   window.directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true, suppressBicyclingLayer: true});
 
-  // Use the Promise to ensure the google.charts library is loaded
-
-  var sty = [
-    {
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "color": "#1d2c4d"
-        }
-      ]
-    },
-    {
-      "elementType": "labels.text.fill",
-      "stylers": [
-        {
-          "color": "#8ec3b9"
-        }
-      ]
-    },
-    {
-      "elementType": "labels.text.stroke",
-      "stylers": [
-        {
-          "color": "#1a3646"
-        }
-      ]
-    },
-    {
-      "featureType": "administrative.country",
-      "elementType": "geometry.stroke",
-      "stylers": [
-        {
-          "color": "#4b6878"
-        }
-      ]
-    },
-    {
-      "featureType": "administrative.land_parcel",
-      "elementType": "labels",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "featureType": "administrative.land_parcel",
-      "elementType": "labels.text.fill",
-      "stylers": [
-        {
-          "color": "#64779e"
-        }
-      ]
-    },
-    {
-      "featureType": "administrative.province",
-      "elementType": "geometry.stroke",
-      "stylers": [
-        {
-          "color": "#4b6878"
-        }
-      ]
-    },
-    {
-      "featureType": "landscape.man_made",
-      "elementType": "geometry.stroke",
-      "stylers": [
-        {
-          "color": "#334e87"
-        }
-      ]
-    },
-    {
-      "featureType": "landscape.natural",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "color": "#023e58"
-        }
-      ]
-    },
-    {
-      "featureType": "poi",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "color": "#283d6a"
-        }
-      ]
-    },
-    {
-      "featureType": "poi",
-      "elementType": "labels.text",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "featureType": "poi",
-      "elementType": "labels.text.fill",
-      "stylers": [
-        {
-          "color": "#6f9ba5"
-        }
-      ]
-    },
-    {
-      "featureType": "poi",
-      "elementType": "labels.text.stroke",
-      "stylers": [
-        {
-          "color": "#1d2c4d"
-        }
-      ]
-    },
-    {
-      "featureType": "poi.park",
-      "elementType": "geometry.fill",
-      "stylers": [
-        {
-          "color": "#023e58"
-        }
-      ]
-    },
-    {
-      "featureType": "poi.park",
-      "elementType": "labels.text.fill",
-      "stylers": [
-        {
-          "color": "#3C7680"
-        }
-      ]
-    },
-    {
-      "featureType": "road",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "color": "#304a7d"
-        }
-      ]
-    },
-    {
-      "featureType": "road",
-      "elementType": "labels.text.fill",
-      "stylers": [
-        {
-          "color": "#98a5be"
-        }
-      ]
-    },
-    {
-      "featureType": "road",
-      "elementType": "labels.text.stroke",
-      "stylers": [
-        {
-          "color": "#1d2c4d"
-        }
-      ]
-    },
-    {
-      "featureType": "road.highway",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "color": "#2c6675"
-        }
-      ]
-    },
-    {
-      "featureType": "road.highway",
-      "elementType": "geometry.stroke",
-      "stylers": [
-        {
-          "color": "#255763"
-        }
-      ]
-    },
-    {
-      "featureType": "road.highway",
-      "elementType": "labels.text.fill",
-      "stylers": [
-        {
-          "color": "#b0d5ce"
-        }
-      ]
-    },
-    {
-      "featureType": "road.highway",
-      "elementType": "labels.text.stroke",
-      "stylers": [
-        {
-          "color": "#023e58"
-        }
-      ]
-    },
-    {
-      "featureType": "road.local",
-      "elementType": "labels",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "featureType": "transit",
-      "elementType": "labels.text.fill",
-      "stylers": [
-        {
-          "color": "#98a5be"
-        }
-      ]
-    },
-    {
-      "featureType": "transit",
-      "elementType": "labels.text.stroke",
-      "stylers": [
-        {
-          "color": "#1d2c4d"
-        }
-      ]
-    },
-    {
-      "featureType": "transit.line",
-      "elementType": "geometry.fill",
-      "stylers": [
-        {
-          "color": "#283d6a"
-        }
-      ]
-    },
-    {
-      "featureType": "transit.station",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "color": "#3a4762"
-        }
-      ]
-    },
-    {
-      "featureType": "water",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "color": "#0e1626"
-        }
-      ]
-    },
-    {
-      "featureType": "water",
-      "elementType": "labels.text.fill",
-      "stylers": [
-        {
-          "color": "#4e6d70"
-        }
-      ]
-    }
-  ]
-
-  
-}
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(
-    browserHasGeolocation
-      ? "Error: The Geolocation service failed."
-      : "Error: Your browser doesn't support geolocation."
-  );
-  infoWindow.open(window.mp);
+  // Use the Promise to ensure the google.charts library is loaded 
 }
 
 //----------------------------------------------------------------------------------------------------------------------
 /* Class of Start Ride functionality
    Purpose - Provide functionality to the Track and Get Directions buttons, with autocomplete for Get Directions.
 */
-
-/* Function Interface - start-btn
-   Inputs - ps (original position of bike)
-*/
-document.getElementById("start-btn").onclick = function(ps){
-    const options = {
-      enableHighAccuracy: true,
-      timeout: 5000,
-      maximumAge: 0
-    };
-    document.getElementById("suggest").style.visibility = "hidden";
-
-    function error(){
-        alert("Error in start ride");}
-
-    function success(pos){
-            $.ajax({
-            type : "POST",
-            contentType: "application/json", 
-            url : "/post",
-            dataType: "json",
-            data: JSON.stringify({'data':pos, 'flag': 'const'}),
-            success: function(result) {
-        },error: function(XMLHttpRequest, textStatus, errorThrown) {
-        alert("Status: " + textStatus); alert("Error: " + errorThrown);
-    }
-    });
-
-    }
-    navigator.geolocation.getCurrentPosition(success, error, options);
-
-}
-
-/* Function Interface - start-btn
-   Inputs - None
-   Purpose -  Handler for the modal popup.
-*/
-document.getElementById("start-btn").onclick = function() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "block";
-  document.getElementById("directions-form").style.display = "none";
-  var modal2 = document.getElementById("nearby-srch");
-  modal2.style.display = "none";
-}
-
-/* Function Interface - cross
-   Inputs - None
-   Purpose -  Close button for popup
-*/
-document.getElementById("cross").onclick = function() {
-  document.getElementById('deets_cross').marker.setMap(null);
-  window.directionsDisplay.setMap(null);
-  document.getElementById("deets-modal").style.display = "none";
-  document.getElementById("myModal").style.display = "none";
-  document.getElementById("suggest").style.visibility = "visible";
-  console.log('window.directionsDisplay', window.directionsDisplay);
-  destmarker.setMap(null);
-}
-
-
-/* Function Interface - dir-btn
-   Inputs - None
-   Purpose -  Directions form with suggestions
-*/
-document.getElementById("dir-btn").onclick = function(map) {
-  document.getElementById("dest-text").value = "";
-  var modal = document.getElementById("directions-form");
-  var loc;
-  var usearr = [];
-  modal.style.display = "block";
-  document.getElementById("myModal").style.display = "none";
-  const comp = new google.maps.places.Autocomplete(document.getElementById("dest-text"));
-  comp.addListener('place_changed', fillInAddress);
-  function fillInAddress() {
-    // get the actual latitude and longitude from the place name
-    var place1 = comp.getPlace();
-    usearr = fetchmoredeets(place1.name);
-    destmarker = new google.maps.Marker({map:window.mp});
-    document.getElementById('deets_cross').marker = destmarker;
-    destmarker.setPosition(place1.geometry.location);
-    destmarker.setVisible(true);
-    findRoute(place1);
-    document.getElementById("go-to-details").loc = place1;
-  }
-}
 
 function findRoute(place){
     var coord = place.geometry.location;
@@ -662,193 +288,11 @@ function findRoute(place){
 
 }
 
-
-
-/* Function Interface - cross_dir
-   Inputs - None
-   Purpose -  Close button for directions form
-*/
-document.getElementById("cross-dir").onclick = function() {
-  document.getElementById("directions-form").style.display = "none";
-
-}
-
-document.getElementById("cross-details").onclick = function() {
-  currentLocationPromise.then(function(currentLocation) {
-    console.log("Current location: " + currentLocation.toString());
-    // do something with currentLocation
-    document.getElementById("trip-details").style.display = "none";
-    document.getElementById("cross-details").marker.setMap(null);
-    window.mp.setCenter(currentLocation);
-    window.directionsDisplay.setMap(null);
-    document.getElementById("start").style.visibility = "visible";
-  }).catch(function(error) {
-    console.log("Error getting current location: " + error.message);
-  });
-
-}
-
-/* Function Interface - track-btn
-   Inputs - map (map that is displayed on the webpage)
-   Purpose - Start Tracking Session
-*/
-document.getElementById("track-btn").onclick = function(map){
-   document.getElementById("directions-form").style.display = "none";
-   document.getElementById("map").style.width = "400px";
-   window.mp.setZoom(16);
-
-}
-
 //----------------------------------------------------------------------------------------------------------------------
 /* Class of Suggest Ride functionality
    Purpose - Provide functionality to the table of nearby search buttons, with ratings and images.
 */
 
-/* Function Interface - sugg-btn
-   Inputs - None
-   Purpose - Scrape Places API based on LatLng Bounds
-*/
-document.getElementById("sugg-btn").onclick = function(){
-    var dict = new Array();
-    var lt, ln;
-    document.getElementById("start").style.visibility = "hidden";
-    currentLocationPromise.then(function(currentLocation) {
-      console.log("Current location: " + currentLocation.toString());
-      // do something with currentLocation
-      lt = currentLocation.lat();
-      ln = currentLocation.lng();
-      
-      // gets list of nearby places for suggestions
-      var suggestions;
-      $.ajax({
-        url: "/nearby"
-    }).done(function(res, data) {
-      // once we have the list of nearby places
-        suggestions = res;
-        var req = suggestions;
-      // get basic data from here
-        for(var i=0; i<req.results.length; i++){
-          var res = req.results[i];
-          try{
-            if(res['photos'] && res['opening_hours']){
-                dict.push({'place_id': res.place_id, 'name': res.name, 'rating': res.rating, 'icon': res['icon'], 'open_now': res.opening_hours.open_now});
-            }
-            else if(res['opening_hours']){
-                dict.push({'place_id': res.place_id,'name': res.name, 'rating': res.rating, 'pic_id': res.opening_hours.open_now});
-            }
-            else{
-                dict.push({'place_id': res.place_id,'name': res.name, 'rating': res.rating});
-          }}
-          catch(err){
-            console.log(err);
-          }
-        // insert into the table
-        var tbody = document.getElementById("sugg-entries")
-        var row = tbody.insertRow();
-        row.id = 'suggestion'.concat(String(i));
-        var cell_name = row.insertCell();
-        var cell_rating = row.insertCell();
-        var cell_hours = row.insertCell();
-        cell_name.innerHTML = dict[i]['name'];
-        cell_rating.innerHTML = dict[i]['rating'];
-        cell_hours.innerHTML = dict[i]['open_now'];
-        var tbl = document.getElementById("near-tbl");
-        var rows = tbl.getElementsByTagName("tr");
-        }
-        for (i = 0; i < rows.length; i++) {
-          var currentRow = tbl.rows[i];
-          // // responsible for highlighting hovered row
-          // if (currentRow.id != 'desc-row'){
-          //   currentRow.onmouseover = function() {
-          //     this.style.backgroundColor = "#00000046";
-          //   }
-          //   currentRow.onmouseout = function() {
-          //     this.style.backgroundColor = rgba(0,0,0,0.5);  
-          //   }
-          // }
-          
-          var createClickHandler = function(row, cnt) {
-            return function() {
-              console.log("createClickHandler");
-              var cell = row.getElementsByTagName("td");
-              modal.style.display = "none";
-              // make call to places details for maps api from backend
-              var place_id = dict[cnt-1].place_id;
-              // send clicked place to backed, so we can get the place details
-              $.ajax({
-                type : "POST",
-                url : "/post",
-                dataType: "json",
-                contentType: "application/json",
-                data: JSON.stringify({pid:place_id, flag: 'place_details'}),
-                success: function(result) {
-                  console.log(result);
-                  $.ajax({
-                    type: 'GET',
-                    url: '/details'
-                  }).done(function(res, data) {
-                    // get the place details and create info page
-                    // console.log(data, res.result);
-                    var detailspopup = document.getElementById("trip-details"); 
-                    detailspopup.style.display = "block";
-                    document.getElementById("cross-dir").loc = new google.maps.LatLng(res.result.geometry.location.lat, res.result.geometry.location.lng);
-                    tripDetails(res.result);
-
-                  })
-                },error: function(XMLHttpRequest, textStatus, errorThrown) {
-                  console.log("ERRRR");
-            }
-                });
-            };
-          };
-          currentRow.onclick = createClickHandler(currentRow, i);
-        }
-
-
-      });
-    }).catch(function(error) {
-      console.log("Error getting current location: " + error.message);
-    });
-      
-      // table display
-      var modal = document.getElementById("nearby-srch");
-      modal.style.display = "block";
-    
-}
-
-
-/* Function Interface - cross-srch
-   Inputs - None
-   Purpose - Close button for the suggestions
-*/
-document.getElementById("cross-srch").onclick = function() {
-  document.getElementById("nearby-srch").style.display = "none";
-  document.getElementById("start").style.visibility = "visible";
-
-}
-
-document.getElementById("deets_cross").onclick = function() {
-    document.getElementById('deets_cross').marker.setMap(null);
-    console.log('marker', document.getElementById('deets_cross').marker)
-    window.directionsDisplay.setMap(null);
-    document.getElementById("deets-modal").style.display = "none";
-
-}
-
-document.getElementById("go-to-details").onclick = function() {
-  var infomodal = document.getElementById("deets-modal");
-  infomodal.style.display = "none";
-  console.log('pass to tripdetails', document.getElementById("go-to-details").loc)
-  tripDetails(document.getElementById("go-to-details").loc);
-  var detailspopup = document.getElementById("trip-details");
-  detailspopup.style.display = "block";
-
-  // document.getElementById("deets-modal").style.display = "none";
-  // destmarker = new google.maps.Marker({map:window.mp});
-  // destmarker.setVisible(false);
-  // window.directionsDisplay.setMap(null);
-  // window.mp.setCenter(homemarker.position);
-}
 
 /* Inputs- None;
    Outputs - None;
@@ -921,32 +365,6 @@ function fetchmoredeets(addr) {
    Inputs - None
    Outputs - None;
    Description - Toggle for showing bike routes */
-var bikeLayer;
-var layerCnt = 0;
-document.getElementById("bike-routes-btn").onclick=function(){
-    // implies show bike routes
-    if (layerCnt % 2 == 0) {
-      document.getElementById('bike-routes-btn').innerHTML= "Hide Bike Routes";
-      try{
-        bikeLayer = new google.maps.BicyclingLayer();
-        bikeLayer.setMap(window.mp);
-      }
-      catch(err){
-        console.log(err);
-      }
-      
-    }
-    else {
-      document.getElementById('bike-routes-btn').innerHTML= "Show Bike Routes";
-      try{
-        bikeLayer.setMap(null);
-      }
-      catch(err){
-        console.log(err);
-      }
-    }
-    layerCnt++;
-}
 
 
 const trackLocation = ({ onSuccess, onError = () => { } }) => {
@@ -958,15 +376,6 @@ const trackLocation = ({ onSuccess, onError = () => { } }) => {
   return navigator.geolocation.watchPosition(onSuccess, onError);
 };
 
-// document.getElementById("recenter").onclick=function(){
-//     var latlng = new google.maps.LatLng(fetchit.lat, fetchit.lng);
-//     window.mp.setCenter(latlng, 20);
-// }
-
-document.getElementById("logo").onclick=function(){
-  window.location.href = '/';
-  window.location.reload();
-}
 
 function tripDetails(place){
   console.log('place', place);
