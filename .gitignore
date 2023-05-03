@@ -3,3 +3,4 @@ venv/
 .idea/
 .vscode/
 logs/
+config/__pycache__/
