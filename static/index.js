@@ -76,6 +76,8 @@ function doSomethingWithLocation() {
    Purpose - Initialize map with bike routes and the bike icon for indicator. */
 
    // refactor this to assign all variables here and then call the function that does this stuff
+
+
 function initMap() {
   var opt = {
     zoom: 14,
@@ -89,6 +91,100 @@ function initMap() {
     script.src = '/static/crimeMap.js';
     document.getElementsByTagName('head')[0].appendChild(script);
   });
+  
+
+  // Create an array to hold the features
+
+// Load the JSON data from the file
+var heatmapLayer; // Define the heatmap layer as a global variable
+
+fetch('/static/crimedata/parsedNeighborHoods.json')
+.then(function(response) {
+  return response.json();
+})
+.then(function(data) {
+  var features = [];
+
+  // Loop through the data and create Point features with the latitude and longitude coordinates
+  for (var key in data) {
+    var item = data[key];
+    var coordinate = ol.proj.fromLonLat([parseFloat(item.longitude), parseFloat(item.latitude)]);
+    var feature = new ol.Feature(new ol.geom.Point(coordinate));
+    features.push(feature);
+  }
+
+  // Create a vector source with the features
+  var vectorSource = new ol.source.Vector({
+    features: features
+  });
+
+  // Create a heatmap layer
+  var heatmapLayer = new ol.layer.Heatmap({
+    source: vectorSource, // Set the source to the vector source
+    radius: 7, // Set the radius of the heatmap points
+    gradient: ['blue', 'lime', 'yellow', 'red'] // Set the gradient colors
+  });
+
+  // Add the heatmap layer to the OpenLayers map
+  var olMap = new ol.Map({
+    target: 'map', // Set the target DOM element
+    layers: [
+      // Add any other layers you may have
+      heatmapLayer // Add the heatmap layer
+    ],
+    view: new ol.View({
+      center: ol.proj.fromLonLat([-87.623177, 41.881832]), // Set the initial center
+      zoom: 12 // Set the initial zoom level
+    })
+  });
+
+  // Convert the OpenLayers map to a Google Maps overlay
+  olMap.once('ready', function() {
+    var olOverlay = new ol.Overlay({
+      element: document.getElementById('mapOverlay'), // Use a different parent element
+      position: ol.proj.fromLonLat([-87.623177, 41.881832]),
+      positioning: 'center-center',
+      stopEvent: true, // Allow events to propagate through the overlay
+      insertFirst: false // Append the overlay element as the last child of its parent
+    });
+    olMap.getViewport().style.pointerEvents = 'none';
+    olMap.getInteractions().forEach(function(interaction) {
+      if (interaction instanceof ol.interaction.KeyboardPan ||
+          interaction instanceof ol.interaction.KeyboardZoom ||
+          interaction instanceof ol.interaction.DragPan ||
+          interaction instanceof ol.interaction.DragZoom ||
+          interaction instanceof ol.interaction.MouseWheelZoom ||
+          interaction instanceof ol.interaction.PinchRotate ||
+          interaction instanceof ol.interaction.PinchZoom) {
+        interaction.setActive(false);
+      }
+    });
+    olOverlay.setMap(window.mp); // Use the olMap instance as the map for the overlay
+
+    // Hide the overlay
+    olOverlay.setPosition(undefined);
+
+    // Disable the heatmap layer
+    heatmapLayer.setVisible(false);
+
+    // Add an event listener to the overlay close button to re-enable the heatmap layer
+    document.getElementById('closeOverlay').addEventListener('click', function() {
+      olOverlay.setPosition(undefined);
+      heatmapLayer.setVisible(true); // Re-enable the heatmap layer
+    });
+  });
+})
+.catch(function(error) {
+  console.error('Error: ', error);
+});
+
+
+
+
+
+
+
+  // Add the heatmap layer to the map
   currentLocationPromise.then(function(currentLocation) {
     console.log("Current location: " + currentLocation.toString());
     // do something with currentLocation
@@ -121,20 +217,9 @@ function initMap() {
   
   destmarker = new google.maps.Marker({map:window.mp});
   window.directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true, suppressBicyclingLayer: true});
-  const loadCharts = new Promise((resolve) => {
-    google.charts.load('current', {packages: ['corechart', 'table', 'geochart', 'map', 'visualization']});
-    google.charts.setOnLoadCallback(resolve);
-  });
 
   // Use the Promise to ensure the google.charts library is loaded
-  loadCharts.then(() => {
-    fetch('/static/crimedata/parsedNeighborhoods.json')
-      .then(response => response.json())
-      .then(data => {
-        generateHeatmap(data); // Call the function from heatmap.js
-      })
-      .catch(error => console.error(error));
-  });
+
   var sty = [
     {
       "elementType": "geometry",

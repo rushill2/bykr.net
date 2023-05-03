@@ -7,7 +7,6 @@ import sys, os
 import traceback,json
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from maps import GeoHandler
-print(GeoHandler.test(GeoHandler))
 import _thread
 from config import logconfig
 
@@ -87,17 +86,14 @@ def count():
 
 @app.route('/nearby')
 def nearby():
-    print('reached nearby')
     return GeoHandler.nearbyPlaces(GeoHandler, geodata.latlng[0], geodata.latlng[1])
 
 @app.route('/details')
 def details():
-    print('reached details')
     return placeDeets
 
 @app.route('/nameSearch')
 def name():
-    print('reached name')
     return placeName
 
 @app.route('/login', methods=['POST'])
@@ -106,8 +102,6 @@ def login():
     if data is None:
         data = json.loads(request.json)
     logger.info("Post data: " + str(data))
-    print(data)
-    print('reached login')
     return placeName
 
 if __name__ == "__main__":
