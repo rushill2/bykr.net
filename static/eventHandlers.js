@@ -11,55 +11,54 @@ document.getElementById("cross-srch").onclick = function() {
   
   }
   
+  let startTime;
+  let timerInterval;
+  
+  // Function to start the timer
+  function startTimer() {
+    startTime = Date.now();
+    timerInterval = setInterval(updateTimer, 1000); // Update timer every second
+  }
+  
+  // Function to update the timer
+  function updateTimer() {
+    const currentTime = Date.now();
+    const elapsedTime = currentTime - startTime;
+    const formattedTime = formatTime(elapsedTime);
+    document.getElementById("timer").textContent = "Time elapsed: " + formattedTime;
+  }
+  
+  // Function to format the time
+  function formatTime(milliseconds) {
+    const seconds = Math.floor(milliseconds / 1000) % 60;
+    const minutes = Math.floor(milliseconds / 1000 / 60) % 60;
+    const hours = Math.floor(milliseconds / 1000 / 60 / 60);
+  
+    const formattedSeconds = seconds.toString().padStart(2, "0");
+    const formattedMinutes = minutes.toString().padStart(2, "0");
+    const formattedHours = hours.toString().padStart(2, "0");
+  
+    return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+  }
+  
+  // Call startTimer function whenever you want to start the timer  
+
   document.getElementById("go-to-details").onclick = function() {
-    console.log("marker is", document.getElementById("markers").marker);
     var infomodal = document.getElementById("deets-modal");
     var tripWindow = document.getElementById("trip-modal");
     tripWindow.style.display = "block";
+
     infomodal.style.display = "none";
     document.getElementById("suggest").style.visibility = "visible";
     window.tripDetails(document.getElementById("go-to-details").loc);
+
     var detailspopup = document.getElementById("trip-details");
     window.mp.setCenter(window.homemarker.getC)
     detailspopup.style.display = "block";
     console.log("Reached formatTime");
-    // now to create a modal for the trip details with a timer and distance 
-    // Function to format the time
-    function formatTime(time) {
-      return time < 10 ? `0${time}` : time;
-    }
-
-    // Function to update and display the timer
-    function updateTimer() {
-      console.log("reached updateTimer");
-      let seconds = 0;
-      let minutes = 0;
-      let hours = 0;
-
-      setInterval(function () {
-        seconds++;
-
-        if (seconds >= 60) {
-          seconds = 0;
-          minutes++;
-
-          if (minutes >= 60) {
-            minutes = 0;
-            hours++;
-          }
-        }
-
-        const formattedTime = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
-        document.getElementById("timer").textContent = formattedTime;
-      }, 1000); // Update the timer every 1000 milliseconds (1 second)
-    }
-
-// Start the timer
-    console.log("STARTED TIMER");
-    updateTimer();
-    console.log("updateTimer started");
   }
-  
+
+
   var bikeLayer;
   var layerCnt = 0;
   document.getElementById("bike-routes-btn").onclick=function(){
@@ -119,11 +118,13 @@ document.getElementById("trip_modal_close").onclick = function() {
   window.directionsDisplay.setMap(null);
   document.getElementById('start').style.visibility= "visible";
   console.log("MARKERS", document.getElementById("markers"), document.getElementById("markers").marker);
+  clearInterval(window.timerInterval);
+  var rideTime = Date.now()- startTime;
+  console.log("This is the rideTime:", rideTime);
 }
   
   document.getElementById("cross-details").onclick = function() {
     currentLocationPromise.then(function(currentLocation) {
-      // do something with currentLocation
       document.getElementById("trip-details").style.display = "none";
       document.getElementById("markers").marker.setMap(null);
       window.mp.setCenter(currentLocation);
@@ -190,27 +191,6 @@ document.getElementById("start-btn").onclick = function(){
         var modal2 = document.getElementById("nearby-srch");
         modal2.style.display = "none";
     document.getElementById("suggest").style.visibility = "hidden";
-    // window.currentLocationPromise.then(function(currentLocation) {
-    //   console.log('startbtn currentLocationPromise: ' + currentLocation, typeof currentLocation);
-    //   const data = JSON.stringify({'data':currentLocation, 'flag': 'const'});
-    //   console.log('Ajax request payload:', data);
-    //   $.ajax({
-    //     type: "POST",
-    //     contentType: "application/json", 
-    //     url: "/post",SS
-    //     dataType: "json",
-    //     data: data,
-    //     success: function(result) {
-    //       console.log("startbtn post success")
-    //     },
-    //     error: function(XMLHttpRequest, textStatus, errorThrown) {
-    //       console.log('startbtn post error - textStatus:', textStatus);
-    //       console.log('startbtn post error - XMLHttpRequest:', XMLHttpRequest);
-    //     }
-        
-    //   });
-    // });
-    
 }
 
 
@@ -322,6 +302,9 @@ document.getElementById("start-suggestion").onclick = function(){
   document.getElementById("deets-modal").style.display = "none";
   document.getElementById("nearby-srch").style.display = "none";
   document.getElementById("trip-modal").style.display = "block";
+  console.log("DEST:", window.currDest);
+  document.getElementById("trip-title").innerHTML = "Trip to: " + window.currDest.name;
+  startTimer()
 }
 
 
