@@ -1,7 +1,0 @@
-22:00:04 :: INFO : geocoder.base: Requested http://ipinfo.io/json
-22:00:04 :: WARNING : werkzeug:  * Debugger is active!
-22:00:04 :: INFO : werkzeug:  * Debugger PIN: 144-772-890
-22:00:11 :: INFO : werkzeug:  * Detected change in 'c:\\Users\\rushi\\Desktop\\Projects\\bykr.net\\crime.py', reloading
-22:00:12 :: INFO : geocoder.base: Requested http://ipinfo.io/json
-22:00:12 :: WARNING : werkzeug:  * Debugger is active!
-22:00:12 :: INFO : werkzeug:  * Debugger PIN: 144-772-890

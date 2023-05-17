@@ -1,4 +1,0 @@
-04:17:31 :: INFO : geocoder.base: Requested http://ipinfo.io/json
-04:17:31 :: WARNING : werkzeug:  * Debugger is active!
-04:17:31 :: INFO : werkzeug:  * Debugger PIN: 144-772-890
-04:17:59 :: INFO : werkzeug:  * Detected change in 'c:\\Users\\rushi\\Desktop\\Projects\\bykr.net\\maps.py', reloading

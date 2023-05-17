@@ -1,52 +1,91 @@
+
 document.getElementById("cross-srch").onclick = function() {
     document.getElementById("nearby-srch").style.display = "none";
     document.getElementById("start").style.visibility = "visible";
-  
   }
   
   document.getElementById("deets_cross").onclick = function() {
-      document.getElementById('deets_cross').marker.setMap(null);
-      console.log('marker', document.getElementById('deets_cross').marker)
+      document.getElementById('markers').marker.setMap(null);
       window.directionsDisplay.setMap(null);
       document.getElementById("deets-modal").style.display = "none";
   
   }
   
   document.getElementById("go-to-details").onclick = function() {
+    console.log("marker is", document.getElementById("markers").marker);
     var infomodal = document.getElementById("deets-modal");
+    var tripWindow = document.getElementById("trip-modal");
+    tripWindow.style.display = "block";
     infomodal.style.display = "none";
-    console.log('pass to tripdetails', document.getElementById("go-to-details").loc)
-    tripDetails(document.getElementById("go-to-details").loc);
+    document.getElementById("suggest").style.visibility = "visible";
+    window.tripDetails(document.getElementById("go-to-details").loc);
     var detailspopup = document.getElementById("trip-details");
+    window.mp.setCenter(window.homemarker.getC)
     detailspopup.style.display = "block";
+    console.log("Reached formatTime");
+    // now to create a modal for the trip details with a timer and distance 
+    // Function to format the time
+    function formatTime(time) {
+      return time < 10 ? `0${time}` : time;
+    }
+
+    // Function to update and display the timer
+    function updateTimer() {
+      console.log("reached updateTimer");
+      let seconds = 0;
+      let minutes = 0;
+      let hours = 0;
+
+      setInterval(function () {
+        seconds++;
+
+        if (seconds >= 60) {
+          seconds = 0;
+          minutes++;
+
+          if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+          }
+        }
+
+        const formattedTime = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
+        document.getElementById("timer").textContent = formattedTime;
+      }, 1000); // Update the timer every 1000 milliseconds (1 second)
+    }
+
+// Start the timer
+    console.log("STARTED TIMER");
+    updateTimer();
+    console.log("updateTimer started");
   }
   
-    var bikeLayer;
-    var layerCnt = 0;
-    document.getElementById("bike-routes-btn").onclick=function(){
-        // implies show bike routes
-        if (layerCnt % 2 == 0) {
-        document.getElementById('bike-routes-btn').innerHTML= "Hide Bike Routes";
-        try{
-            bikeLayer = new google.maps.BicyclingLayer();
-            bikeLayer.setMap(window.mp);
-        }
-        catch(err){
-            console.log(err);
-        }
-        
-        }
-        else {
-        document.getElementById('bike-routes-btn').innerHTML= "Show Bike Routes";
-        try{
-            bikeLayer.setMap(null);
-        }
-        catch(err){
-            console.log(err);
-        }
-        }
-        layerCnt++;
-    }
+  var bikeLayer;
+  var layerCnt = 0;
+  document.getElementById("bike-routes-btn").onclick=function(){
+      // implies show bike routes
+      if (layerCnt % 2 == 0) {
+      document.getElementById('bike-routes-btn').innerHTML= "Hide Bike Routes";
+      try{
+          bikeLayer = new google.maps.BicyclingLayer();
+          bikeLayer.setMap(window.mp);
+      }
+      catch(err){
+          console.log(err);
+      }
+      
+      }
+      else {
+      document.getElementById('bike-routes-btn').innerHTML= "Show Bike Routes";
+      try{
+          bikeLayer.setMap(null);
+      }
+      catch(err){
+          console.log(err);
+      }
+      }
+      layerCnt++;
+  }
 
     document.getElementById("logo").onclick=function(){
         window.location.href = '/';
@@ -59,7 +98,7 @@ document.getElementById("cross-srch").onclick = function() {
 */
     document.getElementById("track-btn").onclick = function(map){
         document.getElementById("directions-form").style.display = "none";
-        document.getElementById("map").style.width = "400px";
+        // document.getElementById("map").style.width = "400px";
         window.mp.setZoom(16);
     }
 
@@ -71,18 +110,27 @@ document.getElementById("cross-dir").onclick = function() {
     document.getElementById("directions-form").style.display = "none";
   
   }
+
+document.getElementById("trip_modal_close").onclick = function() {
+  document.getElementById("trip-modal").style.display = "none";
+  document.getElementById("start").style.display ="block";
+  document.getElementById("markers").marker.setMap(null);
+  window.mp.setCenter(window.homemarker.position);
+  window.directionsDisplay.setMap(null);
+  document.getElementById('start').style.visibility= "visible";
+  console.log("MARKERS", document.getElementById("markers"), document.getElementById("markers").marker);
+}
   
   document.getElementById("cross-details").onclick = function() {
     currentLocationPromise.then(function(currentLocation) {
-      console.log("Current location: " + currentLocation.toString());
       // do something with currentLocation
       document.getElementById("trip-details").style.display = "none";
-      document.getElementById("cross-details").marker.setMap(null);
+      document.getElementById("markers").marker.setMap(null);
       window.mp.setCenter(currentLocation);
       window.directionsDisplay.setMap(null);
       document.getElementById("start").style.visibility = "visible";
     }).catch(function(error) {
-      console.log("Error getting current location: " + error.message);
+      console.log("cross-details Error getting current location: " + error.message);
     });
   
   }
@@ -102,14 +150,13 @@ document.getElementById("dir-btn").onclick = function(map) {
     comp.addListener('place_changed', fillInAddress);
     function fillInAddress() {
       // get the actual latitude and longitude from the place name
-      var place1 = comp.getPlace();
-      usearr = fetchmoredeets(place1.name);
-      destmarker = new google.maps.Marker({map:window.mp});
-      document.getElementById('deets_cross').marker = destmarker;
-      destmarker.setPosition(place1.geometry.location);
-      destmarker.setVisible(true);
-      findRoute(place1);
-      document.getElementById("go-to-details").loc = place1;
+      window.currDest = comp.getPlace();
+      usearr = window.additionalDetails(window.currDest.name);
+      document.getElementById('markers').marker.setPosition(window.currDest.geometry.location);
+      document.getElementById('markers').marker.setVisible(true);
+      window.findRoute(window.currDest);
+      document.getElementById("deets-modal").style.display = "block";
+      document.getElementById("go-to-details").loc = window.currDest;
     }
   }
 
@@ -118,59 +165,54 @@ document.getElementById("dir-btn").onclick = function(map) {
    Purpose -  Close button for popup
 */
     document.getElementById("cross").onclick = function() {
-        document.getElementById('deets_cross').marker.setMap(null);
+      if (document.getElementById('markers').marker) {
+        document.getElementById('markers').marker.setMap(null);
+      }
         window.directionsDisplay.setMap(null);
         document.getElementById("deets-modal").style.display = "none";
         document.getElementById("myModal").style.display = "none";
         document.getElementById("suggest").style.visibility = "visible";
-        console.log('window.directionsDisplay', window.directionsDisplay);
-        destmarker.setMap(null);
-    }
-
-    /* Function Interface - start-btn
-   Inputs - None
-   Purpose -  Handler for the modal popup.
-    */
-    document.getElementById("start-btn").onclick = function() {
-        var modal = document.getElementById("myModal");
-        modal.style.display = "block";
-        document.getElementById("directions-form").style.display = "none";
-        var modal2 = document.getElementById("nearby-srch");
-        modal2.style.display = "none";
+        document.getElementById('markers').marker.setMap(null);
     }
 
     /* Function Interface - start-btn
    Inputs - ps (original position of bike)
 */
-document.getElementById("start-btn").onclick = function(ps){
+document.getElementById("start-btn").onclick = function(){
     const options = {
       enableHighAccuracy: true,
       timeout: 5000,
       maximumAge: 0
     };
+    var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+        document.getElementById("directions-form").style.display = "none";
+        var modal2 = document.getElementById("nearby-srch");
+        modal2.style.display = "none";
     document.getElementById("suggest").style.visibility = "hidden";
-
-    function error(e){
-        console.error(e)
-        alert("Error in start ride");}
-
-    function success(pos){
-            $.ajax({
-            type : "POST",
-            contentType: "application/json", 
-            url : "/post",
-            dataType: "json",
-            data: JSON.stringify({'data':pos, 'flag': 'const'}),
-            success: function(result) {
-        },error: function(XMLHttpRequest, textStatus, errorThrown) {
-        alert("Status: " + textStatus); alert("Error: " + errorThrown);
-    }
-    });
-
-    }
-    navigator.geolocation.getCurrentPosition(success, error, options);
-
+    // window.currentLocationPromise.then(function(currentLocation) {
+    //   console.log('startbtn currentLocationPromise: ' + currentLocation, typeof currentLocation);
+    //   const data = JSON.stringify({'data':currentLocation, 'flag': 'const'});
+    //   console.log('Ajax request payload:', data);
+    //   $.ajax({
+    //     type: "POST",
+    //     contentType: "application/json", 
+    //     url: "/post",SS
+    //     dataType: "json",
+    //     data: data,
+    //     success: function(result) {
+    //       console.log("startbtn post success")
+    //     },
+    //     error: function(XMLHttpRequest, textStatus, errorThrown) {
+    //       console.log('startbtn post error - textStatus:', textStatus);
+    //       console.log('startbtn post error - XMLHttpRequest:', XMLHttpRequest);
+    //     }
+        
+    //   });
+    // });
+    
 }
+
 
 /* Function Interface - sugg-btn
    Inputs - None
@@ -181,10 +223,9 @@ document.getElementById("sugg-btn").onclick = function(){
     var lt, ln;
     document.getElementById("start").style.visibility = "hidden";
     currentLocationPromise.then(function(currentLocation) {
-      console.log("Current location: " + currentLocation.toString());
       // do something with currentLocation
-      lt = currentLocation.lat();
-      ln = currentLocation.lng();
+      lt = currentLocation.coords.latitude;
+      ln = currentLocation.coords.longitude;
       
       // gets list of nearby places for suggestions
       var suggestions;
@@ -227,9 +268,8 @@ document.getElementById("sugg-btn").onclick = function(){
           var currentRow = tbl.rows[i];          
           var createClickHandler = function(row, cnt) {
             return function() {
-              console.log("createClickHandler");
               var cell = row.getElementsByTagName("td");
-              modal.style.display = "none";
+              modal.style.dispslay = "none";
               // make call to places details for maps api from backend
               var place_id = dict[cnt-1].place_id;
               // send clicked place to backed, so we can get the place details
@@ -240,7 +280,7 @@ document.getElementById("sugg-btn").onclick = function(){
                 contentType: "application/json",
                 data: JSON.stringify({pid:place_id, flag: 'place_details'}),
                 success: function(result) {
-                  console.log(result);
+                  console.log('suggestions post result:', result);
                   $.ajax({
                     type: 'GET',
                     url: '/details'
@@ -249,8 +289,12 @@ document.getElementById("sugg-btn").onclick = function(){
                     // console.log(data, res.result);
                     var detailspopup = document.getElementById("trip-details"); 
                     detailspopup.style.display = "block";
+                    document.getElementById("nearby-srch").style.display = "none";
+
+                    window.currDest = res.result;
+                    console.log("CURRDEST", window.currDest);
                     document.getElementById("cross-dir").loc = new google.maps.LatLng(res.result.geometry.location.lat, res.result.geometry.location.lng);
-                    tripDetails(res.result);
+                    window.tripDetails(res.result);
 
                   })
                 },error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -261,15 +305,26 @@ document.getElementById("sugg-btn").onclick = function(){
           };
           currentRow.onclick = createClickHandler(currentRow, i);
         }
-
-
       });
     }).catch(function(error) {
-      console.log("Error getting current location: " + error.message);
+      console.log("sugg-btn Error getting current location: " + error.message);
     });
       
       // table display
       var modal = document.getElementById("nearby-srch");
       modal.style.display = "block";
     
+}
+
+document.getElementById("start-suggestion").onclick = function(){
+  window.findRoute(window.currDest);
+  document.getElementById("trip-details").style.display = "none";
+  document.getElementById("deets-modal").style.display = "none";
+  document.getElementById("nearby-srch").style.display = "none";
+  document.getElementById("trip-modal").style.display = "block";
+}
+
+
+document.getElementById("google-login-button").onclick = function(ps){
+  alert("Work in progress!")
 }

@@ -40,6 +40,8 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <div id="map"></div>
+
+  <div id = "markers"></div>
   
 
   <h3 style="text-align:center;">
@@ -64,6 +66,18 @@
       </div>
       </div>
     </div>
+
+    <div id="trip-modal" class="modal" style="color:black;margin-left:auto;margin-right:auto;text-align:center;font-family:Courier New;text-align:center">
+      <!-- Modal content -->
+      <div class="modal-content" style="text-align:center">
+      <span class="close" id = "trip_modal_close">&times;</span>
+      <div id = "dest-name"></div>
+      <div id="timer">00:00:00</div>
+      </div>
+      <!-- <div class="modal-content" style="text-align:center">
+      </div> -->
+    </div>
+
 
     <div id="deets-modal" class="modal" style="color:black;margin-left:auto;margin-right:auto;text-align:center;font-family:Courier New;text-align:center">
       <!-- Modal content -->
@@ -143,6 +157,7 @@
         <p class="place-summary"></p>
         <a class="place-website"  target="_blank"></a>
         <p class="place-wheelchair"></p>
+        <button class="button" id="start-suggestion">Start Trip</button>
       </div>
     </div>
     

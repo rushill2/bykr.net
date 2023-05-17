@@ -1,62 +1,63 @@
 // Main Page for Ryder static html
-var map, infoWindow;
-var ps;
-var homemarker, destmarker;
-var currPos;
 //----------------------------------------------------------------------------------------------------------------------
 // location constantly acquired here
 
 document.getElementById("loading-indicator").style.display = "block";
 
-const currentLocationPromise = new Promise((resolve, reject) => {
-  if ("geolocation" in navigator) {
-    // geolocation is available
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        // update location
-        document.getElementById("loading-indicator").style.display = "none";
-        const { latitude, longitude } = position.coords;
-        const currentLocation = new google.maps.LatLng(latitude, longitude);
-        resolve(currentLocation);
-      },
-      (error) => {
-        // handle errors
-        document.getElementById("loading-indicator").style.display = "none";
-        switch (error.code) {
-          case error.PERMISSION_DENIED:
-            console.log("User denied the request for Geolocation.");
-            break;
-          case error.POSITION_UNAVAILABLE:
-            console.log("Location information is unavailable.");
-            break;
-          case error.TIMEOUT:
-            console.log("The request to get user location timed out.");
-            break;
-          case error.UNKNOWN_ERROR:
-            console.log("An unknown error occurred.");
-            break;
-        }
-        reject(error);
-      },
-      {
-        maximumAge: 30000, // 5 minutes in milliseconds
+if ('geolocation' in navigator) {
+  const options = {
+    enableHighAccuracy: true,
+    timeout: Infinity,
+    maximumAge: 0
+  };
+
+  const currentLocationPromise = new Promise((resolve, reject) => {
+    const onSuccess = (position) => {
+      const { latitude, longitude } = position.coords;
+      document.getElementById("loading-indicator").style.display = "none";
+      var latlng = new google.maps.LatLng(latitude, longitude);
+      if (window.homemarker){
+        window.homemarker.setPosition(latlng);
       }
-    );
-  } else {
-    // geolocation is not available
-    document.getElementById("loading-indicator").style.display = "none";
-    console.log("Geolocation is not supported by this browser.");
-    reject(new Error("Geolocation is not supported by this browser."));
-  }
-});
+      else{
+        window.homemarker = new google.maps.Marker({
+          icon: {
+            url: "https://cdn.pixabay.com/photo/2014/04/03/10/53/bicycle-311656_960_720.png",
+            scaledSize: new google.maps.Size(60, 50),
+            fillOpacity: 1,
+            strokeWeight: 5,
+            fillColor: '#5384ED',
+            strokeColor: '#ffffff',
+          },
+          map: window.mp
+        });
+      }
+      const data = { latitude, longitude };
+      $.ajax({
+        type: "POST",
+        url: "/location_daemon",
+        data: JSON.stringify(data),
+        contentType: "application/json",
+        error: function(error) {
+          console.error("Failed to update location:", error);
+        }
+      });
+      resolve(position);
+    };
 
+    const onError = (error) => {
+      console.error(`Error getting location: ${error.message}`);
+      reject(error);
+    };
 
-currentLocationPromise.then(function(currentLocation) {
-  console.log("Current location: " + currentLocation.toString());
-  // do something with currentLocation
-}).catch(function(error) {
-  console.log("Error getting current location: " + error.message);
-});
+    const watchId = navigator.geolocation.watchPosition(onSuccess, onError, options);
+  });
+
+  window.currentLocationPromise = currentLocationPromise;
+} else {
+  console.error('Geolocation is not supported by this browser.');
+  // Handle lack of geolocation support appropriately
+}
 
 //----------------------------------------------------------------------------------------------------------------------
 // Map Init
@@ -64,10 +65,7 @@ currentLocationPromise.then(function(currentLocation) {
    Input - None
    Purpose - Initialize map with bike routes and the bike icon for indicator. */
 
-   // refactor this to assign all variables here and then call the function that does this stuff
-
-
-function initMap() {
+ window.initMap=function() {
   var opt = {
     zoom: 14,
     clickableIcons: false,
@@ -80,168 +78,149 @@ function initMap() {
     script.src = '/static/crimeMap.js';
     document.getElementsByTagName('head')[0].appendChild(script);
   });
-  
+}
+
 
   // Create an array to hold the features
 
 // Load the JSON data from the file
 
-fetch('/static/crimedata/parsedNeighborHoods.json')
-.then(function(response) {
-  return response.json();
-})
-.then(function(data) {
-  var features = [];
+// fetch('/static/crimedata/parsedNeighborHoods.json')
+// .then(function(response) {
+//   return response.json();
+// })
+// .then(function(data) {
+//   var features = [];
 
-  // Loop through the data and create Point features with the latitude and longitude coordinates
-  for (var key in data) {
-    var item = data[key];
-    var coordinate = ol.proj.fromLonLat([parseFloat(item.longitude), parseFloat(item.latitude)]);
-    var feature = new ol.Feature(new ol.geom.Point(coordinate));
-    features.push(feature);
+//   // Loop through the data and create Point features with the latitude and longitude coordinates
+//   for (var key in data) {
+//     var item = data[key];
+//     var coordinate = ol.proj.fromLonLat([parseFloat(item.longitude), parseFloat(item.latitude)]);
+//     var feature = new ol.Feature(new ol.geom.Point(coordinate));
+//     features.push(feature);
+//   }
+
+//   // Create a vector source with the features
+//   var vectorSource = new ol.source.Vector({
+//     features: features
+//   });
+
+//   // Create a heatmap layer
+//   var heatmapLayer = new ol.layer.Heatmap({
+//     source: vectorSource, // Set the source to the vector source
+//     radius: 7, // Set the radius of the heatmap points
+//     gradient: ['blue', 'lime', 'yellow', 'red'], // Set the gradient colors
+//     overlay: true,
+//   });
+
+//   // Add the heatmap layer to the OpenLayers map
+//   var olMap = new ol.Map({
+//     target: 'map', // Set the target DOM element
+//     layers: [
+//       // Add any other layers you may have
+//       heatmapLayer // Add the heatmap layer
+//     ],
+//     view: new ol.View({
+//       center: ol.proj.fromLonLat([-87.623177, 41.881832]), // Set the initial center
+//       zoom: 12 // Set the initial zoom level
+//     }),
+//     useInterimTilesOnError: false
+//   });
+
+//   // Disable interactions on the map
+//   olMap.getInteractions().clear();
+
+//   // Convert the OpenLayers map to a Google Maps overlay
+//   olMap.once('ready', function() {
+//     window.olOverlay = new ol.Overlay({
+//       element: document.getElementById('mapOverlay'), // Use a different parent element
+//       position: ol.proj.fromLonLat([-87.623177, 41.881832]),
+//       positioning: 'center-center',
+//       stopEvent: true, // Allow events to propagate through the overlay
+//       insertFirst: false // Append the overlay element as the last child of its parent
+//     });
+
+//     // Set the position of the overlay element to be fixed
+//     window.olOverlay.getElement().style.position = 'fixed';
+
+//     // Set the map viewport to ignore pointer events
+//     olMap.getViewport().style.pointerEvents = 'auto';
+
+//     // Use the olMap instance as the map for the overlay
+//     window.olOverlay.setMap(window.mp);
+
+//     // Hide the overlay
+//     window.olOverlay.setPosition(undefined);
+
+//     // Disable pointer events on the heatmap layer's source
+//     heatmapLayer.getSource().set('pointerEvents', 'none');
+
+//     // Add an event listener to the overlay close button to re-enable the heatmap layer
+//     document.getElementById('closeOverlay').addEventListener('click', function() {
+//       window.olOverlay.setPosition(undefined);
+//       heatmapLayer.getSource().set('pointerEvents', 'none'); // Re-enable pointer events on the heatmap layer's source
+//     });
+//   });
+// })
+// .catch(function(error) {
+//   console.error('Error: ', error);
+// });
+
+
+// Add the heatmap layer to the map
+window.currentLocationPromise.then(function(position) {
+  const { latitude, longitude } = position.coords;
+  document.getElementById('markers').marker = new google.maps.Marker({map:window.mp});
+  window.directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true, suppressBicyclingLayer: true});
+  try{
+    var latlng = new google.maps.LatLng(latitude, longitude);
+    var pos = latlng;
+    // console.log('locationPromise pos: ' + pos);
+    window.homemarker.setPosition(pos);
+    window.homemarker.setVisible(true);
+    window.mp.setCenter(pos);
+    window.mp.panTo(pos);
   }
-
-  // Create a vector source with the features
-  var vectorSource = new ol.source.Vector({
-    features: features
-  });
-
-  // Create a heatmap layer
-  var heatmapLayer = new ol.layer.Heatmap({
-    source: vectorSource, // Set the source to the vector source
-    radius: 7, // Set the radius of the heatmap points
-    gradient: ['blue', 'lime', 'yellow', 'red'], // Set the gradient colors
-    overlay: true
-  });
-
-  // Add the heatmap layer to the OpenLayers map
-  var olMap = new ol.Map({
-    target: 'map', // Set the target DOM element
-    layers: [
-      // Add any other layers you may have
-      heatmapLayer // Add the heatmap layer
-    ],
-    view: new ol.View({
-      center: ol.proj.fromLonLat([-87.623177, 41.881832]), // Set the initial center
-      zoom: 12 // Set the initial zoom level
-    }),
-    useInterimTilesOnError: false
-  });
-
-  // Disable interactions on the map
-  olMap.getInteractions().clear();
-
-  // Convert the OpenLayers map to a Google Maps overlay
-  olMap.once('ready', function() {
-    var olOverlay = new ol.Overlay({
-      element: document.getElementById('mapOverlay'), // Use a different parent element
-      position: ol.proj.fromLonLat([-87.623177, 41.881832]),
-      positioning: 'center-center',
-      stopEvent: true, // Allow events to propagate through the overlay
-      insertFirst: false // Append the overlay element as the last child of its parent
-    });
-
-    // Set the position of the overlay element to be fixed
-    olOverlay.getElement().style.position = 'fixed';
-
-    // Set the map viewport to ignore pointer events
-    olMap.getViewport().style.pointerEvents = 'auto';
-
-    // Use the olMap instance as the map for the overlay
-    olOverlay.setMap(window.mp);
-
-    // Hide the overlay
-    olOverlay.setPosition(undefined);
-
-    // Disable pointer events on the heatmap layer's source
-    heatmapLayer.getSource().set('pointerEvents', 'none');
-
-    // Add an event listener to the overlay close button to re-enable the heatmap layer
-    document.getElementById('closeOverlay').addEventListener('click', function() {
-      olOverlay.setPosition(undefined);
-      heatmapLayer.getSource().set('pointerEvents', 'none'); // Re-enable pointer events on the heatmap layer's source
-    });
-  });
-})
-.catch(function(error) {
-  console.error('Error: ', error);
+  catch(err){
+    console.error(err);
+  }
+}).catch(function(error) {
+  console.error(" LocationPromise Error getting current location: " + error.message);
 });
 
 
-  // Add the heatmap layer to the map
-  currentLocationPromise.then(function(currentLocation) {
-    console.log("Current location: " + currentLocation.toString());
-    // do something with currentLocation
-    homemarker = new google.maps.Marker({
-    icon: {url: "https://cdn.pixabay.com/photo/2014/04/03/10/53/bicycle-311656_960_720.png",
-      scaledSize: new google.maps.Size(60, 50),
-      fillOpacity: 1,
-      strokeWeight: 5,
-      fillColor: '#5384ED',
-      strokeColor: '#ffffff',
-    }, 
-    map: window.mp
-  });
-
-    flag = 1
-    try{
-      var latlng = new google.maps.LatLng(currentLocation.lat(), currentLocation.lng());
-      var pos = latlng;
-      homemarker.setPosition(pos);
-      homemarker.setVisible(true);
-      window.mp.setCenter(pos);
-      window.mp.panTo(pos);
-    }
-    catch(err){
-      console.log(err);
-    } 
-  }).catch(function(error) {
-    console.log("Error getting current location: " + error.message);
-  });
-  
-  destmarker = new google.maps.Marker({map:window.mp});
-  window.directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true, suppressBicyclingLayer: true});
-
-  // Use the Promise to ensure the google.charts library is loaded 
-}
 
 //----------------------------------------------------------------------------------------------------------------------
 /* Class of Start Ride functionality
    Purpose - Provide functionality to the Track and Get Directions buttons, with autocomplete for Get Directions.
 */
 
-function findRoute(place){
+window.findRoute = function(place){
     var coord = place.geometry.location;
     var dest;
     var l, ln;
-    console.log('window.window.directionsDisplay:', window.directionsDisplay);
     var dest_coord;     // for get directions
     var el = document.getElementById("dest-text");
-    console.log('findRoute window.directionsDisplay:', window.directionsDisplay);
-    console.log('map:', window.mp);  
     document.getElementById('directions-form').setAttribute("style","height:400px");
       var geocoder = new google.maps.Geocoder();
       geocoder.geocode( { 'address': el.value}, function(results, status) {
+      console.log("status: " + status)
       if (status == google.maps.GeocoderStatus.OK)
       {
         dest_coord = results[0].geometry.location;
         console.log('coord:', dest_coord);
         // get location of bike now
-          destmarker = new google.maps.Marker({map:window.mp});
-          destmarker.setPosition(dest_coord);
-          destmarker.setVisible(true);
-          destmarker.setMap(window.mp);
-          document.getElementById('deets_cross').marker = destmarker;
+          document.getElementById('markers').marker = new google.maps.Marker({map:window.mp});
+          document.getElementById('markers').marker.setPosition(dest_coord);
+          document.getElementById('markers').marker.setVisible(true);
+          document.getElementById('markers').marker.setMap(window.mp);
           var latlngbounds = new google.maps.LatLngBounds();
           
           // scalr map
           // console.log(1, currentLocation.lat(), currentLocation.lng());
-          currentLocationPromise.then(function(currentLocation) {
-            console.log("Current location: " + currentLocation.toString());
+          window.currentLocationPromise.then(function(currentLocation) {
             // do something with currentLocation
-            console.log(2, currentLocation);
-            var curr_coords = new google.maps.LatLng(currentLocation.lat(), currentLocation.lng());
-            console.log('findroute curr', curr_coords);
+            var curr_coords = new google.maps.LatLng(currentLocation.coords.latitude, currentLocation.coords.longitude);
             latlngbounds.extend(curr_coords);
             latlngbounds.extend(dest_coord);
             window.mp.fitBounds(latlngbounds);
@@ -250,7 +229,6 @@ function findRoute(place){
             var directionsService = new google.maps.DirectionsService();
   
             document.getElementById("directions-form").style.display = "none";
-            document.getElementById("deets-modal").style.display = "block";
             var deetsreq = {
               placeId: "ChIJ7XUlvEHXDIgRZ-s1ZkNU2yg",
               fields: ['name', 'rating', 'formatted_phone_number', 'geometry', 'international_phone_number', 'address_component']
@@ -260,7 +238,6 @@ function findRoute(place){
             var service = new google.maps.places.PlacesService(window.mp);
             // service.getDetails(deetsreq, callback);
             window.window.directionsDisplay.setMap(window.mp);
-            console.log('location:', location);
             var request =  { 
             origin: curr_coords,
             destination: dest_coord,
@@ -279,7 +256,7 @@ function findRoute(place){
                 }
           });
           }).catch(function(error) {
-            console.log("Error getting current location: " + error.message);
+            console.error("findRoute Error getting current location: " + error.message);
           });
          
         
@@ -299,7 +276,7 @@ function findRoute(place){
    Description - Handler for Get Directions button, that creates an autocomplete widget from google maps API */
 
 
-function fetchmoredeets(addr) {
+window.additionalDetails = function(addr) {
     var loc = addr.split(' ').join('+')
     console.log(loc);
     // replace with backend api call
@@ -355,29 +332,10 @@ function fetchmoredeets(addr) {
     catch(err){
       console.log('fetch error:', err);
     }
-
-    
-    
-    
-
 }
-/* Function Interface - bike-route-btn
-   Inputs - None
-   Outputs - None;
-   Description - Toggle for showing bike routes */
 
 
-const trackLocation = ({ onSuccess, onError = () => { } }) => {
-  if ('geolocation' in navigator === false) {
-    return onError(new Error('Geolocation is not supported by your browser.'));
-  }
-
-  // Use watchPosition instead.
-  return navigator.geolocation.watchPosition(onSuccess, onError);
-};
-
-
-function tripDetails(place){
+window.tripDetails = function(place){
   console.log('place', place);
   var modal = document.getElementById("trip-details");
   const name = place.name;
@@ -392,11 +350,10 @@ function tripDetails(place){
   const phoneEl = modal.querySelector(".place-phone");
   const websiteE1 = modal.querySelector(".place-website");
   const wheelchairE1 = modal.querySelector(".place-wheelchair");
-  var destmarker = new google.maps.Marker({map: window.mp});
-  document.getElementById("cross-details").marker = destmarker;
+  document.getElementById('markers').marker = new google.maps.Marker({map: window.mp});
   var dest_coord = new google.maps.LatLng(place.geometry.location.lat, place.geometry.location.lng);
-  destmarker.setPosition(dest_coord);
-  destmarker.setVisible(true);
+  document.getElementById('markers').marker.setPosition(dest_coord);
+  document.getElementById('markers').marker.setVisible(true);
   var latlngbounds = new google.maps.LatLngBounds();
   $.ajax({
     type: "GET",

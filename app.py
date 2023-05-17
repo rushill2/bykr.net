@@ -1,19 +1,20 @@
 import mimetypes
+
 mimetypes.add_type('application/javascript', '.js')
 mimetypes.add_type('text/css', '.css')
 
 import logging
 import sys, os
-import traceback,json
+import traceback, json
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from maps import GeoHandler
-import _thread
+from flask_socketio import SocketIO, emit
 from config import logconfig
 
 logger = logging.getLogger()
 logger.propagate = False
 logger.setLevel(logging.INFO)
-file_handler = loggingfile_handler = logging.FileHandler(os.path.join(logconfig.logPath, (
+file_handler = logging.FileHandler(os.path.join(logconfig.logPath, (
     logconfig.logFilename).replace('event', 'ILS')))
 file_handler.setFormatter(logconfig.logFormat)
 logger.addHandler(file_handler)
@@ -23,16 +24,17 @@ placeDeets = None
 placeName = None
 picref = None
 app = Flask(__name__, static_url_path='/static', static_folder='static', template_folder='templates')
-import geocoder
-geodata = geocoder.ip('me')
+socketio = SocketIO(app)
 
+import geocoder
+
+geodata = geocoder.ip('me')
 
 
 # Handle the get requests to app (site server)
 @app.route('/', methods=["GET"])
 def index():
     # thread for the location data transfer
-    print('this works')
     return render_template("index.html")
 
 
@@ -49,12 +51,7 @@ def post():
             data = json.loads(request.json)
         logger.info("Post data: " + str(data))
         datag = data
-        if data['flag'] == 'const':
-            new_thread = _thread(target=GeoHandler.testhelp, args=(datag,))
-            new_thread.daemon = True
-            new_thread.start()
-            logger.info("Starting the call transfer thread")
-        elif data['flag'] == 'place_details':
+        if data['flag'] == 'place_details':
             # make placedetails api call
             global placeDeets
             placeDeets = GeoHandler.placeDetails(GeoHandler, data['pid'])
@@ -66,16 +63,18 @@ def post():
             global picref
             picref = data['data']
             logger.info("Place get_images post request received")
-        GeoHandler.placeImages(GeoHandler,picref)
+        GeoHandler.placeImages(GeoHandler, picref)
         picref = None
         return jsonify({"message": "Request received successfully"})
     except Exception as e:
         logger.error("Error in post request " + str(e) + traceback.format_exc())
         sys.exit(-1)
 
+
 @app.route('/static/<path:filename>')
 def static_files(filename):
     return send_from_directory(app.static_folder, filename)
+
 
 @app.route('/locate')
 def count():
@@ -84,17 +83,21 @@ def count():
     logger.info("Location data by count(): " + str(data))
     return jsonify(data)
 
+
 @app.route('/nearby')
 def nearby():
     return GeoHandler.nearbyPlaces(GeoHandler, geodata.latlng[0], geodata.latlng[1])
+
 
 @app.route('/details')
 def details():
     return placeDeets
 
+
 @app.route('/nameSearch')
 def name():
     return placeName
+
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -104,5 +107,19 @@ def login():
     logger.info("Post data: " + str(data))
     return placeName
 
+
+@app.route('/location_daemon', methods=['POST'])
+def handle_location_data():
+    try:
+        data = request.json
+        # do something with the location data, e.g. print it
+        print(data['latitude'], data['longitude'])
+        return 'OK'
+    except Exception as e:
+        logger.error(f"Location Daemon error: {e}")
+        return 'NOT OK'
+
+
+
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)
